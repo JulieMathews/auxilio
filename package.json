@@ -1,0 +1,23 @@
+{
+  "name": "auxilio",
+  "version": "1.0.0",
+  "description": "v2.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/JulieMathews/auxilio.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/JulieMathews/auxilio/issues"
+  },
+  "homepage": "https://github.com/JulieMathews/auxilio#readme",
+  "dependencies": {
+    "express": "^4.16.4"
+  }
+}
