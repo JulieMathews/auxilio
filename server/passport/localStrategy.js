@@ -1,27 +1,12 @@
-var LocalStrategy = require("passport-local").Strategy;
-
+const LocalStrategy = require('passport-local').Strategy
 var db = require("../database/models");
+const User = require('../database/models/user')
 
-module.exports = function(passport) {
-  passport.serializeUser(function(user, done) {
-    done(null, user.uuid);
-  });
 
-  passport.deserializeUser(function(uuid, done) {
-    db.User.findById(uuid).then(function(user) {
-      if (user) {
-        done(null, user.get());
-      } else {
-        done(user.errors, null);
-      }
-    });
-  });
-
-  //Register for an user
-  passport.use(
-    "local-signup",
-    new LocalStrategy(
-      {
+  
+//Register for an user
+  const strategy = new LocalStrategy({
+      
         usernameField: "email",
         passwordField: "password",
         passReqToCallback: true
@@ -60,7 +45,7 @@ module.exports = function(passport) {
         });
       }
     )
-  );
+
 
   //log in to your account
   passport.use(
@@ -93,4 +78,5 @@ module.exports = function(passport) {
       }
     )
   );
-};
+
+module.exports = strategy 

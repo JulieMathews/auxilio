@@ -1,15 +1,83 @@
-var db = require("../models");
+const express = require('express')
+var User= require("../database/models/user");
 var passport = require("passport");
+const router = express.Router()
 
-module.exports = function (app){
 
-    app.get("/", function(req, res){
-        res.render('layouts/index');
 
+
+
+    router.post('/', (req, res) => {
+        console.log('user signup');
+
+
+    const { email, username, password} = req.body
+    //Add validation
+    User.findOne({email: email}, (err, email) => {
+        if(err) {
+            console.log("User.js post err: ", err)
+        }else if (email) {
+            res.json({
+                error: `Looks like this email already has an account: ${email}`
+            })
+        }
+        else {
+            const newUser = new User({
+                email: email,
+                username: username,
+                password: password
+            })
+            newUser.save((err, savedUser) =>{
+                if (err)return res.json(err)
+                res.json(savedUser)
+            })
+        }
     })
+})
 
 
-    app.get("/register", function (req, res){
+router.post(
+    '/login',
+    function(req, res, next) {
+        console.log("routes/user.js, login, req.body: ");
+        console.log(req.body)
+        next()
+    },
+    passport.authenticate('local'),
+    (req, res) => {
+        console.log("logged in", req.user);
+        var userInfo = {
+            email:req.user.email
+        };
+        res.send(userInfo);
+    }
+)
+
+router.get('/', (req, res, next) => {
+    console.log("===user!====")
+    console.log(req.user)
+    if (req.user){
+        res.json({ user: req.user})
+    }else{
+        res.json({ user: null })
+    }
+})
+
+router.post('./logout', (req, res) => {
+    if(req.user) {
+        req.logout()
+        res.send({ msg: "logging out"})
+    }else {
+        res.send({msg: "no user to log out" })
+    }
+})
+
+module.exports = router
+
+   /* module.exports = function (app){
+
+
+   app.get("/register", function (req, res){
         var context = {errors: req.flash('error') };
         console.log("Context: ", context);
         res.render("register", context);
@@ -123,7 +191,7 @@ module.exports = function (app){
       });
     
     }
-
+*/
 
 
 

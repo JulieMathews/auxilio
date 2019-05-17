@@ -7,16 +7,13 @@ var passport = require('passport');
 var flash = require("connect-flash");
 const Sequelize = require('sequelize')
 const db = require('./database/models');
-
-
-
-
-
+const user = require('./routes/user')
 const app = express();
 var port = process.env.PORT || 8080;
 
+
 //passing the passport for configuration file
-require("./passport/passport.js")(passport);
+//require("./passport/localStrategy.js/index.js")(passport);
 
 //Middleware
 app.use(bodyParser.urlencoded({extended: false}));

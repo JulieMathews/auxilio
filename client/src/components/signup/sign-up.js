@@ -51,6 +51,21 @@ render() {
 		<div className="SignupForm">
 			<h4>Sign up</h4>
 			<form className="form-horizontal">
+			<div className="form-group">
+					<div className="col-1 col-ml-auto">
+						<label className="form-label" htmlFor="email">email</label>
+					</div>
+					<div className="col-3 col-mr-auto">
+						<input className="form-input"
+							type="text"
+							id="email"
+							name="email"
+							placeholder="email"
+							value={this.state.email}
+							onChange={this.handleChange}
+						/>
+					</div>
+				</div>
 				<div className="form-group">
 					<div className="col-1 col-ml-auto">
 						<label className="form-label" htmlFor="username">Username</label>
