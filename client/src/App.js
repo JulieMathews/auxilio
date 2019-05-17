@@ -2,8 +2,8 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import { Route, Link } from 'react-router-dom'
 // components
-import Signup from './components/sign-up'
-import LoginForm from './components/login-form'
+import Signup from './components/signup/sign-up'
+import LoginForm from './components/login/login-form'
 import Navbar from './components/navbar'
 import Home from './components/home'
 

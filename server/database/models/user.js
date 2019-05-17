@@ -1,5 +1,5 @@
 'use strict';
-var sequelize = rqeuire('sequelize')
+var sequelize = require('sequelize')
 var uuidv1 = require("uuid/v1");
 var bcrypt = require("bcrypt");
 
