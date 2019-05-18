@@ -2,7 +2,7 @@ import React from 'react';
 import '../css/style.css';
 import logo from '../img/logo.png';
 
-const navbar = (props) => {
+const Navbar = (props) => {
   return (
     <div className="header_area">
       <div className="main_menu" id="mainNav">
@@ -52,4 +52,4 @@ const navbar = (props) => {
   )
 };
 
-export default navbar;
+export default Navbar;

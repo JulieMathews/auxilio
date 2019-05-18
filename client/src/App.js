@@ -5,14 +5,13 @@ import { Route } from 'react-router-dom'
 // components
 import Signup from './components/signup/sign-up'
 import LoginForm from './components/login/login-form'
-import Navbar from './components/navbar'
+//import Navbar from './components/navbar'
 import Home from './components/home'
 import InstantMessenger from './components/chat/chat'
 
 // pages
 import Navbar from './Navbar/Navbar';
 import Header from './Header/Header';
-import logo from './logo.svg';
 
   //  return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work?'));
 
@@ -61,9 +60,8 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Navbar />
+
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
-        <Header />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
           <p>Join the party, {this.state.username}!</p>
@@ -89,7 +87,9 @@ class App extends Component {
           path="/messenger"
           render={() =>
             <InstantMessenger/>}
-        />    
+        />  
+   <Header />
+  
       </div>
     );
   }

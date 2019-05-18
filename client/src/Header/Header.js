@@ -1,9 +1,9 @@
 import React from 'react';
 import '../css/style.css';
 
-const navbar = (props) => {
+const Header = (props) => {
   return (
-      <section class="home_banner_area">
+    <section class="home_banner_area">
       <div class="banner_inner">
         <div class="container">
           <div class="row">
@@ -48,4 +48,4 @@ const navbar = (props) => {
   )
 };
 
-export default header;
+export default Header;
