@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "client",
   "version": "0.1.0",
   "private": true,
@@ -6,6 +7,21 @@
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-scripts": "3.0.1"
+=======
+  "name": "auxilio",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "body": "^5.1.0",
+    "body-parser": "^1.19.0",
+    "express": "^4.16.4",
+    "nodemon": "^1.19.0",
+    "parser": "^0.1.4",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-scripts": "3.0.1",
+    "spectre.css": "^0.5.8"
+>>>>>>> 64257070f49c67bf184d97f83b39d88d4b591132
   },
   "scripts": {
     "start": "react-scripts start",
@@ -27,5 +43,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+<<<<<<< HEAD
   }
+=======
+  },
+  "proxy": "http://localhost:8080"
+>>>>>>> 64257070f49c67bf184d97f83b39d88d4b591132
 }
