@@ -6,6 +6,7 @@ import Signup from './components/signup/sign-up'
 import LoginForm from './components/login/login-form'
 import Navbar from './components/navbar'
 import Home from './components/home'
+import InstantMessenger from './components/chat/chat'
 
 class App extends Component {
   constructor() {
@@ -75,6 +76,11 @@ class App extends Component {
             <Signup/>}
         />
 
+        <Route
+          path="/messenger"
+          render={() =>
+            <InstantMessenger/>}
+        />    
       </div>
     );
   }

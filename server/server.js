@@ -3,7 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const path = require('path');
 const session = require('express-session');
-var passport = require('passport');
+var passport = require('./passport');
 var flash = require("connect-flash");
 const Sequelize = require('sequelize')
 const db = require('./database/models');
@@ -11,9 +11,6 @@ const user = require('./routes/user')
 const app = express();
 var port = process.env.PORT || 8080;
 
-
-//passing the passport for configuration file
-//require("./passport/localStrategy.js/index.js")(passport);
 
 //Middleware
 app.use(bodyParser.urlencoded({extended: false}));
@@ -39,7 +36,7 @@ app.use(passport.session()); //persistent login sessions
 app.use(flash());
 
 //Routes 
-//app.use('/user', user)
+app.use("/user", user);
 
 app.use(express.static(path.join(__dirname, 'build')));
 

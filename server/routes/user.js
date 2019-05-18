@@ -1,5 +1,5 @@
 const express = require('express')
-var User= require("../database/models/user");
+var User = require("../database/models").User;
 var passport = require("passport");
 const router = express.Router()
 
@@ -13,24 +13,20 @@ const router = express.Router()
 
     const { email, username, password} = req.body
     //Add validation
-    User.findOne({email: email}, (err, email) => {
-        if(err) {
-            console.log("User.js post err: ", err)
-        }else if (email) {
+    User.findOne({ where: {email: email} }).then(user => {
+        if(user) {
             res.json({
                 error: `Looks like this email already has an account: ${email}`
-            })
-        }
-        else {
+            });
+        } else {
             const newUser = new User({
                 email: email,
                 username: username,
-                password: password
-            })
-            newUser.save((err, savedUser) =>{
-                if (err)return res.json(err)
+                password:  User.generateHash(password)
+            });
+            newUser.save().then(savedUser => {
                 res.json(savedUser)
-            })
+            });
         }
     })
 })
@@ -47,7 +43,8 @@ router.post(
     (req, res) => {
         console.log("logged in", req.user);
         var userInfo = {
-            email:req.user.email
+            email:req.user.email,
+            username:req.user.username
         };
         res.send(userInfo);
     }
@@ -63,7 +60,7 @@ router.get('/', (req, res, next) => {
     }
 })
 
-router.post('./logout', (req, res) => {
+router.post('/logout', (req, res) => {
     if(req.user) {
         req.logout()
         res.send({ msg: "logging out"})

@@ -1,11 +1,9 @@
+const passport = require("passport");
 const LocalStrategy = require('passport-local').Strategy
 var db = require("../database/models");
-const User = require('../database/models/user')
 
-
-  
 //Register for an user
-  const strategy = new LocalStrategy({
+  const strategySignup = new LocalStrategy({
       
         usernameField: "email",
         passwordField: "password",
@@ -48,35 +46,35 @@ const User = require('../database/models/user')
 
 
   //log in to your account
-  passport.use(
-    "local-login",
-    new LocalStrategy(
+  const strategy = new LocalStrategy(
       {
-        usernameField: "email",
-        passwordField: "password",
-        passReqToCallback: true
+        usernameField: "username",
+        passwordField: "password"
       },
-      function(req, email, password, done) {
+      function(email, password, done) {
+        console.log("Attempting login");
         db.User.findOne({
           where: {
             email: email
           }
         })
           .then(function(user) {
+            console.log("Got user: ", user.get());
             if (!user) {
               return done(null, false, {
                 message: "It looks like that email doesn't exist!"
               });
             } else if (!user.validPassword(password)) {
+              console.log("Wrong password!");
               return done(null, false, { message: "Oops! Wrong password." });
             }
+            console.log("All good");
             return done(null, user);
           })
           .catch(function(err) {
             return done(err);
           });
       }
-    )
-  );
+    );
 
 module.exports = strategy 

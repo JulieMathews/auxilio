@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Redirect } from 'react-router-dom'
+import Error from '../error/error';
 import axios from 'axios'
 
 class Signup extends Component {
@@ -6,6 +8,7 @@ class Signup extends Component {
 		super()
 		this.state = {
 			username: '',
+			email: '',
 			password: '',
 			confirmPassword: '',
 
@@ -26,29 +29,34 @@ class Signup extends Component {
 		//request to server to add a new username/password
 		axios.post('/user/', {
 			username: this.state.username,
+			email: this.state.email,
 			password: this.state.password
 		})
 			.then(response => {
 				console.log(response)
-				if (!response.data.errmsg) {
+				if (!response.data.error) {
 					console.log('successful signup')
 					this.setState({ //redirect to login page
 						redirectTo: '/login'
 					})
 				} else {
 					console.log('username already taken')
+					this.setState({ error: response.data.error });
 				}
 			}).catch(error => {
 				console.log('signup error: ')
-				console.log(error)
-
+				console.log(error);
 			})
 	}
 
 
 render() {
-	return (
+	if (this.state.redirectTo) {
+		return <Redirect to={{ pathname: this.state.redirectTo }} />
+	} else {
+		return (
 		<div className="SignupForm">
+			<Error message={this.state.error} />
 			<h4>Sign up</h4>
 			<form className="form-horizontal">
 			<div className="form-group">
@@ -107,6 +115,7 @@ render() {
 		</div>
 
 	)
+}
 }
 }
 

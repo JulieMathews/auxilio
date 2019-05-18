@@ -1,8 +1,7 @@
 
 const passport = require('passport')
 const LocalStrategy = require('./localStrategy')
-const User = require('../database/models/user')
-
+var User = require("../database/models").User;
 
 
 
@@ -21,7 +20,7 @@ const User = require('../database/models/user')
 
     passport.deserializeUser(function(uuid, done) {
         console.log('DeserializeUser called')
-      db.User.findById(uuid).then(function(user) {
+      User.findById(uuid).then(function(user) {
         if (user) {
           done(null, user.get());
         } else {

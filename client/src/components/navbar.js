@@ -5,6 +5,8 @@ import logo from '../logo.svg';
 import '../App.css';
 import axios from 'axios'
 
+
+
 class Navbar extends Component {
     constructor() {
         super()
@@ -54,13 +56,16 @@ class Navbar extends Component {
                                     <Link to="/signup" className="btn btn-link">
                                     <span className="text-secondary">sign up</span>
 				</Link>
+                                    <Link to="/messenger" className="btn btn-link">
+                                    <span className="text-secondary">Direct Messages</span>
+				</Link>
                                 </section>
                             )}
                     </div>
                     <div className="col-4 col-mr-auto">
                     <div id="top-filler"></div>
                         <img src={logo} className="App-logo" alt="logo" />
-                        <h1 className="App-title">MERN Passport</h1>
+                        <h1 className="App-title">Auxilio</h1>
                     </div>
                 </header>
             </div>
