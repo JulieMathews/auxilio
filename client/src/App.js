@@ -7,6 +7,7 @@ import LoginForm from './components/login/login-form'
 import Navbar from './components/navbar'
 import Home from './components/home'
 import InstantMessenger from './components/chat/chat'
+import Articles from './components/articles/articles';
 
 class App extends Component {
   constructor() {
@@ -75,12 +76,19 @@ class App extends Component {
           render={() =>
             <Signup/>}
         />
-
+        {this.state.loggedIn &&
+        <React.Fragment>
         <Route
           path="/messenger"
           render={() =>
-            <InstantMessenger/>}
-        />    
+            <InstantMessenger currentUser={this.state.username} />
+          } />
+        <Route
+            path="/articles"
+            render={() => <Articles/> }
+          />
+        </React.Fragment>
+        }
       </div>
     );
   }

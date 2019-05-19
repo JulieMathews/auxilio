@@ -1,5 +1,24 @@
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
+Instructions: 
+Run npm install to update to latest node modules.
+Update config/config.json to match your local MySQL config. (TODO: this should use a local environment file so this doesn't always have to be edited.)
+Navigate to the server folder and run the following commands:
+Run npx sequelize db:createto create the database if it doesn't already exist.
+Run npx sequelize db:migrate to update the database to the latest schema.
+Run npx sequelize db:seed:all to seed the database with the latest dummy data.
+Run npm start to start the server.
+
+
+
+
+
+
+
+
+
+
+
 ## Available Scripts
 
 In the project directory, you can run:
