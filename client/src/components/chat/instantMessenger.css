@@ -15,13 +15,12 @@
 
 .Messages-list {
   padding: 20px 0;
-  max-width: 900px;
-  width: 100%;
-  margin: 0 auto;
+  /* margin: 0 auto; */
   list-style: none;
   padding-left: 0;
   flex-grow: 1;
-  overflow: auto;
+ 
+  /* float: right; */
 }
 
 .Messages-message {
@@ -39,11 +38,11 @@
   display: inline-block;
 }
 
-.currentMember > .Message-content {
+.currentMember>.Message-content {
   align-items: flex-end;
 }
 
-.Messages-message > .avatar {
+.Messages-message>.avatar {
   height: 35px;
   width: 35px;
   border-radius: 50%;
@@ -51,14 +50,14 @@
   margin: 0 10px -10px;
 }
 
-.Message-content > .username {
+.Message-content>.username {
   display: block;
   color: gray;
   font-size: 14px;
   padding-bottom: 4px;
 }
 
-.Message-content > .text {
+.Message-content>.text {
   padding: 10px;
   max-width: 400px;
   margin: 0;
@@ -68,7 +67,7 @@
   display: inline-block;
 }
 
-.currentMember > .Message-content .text {
+.currentMember>.Message-content .text {
   background-color: rgb(10, 187, 187);
 }
 
@@ -80,26 +79,54 @@
   margin: 0 auto 40px;
 }
 
+.messageParent {
+  float: right;
+  background-color: rgb(169, 169, 169, .25);
+  border: 5px solid rgb(41, 79, 150);
+  border-radius: 10px;
+  margin: 15px;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  width: 25%;
+  overflow: scroll;
+}
+
+form {
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  background:rgb(41, 79, 150, .40);
+  width: 24.5%;
+  margin-bottom: 23px;
+  margin-right: 20px;
+  float: right;
+}
+
 input {
   padding: 5px;
   font-size: 16px;
   border-radius: 8px;
-  border: 1px solid rgb(10, 187, 187);
+  border: 2px solid rgb(10, 187, 187);
   flex-grow: 1;
+  width: 80%
+  /* float: right; */
 }
 
 button {
-  padding: 5px 10px;
+  padding: 5px 10px 5px 10px;
   font-size: 16px;
   background-color: rgb(10, 187, 187);
   color: white;
-  border: none;
+  border: 2px white solid;
   border-radius: 8px;
   margin-left: 10px;
 }
 
 h1 {
-  -webkit-text-fill-color: white; /* Will override color (regardless of order) */
+  -webkit-text-fill-color: white;
+  /* Will override color (regardless of order) */
   -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: rgb(10, 119, 187);
   font-weight: bolder;

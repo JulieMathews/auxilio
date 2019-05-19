@@ -71,6 +71,7 @@ class InstantMessenger extends Component {
         <div className="App-header">
           <h1>Auxilio</h1>
         </div>
+        <div className="messageParent">
         <Messages
           messages={this.state.messages}
           currentMember={this.state.member}
@@ -78,6 +79,7 @@ class InstantMessenger extends Component {
         <Input
           onSendMessage={this.onSendMessage}
         />
+        </div>
       </div>
     );
   }
