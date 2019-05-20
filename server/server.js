@@ -40,7 +40,9 @@ app.use(flash());
 app.use("/user", user);
 app.use("/article", article)
 
-app.use(express.static(path.join(__dirname, '..', 'client', 'build')));
+var staticFiles = process.env.NODE_ENV === "production" ? "build" : "public";
+var staticPath = path.join(__dirname, '..', 'client', staticFiles);
+app.use(express.static(staticPath));
 
 app.get('/ping', function (req, res) {
  return res.send('pong');

@@ -1,5 +1,5 @@
 import React from 'react';
-import '../css/style.css';
+import './Header.css';
 
 // Header message = { this.state.info }
 
@@ -15,7 +15,7 @@ const Header = (props) => {
             <div class="col-lg-4">
               <div class="home_right_box">
                 <div class="home_item">
-                  <a><img src="../img/familyapp/family.png"></img></a>
+                  <a><img src="../../img/familyapp/family.png"></img></a>
                 </div>
                 <div class="home_item">
                   <p>Community Forum</p>
