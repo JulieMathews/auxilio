@@ -20,7 +20,7 @@ var User = require("../database/models").User;
 
     passport.deserializeUser(function(uuid, done) {
         console.log('DeserializeUser called')
-      User.findById(uuid).then(function(user) {
+      User.findByPk(uuid).then(function(user) {
         if (user) {
           done(null, user.get());
         } else {

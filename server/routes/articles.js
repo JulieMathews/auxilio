@@ -1,15 +1,20 @@
-var db = require('./models');
+var express = require("express")
+var Article = require('../database/models').Article;
+const router = express.Router()
 
-module.exports = function(app) {
-    app.get("/specialist-articles", function(req, res) {
-        db.Article.findAll().then(articles => {
-            res.render('specialistArticles', { articles: articles.map(a => a.get({plain: true})) });
+
+
+
+    router.get("/", function(req, res) {
+        Article.findAll().then(articles => {
+            res.json({ articles: articles });
         });
     });
 
-    app.get("/article/:id", function(req, res) {
-        db.Article.findByPk(req.params.id).then(article => {
-            res.render('singlePost', {article: article.get({plain: true})});
+    router.get("/:id", function(req, res) {
+        Article.findByPk(req.params.id).then(article => {
+            res.json({article: article.get({plain: true})});
         });
     });
-};
+
+    module.exports = router

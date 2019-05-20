@@ -8,6 +8,7 @@ var flash = require("connect-flash");
 const Sequelize = require('sequelize')
 const db = require('./database/models');
 const user = require('./routes/user')
+const article = require('./routes/articles')
 const app = express();
 var port = process.env.PORT || 8080;
 
@@ -37,6 +38,7 @@ app.use(flash());
 
 //Routes 
 app.use("/user", user);
+app.use("/article", article)
 
 app.use(express.static(path.join(__dirname, 'build')));
 
