@@ -1,7 +1,30 @@
 {
+  "development": {
+    "username": "root",
+    "password": "rootroot",
+    "database": "articles_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "127.0.0.1",
+    "dialect": "mysql"
+  }
+}
+
     "development": {
       "username": "root",
-      "password": "A2bruti07",
+      "password": "asdfjkl;",
       "database": "articles_db",
       "host": "127.0.0.1",
       "dialect": "mysql"
@@ -20,4 +43,3 @@
       "host": "127.0.0.1",
       "dialect": "mysql"
     }
-  }
