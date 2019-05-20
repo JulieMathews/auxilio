@@ -1,24 +1,21 @@
 import React from 'react';
 import '../css/style.css';
 
+// Header message = { this.state.info }
+
 const Header = (props) => {
   return (
     <section class="home_banner_area">
       <div class="banner_inner">
         <div class="container">
           <div class="row">
-            <div class="col-lg-8">
-              <div class="banner_content">
-                <h2>Family App</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <a class="banner_btn" href="/login">Get Started</a>
-              </div>
-            </div>
+            
+          {/*  <div> {this.prop.message}</div> */}
                 
             <div class="col-lg-4">
               <div class="home_right_box">
                 <div class="home_item">
-                  <a><img src="img/familyapp/family.png" alt="School Related"></img></a>
+                  <a><img src="../img/familyapp/family.png"></img></a>
                 </div>
                 <div class="home_item">
                   <p>Community Forum</p>

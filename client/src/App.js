@@ -10,8 +10,9 @@ import Home from './components/home'
 import InstantMessenger from './components/chat/chat'
 
 // pages
-import Navbar from './Navbar/Navbar';
-import Header from './Header/Header';
+import Navbar from './components/Navbar/Navbar';
+import Header from './components/Header/Header';
+import Landing from './components/Landing/Landing';
 
   //  return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work?'));
 
@@ -89,6 +90,7 @@ class App extends Component {
             <InstantMessenger/>}
         />  
    <Header />
+   <Landing />
   
       </div>
     );
