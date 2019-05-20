@@ -5,8 +5,6 @@ import { Route } from 'react-router-dom'
 // components
 import Signup from './components/signup/sign-up'
 import LoginForm from './components/login/login-form'
-//import Navbar from './components/navbar'
-import Home from './components/home'
 import InstantMessenger from './components/chat/chat'
 import Articles from './components/articles/articles';
 
@@ -70,9 +68,6 @@ class App extends Component {
         }
         {/* Routes to different components */}
         <Route
-          exact path="/"
-          component={Home} />
-        <Route
           path="/login"
           render={() =>
             <LoginForm
@@ -99,7 +94,7 @@ class App extends Component {
         }
       <Header/>
       <Landing />
-      <Footer/>
+      {/* <Footer/> */}
       </div>
     );
   }
