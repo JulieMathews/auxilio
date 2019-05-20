@@ -1,7 +1,7 @@
-<<<<<<< HEAD
+
 # Auxilio
 v2.0
-=======
+
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
 Instructions: 
@@ -89,4 +89,4 @@ This section has moved here: https://facebook.github.io/create-react-app/docs/de
 ### `npm run build` fails to minify
 
 This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
->>>>>>> 64257070f49c67bf184d97f83b39d88d4b591132
+
