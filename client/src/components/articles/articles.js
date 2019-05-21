@@ -22,30 +22,30 @@ class Articles extends Component {
                 console.log(error);
             })
     }
-  render() {
-      const articles = this.state.articles;
-      return (
-          <div className="Articles-list">
-            {articles.map(a => this.renderArticle(a))}
-          </div>
-      )
-  }
-
-  renderArticle(article) {
-    return(
-        <article className="article">
-            <div className="col-md-9">
-                <div className="blog_post">
-                    <img src="img/blog/main-blog/m-blog-2.jpg" alt="" />
-                    <div className="blog_details">
-                        <a href="single-blog.html"><h2>{article.title}</h2></a>
-                        <p>{article.blurb}</p>
-                        <a href="single-blog.html" className="blog_btn">View More</a>
-                        
-                    </div>
-                </div>
+    render() {
+        const articles = this.state.articles;
+        return (
+            <div className="Articles-list">
+              {articles.map(a => this.renderArticle(a))}
             </div>
-        </article>
+        )
+    }
+  
+    renderArticle(article) {
+      return(
+          <article className="article">
+              <div className="col-md-9">
+                  <div className="blog_post">
+                      <img src="img/blog/main-blog/m-blog-2.jpg" alt="" />
+                      <div className="blog_details">
+                          <a href="single-blog.html"><h2>{article.title}</h2></a>
+                          <p>{article.blurb}</p>
+                          <a href="single-blog.html" className="blog_btn">View More</a>
+  
+                      </div>
+                  </div>
+              </div>
+          </article>
     )
     }
 

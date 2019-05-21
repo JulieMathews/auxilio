@@ -61,32 +61,17 @@ return(
           <li><span className="nav-item active"><a className="nav-link">Logout</a></span></li></Link>
           
           <Link to="/messenger" className="btn btn-link text-secondary">
-          <li><span className="nav-item active"><a className="nav-link">messenger</a></span></li></Link>
+          <li><span className="nav-item active"><a className="nav-link">Chat with Community</a></span></li></Link>
           
-         
-          
-         
-          <Link to="/community-forum" className="btn btn-link text-secondary">
-          <li className="nav-item submenu dropdown">
-                  <div className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forums</div>
-                  <ul className="dropdown-menu">
-                    <li className="nav-item"><a className="nav-link">Community Forum</a></li>
-                    {/*
-                    <li className="nav-item"><a className="nav-link" href="inschoolForum.html">In School Forum</a></li>
-                    <li className="nav-item"><a className="nav-link" href="specialistForum.html">Specialist Forum</a></li>
-                    */}
-
-                  </ul>
-                </li> </Link>
-          
-          
-          
-          
-          
+         <Link to="/community-forum" className="btn btn-link text-secondary">
+          <li><span className="nav-item active"><a className="nav-link">Community Forum</a></span></li></Link>
           
           
           <Link to="/articles" className="btn btn-link text-secondary">
           <li><span className="nav-item active"><a className="nav-link">Articles</a></span></li></Link>
+
+          <Link to="/articles" className="btn btn-link text-secondary">
+          <li><span className="nav-item active"><a className="nav-link">Specialists</a></span></li></Link>
 
           <Link to="/about" className="btn btn-link text-secondary">
           <li><span className="nav-item active"><a className="nav-link">About</a></span></li></Link>
