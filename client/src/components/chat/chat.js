@@ -4,9 +4,6 @@ import Messages from "./Messages";
 import Input from "./Input";
 
 
-
- 
-
 function randomColor() {
   return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
 }
@@ -59,7 +56,7 @@ class InstantMessenger extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h1>Auxilio</h1>
+          <h1><i class="far fa-comments"></i></h1>
         </div>
         <div className="messageParent">
         <Messages
