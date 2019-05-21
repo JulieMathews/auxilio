@@ -3020,3 +3020,47 @@ h6 {
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
+form {
+position: fixed;
+/* bottom: 0; */
+/* right: 0; */
+background: #FFFFFF;
+background: -moz-radial-gradient(center, #FFFFFF 0%, #FFFFFF 0%, #6B7496 100%);
+background: -webkit-radial-gradient(center, #FFFFFF 0%, #FFFFFF 0%, #6B7496 100%);
+background: radial-gradient(ellipse at center, #FFFFFF 0%, #FFFFFF 0%, #6B7496 100%);
+
+/* background: rgb(41, 79, 150); */
+width: 40%;
+margin-bottom: 25%;
+margin-right: 20px;
+/* float: right; */
+border: white 1px solid;
+border-radius: 10px;
+margin: 0 auto;
+justify-content: center;
+z-index: 999;
+margin-left: 30%;
+color: white;
+}
+
+.form-input {
+  margin-left: 2rem;
+  background-color: white !important;
+  
+}
+
+button {
+  border: 1px solid white !important;
+  border-radius: 10px !important;
+  padding: 5px !important;
+}
+
+.form-label {
+  color: black;
+  /* display: flex; */
+  /* justify-content: flex-start; */
+  font-weight: bolder;
+  /* font-size: 1rem; */
+  /* margin-right: 4px !important; */
+
+}

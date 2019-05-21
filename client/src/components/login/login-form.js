@@ -61,9 +61,9 @@ class LoginForm extends Component {
                     <form className="form-horizontal">
                         <div className="form-group">
                             <div className="col-1 col-ml-auto">
-                                <label className="form-label" htmlFor="username">Username</label>
+                                <label className="form-label" htmlFor="username">EMAIL:</label>
                             </div>
-                            <div className="col-3 col-mr-auto">
+                            <div className="col-5 col-mr-auto">
                                 <input className="form-input"
                                     type="text"
                                     id="username"
@@ -76,9 +76,9 @@ class LoginForm extends Component {
                         </div>
                         <div className="form-group">
                             <div className="col-1 col-ml-auto">
-                                <label className="form-label" htmlFor="password">Password: </label>
+                                <label className="form-label" htmlFor="password">PASSWORD: </label>
                             </div>
-                            <div className="col-3 col-mr-auto">
+                            <div className="col-5 col-mr-auto">
                                 <input className="form-input"
                                     placeholder="password"
                                     type="password"
@@ -89,9 +89,9 @@ class LoginForm extends Component {
                             </div>
                         </div>
                         <div className="form-group ">
-                            <div className="col-7"></div>
+                            <div className="col-4"></div>
                             <button
-                                className="btn btn-primary col-1 col-mr-auto"
+                                className="btn btn-primary col-4 col-mr-auto"
                                
                                 onClick={this.handleSubmit}
                                 type="submit">Login</button>
