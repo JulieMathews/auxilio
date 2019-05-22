@@ -9,6 +9,7 @@ const Sequelize = require('sequelize')
 const db = require('./database/models');
 const user = require('./routes/user')
 const article = require('./routes/articles')
+const api = require('./routes/api')
 const app = express();
 var port = process.env.PORT || 8080;
 
@@ -39,6 +40,7 @@ app.use(flash());
 //Routes 
 app.use("/user", user);
 app.use("/article", article)
+app.use("/api", api)
 
 var staticFiles = process.env.NODE_ENV === "production" ? "build" : "public";
 var staticPath = path.join(__dirname, '..', 'client', staticFiles);

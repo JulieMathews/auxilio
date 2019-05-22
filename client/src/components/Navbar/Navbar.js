@@ -61,14 +61,14 @@ return(
           <li><span className="nav-item active"><a className="nav-link">Logout</a></span></li></Link>
           
           <Link to="/messenger" className="btn btn-link text-secondary">
-          <li><span className="nav-item active"><a className="nav-link">Chat with Community</a></span></li></Link>
+          <li><span className="nav-item active"><a className="nav-link">Direct Message with Community members</a></span></li></Link>
           
          <Link to="/community-forum" className="btn btn-link text-secondary">
-          <li><span className="nav-item active"><a className="nav-link">Community Forum</a></span></li></Link>
+          <li><span className="nav-item active"><a className="nav-link">Community News Feed</a></span></li></Link>
           
           
           <Link to="/articles" className="btn btn-link text-secondary">
-          <li><span className="nav-item active"><a className="nav-link">Articles</a></span></li></Link>
+          <li><span className="nav-item active" className="nav-link">Articles</span></li></Link>
 
           <Link to="/articles" className="btn btn-link text-secondary">
           <li><span className="nav-item active"><a className="nav-link">Specialists</a></span></li></Link>

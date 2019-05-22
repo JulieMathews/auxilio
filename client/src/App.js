@@ -7,6 +7,7 @@ import Signup from './components/signup/sign-up'
 import LoginForm from './components/login/login-form'
 import InstantMessenger from './components/chat/chat'
 import Articles from './components/articles/articles';
+import CommunityForum from "./components/CommunityForum/CommunityForum";
 
 // pages
 import Navbar from './components/Navbar/Navbar';
@@ -89,6 +90,10 @@ class App extends Component {
         <Route
             path="/articles"
             render={() => <Articles/> }
+          />
+        <Route
+            path="/community-forum"
+            render={() => <CommunityForum/> }
           />
         </React.Fragment>
         }
