@@ -94,14 +94,7 @@ class App extends Component {
         }
         <Footer />
       </div>
-    //  </Fragment>
-
-
-      
     );
   }
 }
-
 export default App;
-
-      
