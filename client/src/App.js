@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-//import { Fragment } from 'react';
 import './App.css';
 import axios from 'axios'
 import { Route } from 'react-router-dom'
@@ -65,8 +64,7 @@ class App extends Component {
 
   render() {
     return (
-      // <Fragment >
-        <div className="App">
+      <div className="App">
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
@@ -96,14 +94,7 @@ class App extends Component {
         }
         <Footer />
       </div>
-    //  </Fragment>
-
-
-      
     );
   }
 }
-
 export default App;
-
-      
