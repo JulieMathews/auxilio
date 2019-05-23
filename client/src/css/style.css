@@ -46,8 +46,7 @@ Table of Content:
 /*----------------------------------------------------*/
 .list {
   list-style: none;
-  margin: 0px;
-  padding: 0px; }
+  margin: 0px; }
 
 a {
   text-decoration: none;
@@ -61,7 +60,7 @@ a {
 
 body {
   line-height: 24px;
-  background-color: #5ec0ca;
+  background-color: white;
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   font-weight: normal;
@@ -142,7 +141,6 @@ button:focus {
   transition: background 0.4s, all 0.3s linear; }
   .header_area .navbar {
     background: transparent;
-    padding: 0px;
     border: 0px;
     border-radius: 0px; }
     .header_area .navbar .navbar-brand img + img {
@@ -153,7 +151,6 @@ button:focus {
         font: 500 13px/68px "Roboto", sans-serif;
         text-transform: uppercase;
         color: #fff;
-        padding: 0px;
         display: inline-block; }
         .header_area .navbar .nav .nav-item .nav-link:after {
           display: none; }

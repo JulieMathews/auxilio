@@ -6,8 +6,7 @@
   z-index: 99;
   transition: background 0.4s, all 0.3s linear; }
   .header_area .navbar {
-    background: transparent;
-    padding: 0px;
+    background-color: #A2DCE2;
     border: 0px;
     border-radius: 0px; }
     .header_area .navbar .navbar-brand img + img {
@@ -18,7 +17,6 @@
         font: 500 13px/68px "Roboto", sans-serif;
         text-transform: uppercase;
         color: #fff;
-        padding: 0px;
         display: inline-block; }
         .header_area .navbar .nav .nav-item .nav-link:after {
           display: none; }
@@ -26,7 +24,6 @@
         position: relative; }
         .header_area .navbar .nav .nav-item.submenu ul {
           border: none;
-          padding: 0px;
           border-radius: 0px;
           box-shadow: none;
           margin: 0px;
@@ -43,7 +40,6 @@
               visibility: hidden;
               display: block;
               border: none;
-              padding: 0px;
               border-radius: 0px;
               box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.3); } }
           .header_area .navbar .nav .nav-item.submenu ul:before {
@@ -118,3 +114,11 @@
   .container {
     max-width: 1170px; } }
 
+.header_area li a.nav-link {
+  line-height: 0;
+}
+
+.nav-link {
+    display: block;
+    padding: .6rem
+}

@@ -47,7 +47,6 @@
     .navbar-toggler {
         border: none;
         border-radius: 0px;
-        padding: 0px;
         cursor: pointer;
         margin-top: 27px;
         margin-bottom: 23px;
@@ -91,9 +90,7 @@
 	.header_area + section, .header_area + row, .header_area + div {
 		margin-top: 117px;
 	}
-    .header_top .nav{
-        padding: 0px;
-    }
+
     .header_area .navbar .nav .nav-item .nav-link{
         line-height: 40px;
         margin-right: 0px;

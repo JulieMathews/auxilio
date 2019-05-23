@@ -5,10 +5,8 @@ import 'spectre.css/dist/spectre.min.css';
 import 'spectre.css/dist/spectre-icons.css';
 import './index.css';
 import './css/bootstrap.css';
-/*import './css/font-awesome.min.css';*/
 import './css/responsive.css';
 import './css/style.css';
-// import './css/style.css.map';
 import App from './App';
 import { BrowserRouter } from 'react-router-dom' //don't need to specify localhost url in axios http address
 import * as serviceWorker from './serviceWorker';

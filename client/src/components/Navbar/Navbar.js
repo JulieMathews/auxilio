@@ -1,55 +1,173 @@
-import React from 'react';
-import '../css/style.css';
-import logo from '../img/logo.png';
+import React, { Component } from 'react';
+import { Link } from 'react-router-dom'
+import './Navbar.css';
+import logo from '../../img/logo.png';
+import Axios from 'axios'
 
-const Navbar = (props) => {
-  return (
-    <div className="header_area">
-      <div className="main_menu" id="mainNav">
-        <nav className="navbar navbar-expand-lg navbar-light">
-          <div className="container">
+class Navbar extends Component {
+  constructor() {
+    super()
+    this.logout = this.logout.bind(this)
+  }
 
-            <div className="navbar-brand logo_h"><img src={logo} alt=""/><img src={logo} alt="logo"/></div>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-              <span className="icon-bar"></span>
-            </button>
-            
-            <div className="collapse navbar-collapse offset" id="navbarSupportedContent">
-              <ul className="nav navbar-nav menu_nav ml-auto">
-                <li className="nav-item active"><a className="nav-link" href="index.html">Home</a></li> 
-                  
-                <li className="nav-item submenu dropdown">
-                  <div className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forums</div>
-                  <ul className="dropdown-menu">
-                    <li className="nav-item"><a className="nav-link" href="communityForum.html">Community Forum</a></li>
-                    {/*
-                    <li className="nav-item"><a className="nav-link" href="inschoolForum.html">In School Forum</a></li>
-                    <li className="nav-item"><a className="nav-link" href="specialistForum.html">Specialist Forum</a></li>
-                    */}
-                  </ul>
-                </li> 
+  logout(event) {
+    event.preventDefault()
+    console.log('logging out')
+    Axios.post('/user/logout').then(response => {
+      console.log(response.data)
+      if(response.status === 200) {
+        this.props.updateUser({
+          loggedIn: false,
+          username: null
+        })
+      }
+    }).catch(error =>{ 
+      console.log("Logout error")
+    })
+  }
 
-                {/* 
-                <li className="nav-item submenu dropdown">
-                  <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Specialist</a>
-                  <ul className="dropdown-menu">
-                    <li className="nav-item"><a className="nav-link" href="specialistArticles.html">Articles</a></li>
-                    <li className="nav-item"><a className="nav-link" href="specialistContact.html">Speak With</a></li>
-                  </ul>
-                </li>
-                */} 
-                
-                <li className="nav-item"><a className="nav-link" href="about-us.html">About</a></li> 
+  loggedInNavbar() {
+    if(!this.props.loggedIn) return null;
+    return (
+      <section className="collapse navbar-collapse offset" id="navbarSupportedContent">
+        <ul className="nav navbar-nav menu_nav ml-auto"> 
 
-              </ul>
-            </div> 
-          </div>
-        </nav>
-      </div>
+          <Link to="/" className="btn btn-link text-secondary">
+            <li><span className="nav-item active"><a className="nav-link">Home</a></span></li>
+          </Link>
+      
+          <Link to="/messenger" className="btn btn-link text-secondary">
+            <li><span className="nav-item active"><a className="nav-link">Messenger</a></span></li>
+          </Link>
+              
+          <li className="nav-item submenu dropdown">
+            <div className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forums</div>
+            <ul className="dropdown-menu">
+              <Link to="/communityforum" className="btn btn-link text-secondary">
+                <li className="nav-item"><a className="nav-link">Community Forum</a></li>
+              </Link>
+            </ul>
+          </li> 
+      
+          <li className="nav-item submenu dropdown">
+            <div className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Specialists</div>
+            <ul className="dropdown-menu">
+              <Link to="/articles" className="btn btn-link text-secondary">
+                <li className="nav-item"><a className="nav-link">Articles</a></li>
+              </Link>
+            </ul>
+          </li> 
+
+          <Link to="/aboutus" className="btn btn-link text-secondary">
+            <li><span className="nav-item active"><a className="nav-link">About Us</a></span></li>
+          </Link>
+
+          <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
+            <li><span className="nav-item active"><a className="nav-link">Logout</a></span></li>
+          </Link>
+        </ul>
+      </section>
+    ) 
+  }
+
+  notLoggedInNavbar() {
+    if(this.props.loggedIn) return null;
+    return (
+      <section className="collapse navbar-collapse offset" id="navbarSupportedContent">
+        <ul className="nav navbar-nav menu_nav ml-auto"> 
+        
+          <Link to="/" className="btn btn-link text-secondary">
+            <li><span className="nav-item active"><a className="nav-link">Home</a></span></li></Link>
+
+          <Link to="/aboutus" className="btn btn-link text-secondary">
+            <li><span className="nav-item active"><a className="nav-link">About Us</a></span></li></Link>
+          
+          <Link to="/login" className="btn btn-link text-secondary">
+            <li><span className="nav-item active"><a className="nav-link">Login</a></span></li></Link>
+          
+          <Link to="/signup" className="btn btn-link text-secondary">
+            <li><span className="nav-item active"><a className="nav-link">Signup</a></span></li></Link>
+        </ul>
+      </section>
+    )
+  }
+
+  render() {
+    console.log('navbar render, props: ')
+    console.log(this.props);
+    return(
+      <div> 
+        <header className="header_area">
+          <div className="main_menu" id="mainNav">
+            <nav className="navbar navbar-expand-lg navbar-light">
+              <div className="container">
+                <div className="navbar-brand logo_h"><img src={logo} alt=""/><img src={logo} alt="logo"/></div>
+                {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                  <span className="icon-bar"></span>
+                </button>   */}
+                {this.loggedInNavbar()}
+                {this.notLoggedInNavbar()} 
+              </div> 
+          </nav>
+        </div>
+      </header>
     </div>
-  )
-};
+    );
+  }
+};  
 
-export default Navbar;
+export default Navbar
+
+// const Navbar = (props) => {
+//   return (
+//     <div className="header_area">
+//       <div className="main_menu" id="mainNav">
+//         <nav className="navbar navbar-expand-lg navbar-light">
+//           <div className="container">
+
+//             <div className="navbar-brand logo_h"><img src={logo} alt=""/><img src={logo} alt="logo"/></div>
+//             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+//               <span className="icon-bar"></span>
+//               <span className="icon-bar"></span>
+//               <span className="icon-bar"></span>
+//             </button>
+            
+//             <div className="collapse navbar-collapse offset" id="navbarSupportedContent">
+//               <ul className="nav navbar-nav menu_nav ml-auto">
+//                 <li className="nav-item active"><a className="nav-link" href="index.html">Home</a></li> 
+                  
+//                 <li className="nav-item submenu dropdown">
+//                   <div className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forums</div>
+//                   <ul className="dropdown-menu">
+//                     <li className="nav-item"><a className="nav-link" href="communityForum.html">Community Forum</a></li>
+//                     {/*
+//                     <li className="nav-item"><a className="nav-link" href="inschoolForum.html">In School Forum</a></li>
+//                     <li className="nav-item"><a className="nav-link" href="specialistForum.html">Specialist Forum</a></li>
+//                     */}
+//                   </ul>
+//                 </li> 
+
+//                 {/* 
+//                 <li className="nav-item submenu dropdown">
+//                   <a href="#" className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Specialist</a>
+//                   <ul className="dropdown-menu">
+//                     <li className="nav-item"><a className="nav-link" href="specialistArticles.html">Articles</a></li>
+//                     <li className="nav-item"><a className="nav-link" href="specialistContact.html">Speak With</a></li>
+//                   </ul>
+//                 </li>
+//                 */} 
+                
+//                 <li className="nav-item"><a className="nav-link" href="about-us.html">About Us</a></li> 
+
+//               </ul>
+//             </div> 
+//           </div>
+//         </nav>
+//       </div>
+//     </div>
+//   )
+// };
+
+//export default Navbar;

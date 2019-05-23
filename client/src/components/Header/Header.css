@@ -1,0 +1,48 @@
+.banner_area {
+  position: relative;
+  z-index: 1;
+  min-height: 43px; }
+  .banner_area .banner_inner {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    min-height: 40px;
+    z-index: 1; }
+    .banner_area .banner_inner .overlay {
+      background-color: #5ec0ca;
+      position: absolute;
+      left: 0;
+      right: 0;
+      top: 0;
+      height: 125%;
+      bottom: 0;
+      z-index: -1;}
+    .banner_area .banner_inner .banner_content {
+      margin-top: 70px; }
+      .banner_area .banner_inner .banner_content h2 {
+        color: #fff;
+        font-size: 48px;
+        font-family: "Heebo", sans-serif;
+        margin-top:80px;
+        margin-bottom: 0px;
+        text-transform: uppercase;
+        font-weight: bold; }
+      .banner_area .banner_inner .banner_content .page_link a {
+        font-size: 14px;
+        color: #fff;
+        font-family: "Roboto", sans-serif;
+        margin-right: 32px;
+        position: relative; }
+        .banner_area .banner_inner .banner_content .page_link a:before {
+          content: "\e87a";
+          font-family: 'Linearicons-Free';
+          font-size: 14px;
+          position: absolute;
+          right: -25px;
+          top: 54%;
+          transform: translateY(-50%); }
+        .banner_area .banner_inner .banner_content .page_link a:last-child {
+          margin-right: 0px; }
+          .banner_area .banner_inner .banner_content .page_link a:last-child:before {
+            display: none; }
+

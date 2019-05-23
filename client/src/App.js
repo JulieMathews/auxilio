@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+//import { Fragment } from 'react';
 import './App.css';
 import axios from 'axios'
 import { Route } from 'react-router-dom'
@@ -6,14 +7,17 @@ import { Route } from 'react-router-dom'
 import Signup from './components/signup/sign-up'
 import LoginForm from './components/login/login-form'
 //import Navbar from './components/navbar'
-import Home from './components/home'
+//import Home from './components/home'
 import InstantMessenger from './components/chat/chat'
 import Articles from './components/articles/articles';
 
 // pages
 import Navbar from './components/Navbar/Navbar';
-import Header from './components/Header/Header';
 import Landing from './components/Landing/Landing';
+import AboutUs from './components/AboutUs/AboutUs';
+import Footer from './components/Footer/Footer';
+import CommunityForum from './components/CommunityForum/CommunityForum';
+import SinglePost from './components/SinglePost/SinglePost';
 
   //  return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work?'));
 
@@ -61,48 +65,45 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-
+      // <Fragment >
+        <div className="App">
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
           <p>Join the party, {this.state.username}!</p>
         }
         {/* Routes to different components */}
-        <Route
-          exact path="/"
-          component={Home} />
-        <Route
-          path="/login"
-          render={() =>
-            <LoginForm
-              updateUser={this.updateUser}
-            />}
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/communityforum" component={CommunityForum} />
+        <Route exact path="/aboutus" component={AboutUs} />
+        <Route exact path="/singlepost" component={SinglePost} />
+        
+        <Route path="/login" render={() =>
+          <LoginForm updateUser={this.updateUser} />}
         />
-        <Route
-          path="/signup"
-          render={() =>
-            <Signup/>}
+        <Route path="/signup" render={() =>
+          <Signup/>}
         />
         {this.state.loggedIn &&
-        <React.Fragment>
-        <Route
-          path="/messenger"
-          render={() =>
-            <InstantMessenger currentUser={this.state.username} />
-          } />
-        <Route
-            path="/articles"
-            render={() => <Articles/> }
+          <React.Fragment>
+          <Route path="/messenger" render={() =>
+            <InstantMessenger currentUser={this.state.username} />} 
           />
-        </React.Fragment>
+          <Route path="/articles" render={() => 
+            <Articles/> } 
+          />
+          </React.Fragment>
         }
-      <Header/>
-      <Landing />
-      <Footer/>
+        <Footer />
       </div>
+    //  </Fragment>
+
+
+      
     );
   }
 }
 
 export default App;
+
+      
