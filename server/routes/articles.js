@@ -7,7 +7,7 @@ const router = express.Router()
 
     router.get("/", function(req, res) {
         Article.findAll().then(articles => {
-            res.json({ articles: articles });
+            res.json(articles);
         });
     });
 
