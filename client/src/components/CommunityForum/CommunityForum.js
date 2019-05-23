@@ -1,9 +1,12 @@
+import React, {Fragment} from 'react';
+import { Link } from 'react-router-dom'
+import Header from '../Header/Header';
+import './CommunityForum.css';
+
 // import React from 'react';
 // import './CommunityForum.css';
 // import Events from "./events";
 // import Input from "./input";
-
-// // Header message = { this.state.info }
 
 // class CommunityForum extends React.Component {
 //   state = {
@@ -52,17 +55,27 @@
 //              </div>
 //     </section>
 //     </div>
-import React, {Fragment} from 'react';
-import Header from '../Header/Header';
-import './CommunityForum.css';
 
 // Header message = { this.state.info }
 
 const CommunityForum = (props) => {
   console.log('community', props);
   return (
+  <div>
+    <section class="banner_area">
+      <div class="banner_inner d-flex align-items-center">
+        <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+        <div class="container">
+          <div class="banner_content text-center">
+            <h2>Community Forum</h2>
+          </div>
+        </div>
+      </div>
+    </section>  
+{/* 
     <Fragment>
     <Header landing={false} headline="Community Forum" />
+*/}
     <section class="blog_area">
       <div class="container">
         <div class="row">
@@ -73,7 +86,7 @@ const CommunityForum = (props) => {
                   <div class="blog_info text-right">
                     <ul class="blog_meta list">
                       <div class="thumb">
-                        <img src={ require("../../img/blog/c2.jpg")} alt="School Related"/>
+                        <img src={ require('../../img/blog/c2.jpg') } alt="c2" />
                       </div>
                       <li><a href="#">Henry<i class="lnr lnr-user"></i></a></li>
                       <li><a href="#">2 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
@@ -84,7 +97,9 @@ const CommunityForum = (props) => {
                 <div class="col-md-9">
                   <div class="blog_post">
                     <div class="blog_details">
-                      <a href="/singlepost"><h2>Issues at the playground</h2></a>
+                      <Link to="/singlepost" className="btn btn-link text-secondary">
+                        <h2>Issues at the playground</h2>
+                      </Link>
                       <p>Sed adipiscing diam donec adipiscing tristique risus nec. Risus viverra adipiscing at in tellus integer feugiat scelerisque varius.</p>
                     </div>
                   </div>
@@ -96,7 +111,7 @@ const CommunityForum = (props) => {
                   <div class="blog_info text-right">
                     <ul class="blog_meta list">
                       <div class="thumb">
-                        <img src={ require("../../img/blog/c3.jpg")} alt="School Related"/>
+                        <img src={ require('../../img/blog/c3.jpg') } alt="c3" />
                       </div>
                       <li><a href="#">Annie<i class="lnr lnr-user"></i></a></li>
                       <li><a href="#">2 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
@@ -107,7 +122,9 @@ const CommunityForum = (props) => {
                 <div class="col-md-9">
                   <div class="blog_post">
                     <div class="blog_details">
-                      <a href="singlePost.html"><h2>Eating out troubles</h2></a>
+                      <Link to="/singlepost" className="btn btn-link text-secondary">
+                        <h2>Eating out troubles</h2>
+                      </Link>
                       <p>Aliquet bibendum enim facilisis gravida neque convallis a. Habitant morbi tristique senectus et netus. Lacus vestibulum sed arcu non odio euismod lacinia at.</p>
                     </div>
                   </div>
@@ -119,9 +136,9 @@ const CommunityForum = (props) => {
                   <div class="blog_info text-right">
                     <ul class="blog_meta list">
                       <div class="thumb">
-                        <img src={ require("../../img/blog/c1.jpg")} alt="School Related"/>
+                        <img src={ require('../../img/blog/c1.jpg') } alt="c1" />
                       </div>
-                      <li><a href="#">Emily<i class="lnr lnr-user"></i></a></li>
+                      <li><a href="#">Jane<i class="lnr lnr-user"></i></a></li>
                       <li><a href="#">1 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
                       <li><a href="#">05 Comments<i class="lnr lnr-bubble"></i></a></li>
                     </ul>
@@ -130,7 +147,9 @@ const CommunityForum = (props) => {
                 <div class="col-md-9">
                   <div class="blog_post">
                     <div class="blog_details">
-                      <a href="singlePost.html"><h2>Why don't my parents leave us alone?</h2></a>
+                      <Link to="/singlepost" className="btn btn-link text-secondary">
+                        <h2>Why don't my parents leave us alone?</h2>
+                      </Link>
                       <p>Metus aliquam eleifend mi. Sed adipiscing diam donec adipiscing tristique risus nec. </p>
                     </div>
                   </div>
@@ -147,10 +166,11 @@ const CommunityForum = (props) => {
                     </a>
                   </li>
                   <li class="page-item active"><a href="#" class="page-link">01</a></li>
+
                   <li class="page-item"><a href="#" class="page-link">02</a></li>
                   <li class="page-item"><a href="#" class="page-link">03</a></li>
                   <li class="page-item"><a href="#" class="page-link">04</a></li>
-                  <li class="page-item"><a href="#" class="page-link">09</a></li>
+
                   <li class="page-item">
                     <a href="#" class="page-link" aria-label="Next">
                       <span aria-hidden="true">
@@ -162,6 +182,7 @@ const CommunityForum = (props) => {
               </nav>
             </div>
           </div>
+{/*          !!!!!!!!!SEARCH FOR POSTS!!!!!!!!!
           <div class="col-lg-4">
             <div class="blog_right_sidebar">
               <aside class="single_sidebar_widget search_widget">
@@ -175,10 +196,11 @@ const CommunityForum = (props) => {
               </aside>
             </div>
           </div>
+*/}
         </div>
       </div>
     </section>
-    </Fragment>
+  </div>
   )
   };
 

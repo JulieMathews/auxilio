@@ -7,11 +7,14 @@ import Signup from './components/signup/sign-up'
 import LoginForm from './components/login/login-form'
 import InstantMessenger from './components/chat/chat'
 import Articles from './components/articles/articles';
-import CommunityForum from "./components/CommunityForum/CommunityForum";
 
 // pages
 import Navbar from './components/Navbar/Navbar';
 import Landing from './components/Landing/Landing';
+import AboutUs from './components/AboutUs/AboutUs';
+import Footer from './components/Footer/Footer';
+import CommunityForum from "./components/CommunityForum/CommunityForum";
+import SinglePost from './components/SinglePost/SinglePost';
 
 //import SinglePost from './components/SinglePost/SinglePost';
 //import SpecialistForum from './compoenents/SpecialistForum';
@@ -25,7 +28,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      loggedIn: true,
+      loggedIn: false,
       username: null
     }
 
@@ -68,47 +71,35 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
           <p>Join the party, {this.state.username}!</p>
         }
         {/* Routes to different components */}
-        <Route exact path="/communityforum" component={CommunityForum} />
+        <Route exact path="/" component={Landing} />
+        <Route exact path="/aboutus" component={AboutUs} />
         <Route path="/login" render={() =>
-          <LoginForm updateUser={this.updateUser} />
-        }/>
-        <Route
-          path="/signup"
-          render={() =>
-            <Signup/>}
+          <LoginForm updateUser={this.updateUser} />}
         />
-        {this.state.loggedIn && this.state.user &&
-        <React.Fragment>
-        <Route
-          path="/messenger"
-          render={() =>
-            <InstantMessenger currentUser={this.state.user} />
-          } />
-        <Route
-            path="/articles"
-            render={() => <Articles/> }
+        <Route path="/signup" render={() =>
+          <Signup/>}
+        />
+        {this.state.loggedIn &&
+          <React.Fragment>
+          <Route path="/messenger" render={() =>
+            <InstantMessenger currentUser={this.state.username} />} 
           />
-        <Route
-            path="/community-forum"
-            render={() => <CommunityForum/> }
+          <Route exact path="/communityforum" component={CommunityForum} />
+          <Route exact path="/singlepost" component={SinglePost} />
+          <Route path="/articles" render={() => 
+            <Articles/> } 
           />
-        <Route exact path="/article/:id" />
-        </React.Fragment>
+          <Route exact path="/article/:id" />
+          </React.Fragment>
         }
-      <Landing loggedIn={this.state.loggedIn}/>
-      {/* <Footer/> */}
       </div>
     );
   }
 }
-
 export default App;
-
-//        <Route exact path="/aboutus" component={AboutUs} />

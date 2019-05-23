@@ -6,6 +6,7 @@
   z-index: 99;
   transition: background 0.4s, all 0.3s linear; }
   .header_area .navbar {
+    background-color: #A2DCE2;
     background: transparent .4;
     padding: 0px;
     border: 0px;
@@ -17,7 +18,7 @@
       .header_area .navbar .nav .nav-item .nav-link {
         font: 500 13px/68px "Roboto", sans-serif;
         text-transform: uppercase;
-        color: black;
+        color: #fff;  /* OR BLACK? !!!!! */
         padding: 0px;
         display: inline-block; }
         .header_area .navbar .nav .nav-item .nav-link:after {
@@ -26,7 +27,6 @@
         position: relative; }
         .header_area .navbar .nav .nav-item.submenu ul {
           border: none;
-          padding: 0px;
           border-radius: 0px;
           box-shadow: none;
           margin: 0px;
@@ -43,7 +43,6 @@
               visibility: hidden;
               display: block;
               border: none;
-              padding: 0px;
               border-radius: 0px;
               box-shadow: 0px 10px 30px 0px rgba(255, 255, 255, 0.3); } }
           .header_area .navbar .nav .nav-item.submenu ul:before {
@@ -118,6 +117,10 @@
   .container {
     max-width: 1170px; } }
 
+.header_area li a.nav-link {
+  line-height: 0;
+}
+
 li {
   margin-top: 0px;
 }
@@ -128,6 +131,8 @@ li {
 
 .nav-link {
   height: 20px;
+  display: block;
+  padding: .6rem
 }
 
 .btn.btn-link.text-secondary {

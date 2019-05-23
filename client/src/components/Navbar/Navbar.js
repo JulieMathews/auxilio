@@ -1,8 +1,8 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
 import { Link } from 'react-router-dom'
+import './Navbar.css';
 import logo from '../../img/logo.png';
-import Axios from 'axios';
-import "../../css/style.css";
+import Axios from 'axios'
 
 class Navbar extends Component {
   constructor() {
@@ -28,13 +28,13 @@ class Navbar extends Component {
 
   loggedInNavbar() {
     if(!this.props.loggedIn) return null;
-    console.log('loggedIn', this.props.loggedIn)
     return (
       <section className="collapse navbar-collapse offset" id="navbarSupportedContent">
         <ul className="nav navbar-nav menu_nav ml-auto"> 
-      
-          <Link to="/messenger" className="btn btn-link text-secondary">
-          <li><span className="nav-item active"><a className="nav-link">Messenger</a></span></li></Link>
+
+          <Link to="/" className="btn btn-link text-secondary">
+            <li><span className="nav-item active"><a className="nav-link">Home</a></span></li>
+          </Link>
               
           <li className="nav-item submenu dropdown">
             <div className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forums</div>
@@ -54,11 +54,13 @@ class Navbar extends Component {
             </ul>
           </li> 
 
-          <Link to="/about" className="btn btn-link text-secondary">
-          <li><span className="nav-item active nav-link">About Us</span></li></Link>
+          <Link to="/aboutus" className="btn btn-link text-secondary">
+            <li><span className="nav-item active"><a className="nav-link">About Us</a></span></li>
+          </Link>
 
           <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-            <li><span className="nav-item active"><a className="nav-link">Logout</a></span></li></Link>
+            <li><span className="nav-item active"><a className="nav-link">Logout</a></span></li>
+          </Link>
         </ul>
       </section>
     ) 
@@ -66,13 +68,15 @@ class Navbar extends Component {
 
   notLoggedInNavbar() {
     if(this.props.loggedIn) return null;
-    console.log('logged out', this.props.loggedIn);
     return (
       <section className="collapse navbar-collapse offset" id="navbarSupportedContent">
         <ul className="nav navbar-nav menu_nav ml-auto"> 
         
           <Link to="/" className="btn btn-link text-secondary">
             <li><span className="nav-item active"><a className="nav-link">Home</a></span></li></Link>
+
+          <Link to="/aboutus" className="btn btn-link text-secondary">
+            <li><span className="nav-item active"><a className="nav-link">About Us</a></span></li></Link>
           
           <Link to="/login" className="btn btn-link text-secondary">
             <li><span className="nav-item active"><a className="nav-link">Login</a></span></li></Link>
