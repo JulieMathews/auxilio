@@ -1,10 +1,14 @@
-import React from 'react';
-import '../css/style.css';
+import React, {Fragment} from 'react';
+import Header from '../Header/Header';
+import './SinglePost.css';
 
 // Header message = { this.state.info }
 
 const InSchoolForum = (props) => {
   return (
+    <Fragment>
+    <Header landing={false} headline="Posts" />
+
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
         <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
@@ -15,13 +19,13 @@ const InSchoolForum = (props) => {
 				</div>
       </div>
     </section>
+
     <section class="blog_area single-post-area p_120">
       <div class="container">
         <div class="row">
           <div class="col-lg-8 posts-list">
             <div class="single-post row">
-              <div class="col-lg-12">
-              </div>
+              <div class="col-lg-12"></div>
               <div class="col-lg-3  col-md-3">
                 <div class="blog_info text-right">
                   <ul class="blog_meta list">
@@ -209,6 +213,7 @@ const InSchoolForum = (props) => {
         </div>
       </div>
     </section>
+    </Fragment>
   )
 };
 

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../src/css/style.css';
 import axios from 'axios'
 import { Route } from 'react-router-dom'
 // components
@@ -11,8 +11,13 @@ import CommunityForum from "./components/CommunityForum/CommunityForum";
 
 // pages
 import Navbar from './components/Navbar/Navbar';
-import Header from './components/Header/Header';
 import Landing from './components/Landing/Landing';
+import CommunityForum from './components/CommunityForum/CommunityForum';
+//import SinglePost from './components/SinglePost/SinglePost';
+//import SpecialistForum from './compoenents/SpecialistForum';
+//import SpecialistContact from './components/SpecialistContact';
+//import SpecialistPost from './components/SpecialistPost';
+//import AboutUs from './components/AboutUs/AboutUs';
 
   //  return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work?'));
 
@@ -20,7 +25,7 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      loggedIn: false,
+      loggedIn: true,
       username: null
     }
 
@@ -68,13 +73,10 @@ class App extends Component {
           <p>Join the party, {this.state.username}!</p>
         }
         {/* Routes to different components */}
-        <Route
-          path="/login"
-          render={() =>
-            <LoginForm
-              updateUser={this.updateUser}
-            />}
-        />
+        <Route exact path="/communityforum" component={CommunityForum} />
+        <Route path="/login" render={() =>
+          <LoginForm updateUser={this.updateUser} />
+        }/>
         <Route
           path="/signup"
           render={() =>
@@ -91,14 +93,17 @@ class App extends Component {
             path="/articles"
             render={() => <Articles/> }
           />
+<<<<<<< HEAD
         <Route
             path="/community-forum"
             render={() => <CommunityForum/> }
           />
+=======
+        <Route exact path="/article/:id" />
+>>>>>>> 9685d65ef70f081c76469533ec938170bb5faef4
         </React.Fragment>
         }
-      <Header/>
-      <Landing />
+      <Landing loggedIn={this.state.loggedIn}/>
       {/* <Footer/> */}
       </div>
     );
@@ -106,3 +111,5 @@ class App extends Component {
 }
 
 export default App;
+
+//        <Route exact path="/aboutus" component={AboutUs} />
