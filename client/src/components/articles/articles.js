@@ -1,78 +1,57 @@
-import {Component} from "react";
-import React from "react";
+import React, {useState, useEffect} from 'react';
+import '../Landing/Landing.css';
 import axios from 'axios';
-import ShowMoreText from 'react-show-more-text';
+import Header from '../Header/Header';
+import Navbar from '../Navbar/Navbar';
+import {Link} from 'react-router-dom';
 
-class Articles extends Component {
-    state = {
-        articles: []
-    }
-    executeOnClick(isExpanded) {
-        console.log(isExpanded);
-    }
-    
+const Articles = (props) => { 
+    const [articles, setArticles] = useState([]);
 
+  const fetchArticles = async() => {
+    const response = await axios.get('/article');
+    console.log('fetch articles:', response.data)
+    // let len = response.data.length;
+    // if (len > 3 ) len = 3;
+    // const parsedArticles = response.data.slice(0, len);
+    // setArticles(parsedArticles);
+  }
 
-    componentDidMount() {
-        axios
-            .get('/article')
-            .then(response => {
-                console.log('Articles response:');
-                console.log(response);
-                if (response.status === 200) {
-                    this.setState({articles: response.data.articles});
-                }
-            })
-            .catch(error => {
-                console.log('Articles error:');
-                console.log(error);
-            })
-    }
-    render() {
-        const articles = this.state.articles;
-       
-       
-        return (
-            <div className="Articles-list">
-              {articles.map(a => this.renderArticle(a))}
-            </div>
-        )
-    }
-  
-    renderArticle(article) {
-      return(
-        <React.Fragment>
-        <ShowMoreText
-                
-                lines={3}
-                more='Show more'
-                less='Show less'
-                anchorClass=''
-                onClick={this.executeOnClick
-                }>
+  useEffect(() => {
+    fetchArticles();
+  }, []);
 
-                {article}
-            
-            </ShowMoreText>
-         
-            
-          <article className="article">
-              <div className="col-md-9">
-                  <div className="blog_post">
-                      <img src="img/blog/main-blog/m-blog-2.jpg" alt="" />
-                      <div className="blog_details">
-                        <img src= {article.headerImageUrl} alt={`${article.headerImageUrl}'s picture` } className="img-responsive"/>
-                          <a href="single-blog.html"><h2>{article.title}</h2></a>
-                          <p>{article.blurb}</p>
-                          <a href="single-blog.html" className="blog_btn">View More</a>
-  
-                      </div>
-                  </div>
-              </div>
-          </article>
-          </React.Fragment> 
-    )
-    }
+  const renderArticles = () => {
+    console.log('article:', articles);
+    return articles.map(article => {
+      return (
+        <div className="col-lg-4" key={article.id}>
+          <div className="popular_item">
+            <Link to={`/article/${article.id}`}><img className="img-fluid" src={article.headerImageUrl} /></Link>
+            <h4>{article.title}</h4>
+            {article.blurb}
+          </div>
+        </div>
+      );
+    })
+  }
 
-}
-    export default Articles;
+  return (
+    <div>
+      
+
+      <section className="popular_area p_120">
+        <div className="container">
+          <div className="main_title">
+            <h2>Most Recent Articles</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+          </div>
+          <div className="popular_inner row">
+            {renderArticles()}
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+};
+export default Articles;

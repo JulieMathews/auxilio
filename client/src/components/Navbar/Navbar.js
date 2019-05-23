@@ -34,19 +34,6 @@ class Navbar extends Component {
         <ul className="nav navbar-nav menu_nav ml-auto"> 
       
           <Link to="/messenger" className="btn btn-link text-secondary">
-<<<<<<< HEAD
-          <li><span className="nav-item active"><a className="nav-link">Direct Message with Community members</a></span></li></Link>
-          
-         <Link to="/community-forum" className="btn btn-link text-secondary">
-          <li><span className="nav-item active"><a className="nav-link">Community News Feed</a></span></li></Link>
-          
-          
-          <Link to="/articles" className="btn btn-link text-secondary">
-          <li><span className="nav-item active" className="nav-link">Articles</span></li></Link>
-
-          <Link to="/articles" className="btn btn-link text-secondary">
-          <li><span className="nav-item active"><a className="nav-link">Specialists</a></span></li></Link>
-=======
           <li><span className="nav-item active"><a className="nav-link">Messenger</a></span></li></Link>
               
           <li className="nav-item submenu dropdown">
@@ -66,7 +53,6 @@ class Navbar extends Component {
               </Link>
             </ul>
           </li> 
->>>>>>> 9685d65ef70f081c76469533ec938170bb5faef4
 
           <Link to="/about" className="btn btn-link text-secondary">
           <li><span className="nav-item active nav-link">About Us</span></li></Link>
