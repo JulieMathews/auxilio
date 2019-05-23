@@ -15,7 +15,7 @@ class Input extends Component {
         e.preventDefault();
         this.setState({ text: "" });
         axios
-            .post('/api/discussion/new', {
+            .post('/discussion/new', {
                 discussion: this.state.text
             })
             .then(response => {
@@ -24,7 +24,7 @@ class Input extends Component {
             })
             .catch(error => {
                 console.log("discussion error:")
-                console.log(error);
+                console.log(Error)
             })
         this.props.onSendMessage(this.state.text);
     }
