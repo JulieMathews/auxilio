@@ -22,8 +22,10 @@ class Messages extends Component {
       if (member.id === currentMember.id){
         className += "currentMember";
       }
-      color = member.clientData.color;
-      username = member.clientData.username;
+      if (member.clientData) {
+        color = member.clientData.color;
+        username = member.clientData.username;
+      }
     }
     return (
       <li className={className}>

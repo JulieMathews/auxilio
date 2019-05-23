@@ -51,12 +51,14 @@ class App extends Component {
 
         this.setState({
           loggedIn: true,
+          user: response.data.user,
           username: response.data.user.username
         })
       } else {
         console.log('Get user: no user');
         this.setState({
           loggedIn: false,
+          user: null,
           username: null
         })
       }
@@ -82,12 +84,12 @@ class App extends Component {
           render={() =>
             <Signup/>}
         />
-        {this.state.loggedIn &&
+        {this.state.loggedIn && this.state.user &&
         <React.Fragment>
         <Route
           path="/messenger"
           render={() =>
-            <InstantMessenger currentUser={this.state.username} />
+            <InstantMessenger currentUser={this.state.user} />
           } />
         <Route
             path="/articles"
