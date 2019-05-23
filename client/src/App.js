@@ -12,7 +12,7 @@ import CommunityForum from "./components/CommunityForum/CommunityForum";
 // pages
 import Navbar from './components/Navbar/Navbar';
 import Landing from './components/Landing/Landing';
-import CommunityForum from './components/CommunityForum/CommunityForum';
+
 //import SinglePost from './components/SinglePost/SinglePost';
 //import SpecialistForum from './compoenents/SpecialistForum';
 //import SpecialistContact from './components/SpecialistContact';
@@ -93,14 +93,11 @@ class App extends Component {
             path="/articles"
             render={() => <Articles/> }
           />
-<<<<<<< HEAD
         <Route
             path="/community-forum"
             render={() => <CommunityForum/> }
           />
-=======
         <Route exact path="/article/:id" />
->>>>>>> 9685d65ef70f081c76469533ec938170bb5faef4
         </React.Fragment>
         }
       <Landing loggedIn={this.state.loggedIn}/>

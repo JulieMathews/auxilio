@@ -1,59 +1,57 @@
-<<<<<<< HEAD
-import React from 'react';
-import './CommunityForum.css';
-import Events from "./events";
-import Input from "./input";
+// import React from 'react';
+// import './CommunityForum.css';
+// import Events from "./events";
+// import Input from "./input";
 
-// Header message = { this.state.info }
+// // Header message = { this.state.info }
 
-class CommunityForum extends React.Component {
-  state = {
-    events: []
-  }
+// class CommunityForum extends React.Component {
+//   state = {
+//     events: []
+//   }
 
-  constructor(props) {
-    super(props);
-    this.drone = new window.Scaledrone("czBgrob2FXXXRdrO", {
-      data: { username: "fuckface" }
-    });
-    this.drone.on('open', error => {
-      if (error) {
-        return console.error(error);
-      }
-    });
-    const room = this.drone.subscribe("observable-community-forum");
-    room.on('message', message => {
-      const events = this.state.events;
-      events.push({text: message.data });
-      this.setState({events});
-    });
-  }
+//   constructor(props) {
+//     super(props);
+//     this.drone = new window.Scaledrone("czBgrob2FXXXRdrO", {
+//       data: { username: "fuckface" }
+//     });
+//     this.drone.on('open', error => {
+//       if (error) {
+//         return console.error(error);
+//       }
+//     });
+//     const room = this.drone.subscribe("observable-community-forum");
+//     room.on('message', message => {
+//       const events = this.state.events;
+//       events.push({text: message.data });
+//       this.setState({events});
+//     });
+//   }
 
-  onSendMessage = (text) => {
-    console.log("onSendMessage:");
-    console.log(text)
-    this.drone.publish({
-      room: "observable-community-forum",
-      message: text
-    });
-  }
+//   onSendMessage = (text) => {
+//     console.log("onSendMessage:");
+//     console.log(text)
+//     this.drone.publish({
+//       room: "observable-community-forum",
+//       message: text
+//     });
+//   }
 
-  render() {
-  return (
-<div>
+//   render() {
+//   return (
+// <div>
     
 
-    <Events events={this.state.events} />
+//     <Events events={this.state.events} />
 
-    <Input onSendMessage={this.onSendMessage} />
+//     <Input onSendMessage={this.onSendMessage} />
  
-    <section class="blog_area">
-      <div class="container">
+//     <section class="blog_area">
+//       <div class="container">
         
-             </div>
-    </section>
-    </div>
-=======
+//              </div>
+//     </section>
+//     </div>
 import React, {Fragment} from 'react';
 import Header from '../Header/Header';
 import './CommunityForum.css';
@@ -181,9 +179,8 @@ const CommunityForum = (props) => {
       </div>
     </section>
     </Fragment>
->>>>>>> 9685d65ef70f081c76469533ec938170bb5faef4
   )
-  }
-};
+  };
+
 
 export default CommunityForum;
