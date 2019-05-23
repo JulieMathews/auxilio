@@ -46,7 +46,8 @@ Table of Content:
 /*----------------------------------------------------*/
 .list {
   list-style: none;
-  margin: 0px; }
+  margin: 0px;
+  padding: 0px; }
 
 a {
   text-decoration: none;
@@ -60,7 +61,7 @@ a {
 
 body {
   line-height: 24px;
-  background-color: white;
+  padding-top: 80px;
   font-size: 14px;
   font-family: "Roboto", sans-serif;
   font-weight: normal;
@@ -140,7 +141,9 @@ button:focus {
   z-index: 99;
   transition: background 0.4s, all 0.3s linear; }
   .header_area .navbar {
-    background: transparent;
+    background-color: #A2DCE2;
+    background: transparent .4;
+    padding: 0px;
     border: 0px;
     border-radius: 0px; }
     .header_area .navbar .navbar-brand img + img {
@@ -150,7 +153,8 @@ button:focus {
       .header_area .navbar .nav .nav-item .nav-link {
         font: 500 13px/68px "Roboto", sans-serif;
         text-transform: uppercase;
-        color: #fff;
+        color: black;
+        padding: 0px;
         display: inline-block; }
         .header_area .navbar .nav .nav-item .nav-link:after {
           display: none; }
@@ -302,7 +306,7 @@ button:focus {
       align-self: center; }
     .home_banner_area .banner_inner .banner_content {
       text-align: left;
-      padding-top: 40px;
+      padding-top: 0px;
       color: #fff; }
       .home_banner_area .banner_inner .banner_content h2 {
         margin-top: 0px;
@@ -3017,47 +3021,3 @@ h6 {
 /*---------------------------------------------------- */
 
 /*# sourceMappingURL=style.css.map */
-form {
-position: fixed;
-/* bottom: 0; */
-/* right: 0; */
-background: #FFFFFF;
-background: -moz-radial-gradient(center, #FFFFFF 0%, #FFFFFF 0%, #6B7496 100%);
-background: -webkit-radial-gradient(center, #FFFFFF 0%, #FFFFFF 0%, #6B7496 100%);
-background: radial-gradient(ellipse at center, #FFFFFF 0%, #FFFFFF 0%, #6B7496 100%);
-
-/* background: rgb(41, 79, 150); */
-width: 40%;
-margin-bottom: 25%;
-margin-right: 20px;
-/* float: right; */
-border: white 1px solid;
-border-radius: 10px;
-margin: 0 auto;
-justify-content: center;
-z-index: 999;
-margin-left: 30%;
-color: white;
-}
-
-.form-input {
-  margin-left: 2rem;
-  background-color: white !important;
-  
-}
-
-button {
-  border: 1px solid white !important;
-  border-radius: 10px !important;
-  padding: 5px !important;
-}
-
-.form-label {
-  color: black;
-  /* display: flex; */
-  /* justify-content: flex-start; */
-  font-weight: bolder;
-  /* font-size: 1rem; */
-  /* margin-right: 4px !important; */
-
-}

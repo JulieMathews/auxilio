@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
-import './App.css';
+import '../src/css/style.css';
 import axios from 'axios'
 import { Route } from 'react-router-dom'
 // components
 import Signup from './components/signup/sign-up'
 import LoginForm from './components/login/login-form'
-//import Navbar from './components/navbar'
-//import Home from './components/home'
 import InstantMessenger from './components/chat/chat'
 import Articles from './components/articles/articles';
 
@@ -15,8 +13,14 @@ import Navbar from './components/Navbar/Navbar';
 import Landing from './components/Landing/Landing';
 import AboutUs from './components/AboutUs/AboutUs';
 import Footer from './components/Footer/Footer';
-import CommunityForum from './components/CommunityForum/CommunityForum';
+import CommunityForum from "./components/CommunityForum/CommunityForum";
 import SinglePost from './components/SinglePost/SinglePost';
+
+//import SinglePost from './components/SinglePost/SinglePost';
+//import SpecialistForum from './compoenents/SpecialistForum';
+//import SpecialistContact from './components/SpecialistContact';
+//import SpecialistPost from './components/SpecialistPost';
+//import AboutUs from './components/AboutUs/AboutUs';
 
   //  return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work?'));
 
@@ -50,12 +54,14 @@ class App extends Component {
 
         this.setState({
           loggedIn: true,
+          user: response.data.user,
           username: response.data.user.username
         })
       } else {
         console.log('Get user: no user');
         this.setState({
           loggedIn: false,
+          user: null,
           username: null
         })
       }
@@ -72,10 +78,7 @@ class App extends Component {
         }
         {/* Routes to different components */}
         <Route exact path="/" component={Landing} />
-        <Route exact path="/communityforum" component={CommunityForum} />
         <Route exact path="/aboutus" component={AboutUs} />
-        <Route exact path="/singlepost" component={SinglePost} />
-        
         <Route path="/login" render={() =>
           <LoginForm updateUser={this.updateUser} />}
         />
@@ -87,12 +90,14 @@ class App extends Component {
           <Route path="/messenger" render={() =>
             <InstantMessenger currentUser={this.state.username} />} 
           />
+          <Route exact path="/communityforum" component={CommunityForum} />
+          <Route exact path="/singlepost" component={SinglePost} />
           <Route path="/articles" render={() => 
             <Articles/> } 
           />
+          <Route exact path="/article/:id" />
           </React.Fragment>
         }
-        <Footer />
       </div>
     );
   }

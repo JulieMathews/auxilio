@@ -63,7 +63,7 @@ render() {
 					<div className="col-1 col-ml-auto">
 						<label className="form-label" htmlFor="email">email</label>
 					</div>
-					<div className="col-3 col-mr-auto">
+					<div className="col-5 col-mr-auto">
 						<input className="form-input"
 							type="text"
 							id="email"
@@ -78,7 +78,7 @@ render() {
 					<div className="col-1 col-ml-auto">
 						<label className="form-label" htmlFor="username">Username</label>
 					</div>
-					<div className="col-3 col-mr-auto">
+					<div className="col-5 col-mr-auto">
 						<input className="form-input"
 							type="text"
 							id="username"
@@ -93,7 +93,7 @@ render() {
 					<div className="col-1 col-ml-auto">
 						<label className="form-label" htmlFor="password">Password: </label>
 					</div>
-					<div className="col-3 col-mr-auto">
+					<div className="col-5 col-mr-auto">
 						<input className="form-input"
 							placeholder="password"
 							type="password"
@@ -104,9 +104,9 @@ render() {
 					</div>
 				</div>
 				<div className="form-group ">
-					<div className="col-7"></div>
+					<div className="col-4"></div>
 					<button
-						className="btn btn-primary col-1 col-mr-auto"
+						className="btn btn-primary col-4 col-mr-auto"
 						onClick={this.handleSubmit}
 						type="submit"
 					>Sign up</button>

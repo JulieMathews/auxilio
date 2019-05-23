@@ -7,6 +7,8 @@
   transition: background 0.4s, all 0.3s linear; }
   .header_area .navbar {
     background-color: #A2DCE2;
+    background: transparent .4;
+    padding: 0px;
     border: 0px;
     border-radius: 0px; }
     .header_area .navbar .navbar-brand img + img {
@@ -16,7 +18,8 @@
       .header_area .navbar .nav .nav-item .nav-link {
         font: 500 13px/68px "Roboto", sans-serif;
         text-transform: uppercase;
-        color: #fff;
+        color: #fff;  /* OR BLACK? !!!!! */
+        padding: 0px;
         display: inline-block; }
         .header_area .navbar .nav .nav-item .nav-link:after {
           display: none; }
@@ -118,7 +121,20 @@
   line-height: 0;
 }
 
+li {
+  margin-top: 0px;
+}
+
+.btn {
+  height: 60px !important;
+}
+
 .nav-link {
-    display: block;
-    padding: .6rem
+  height: 20px;
+  display: block;
+  padding: .6rem
+}
+
+.btn.btn-link.text-secondary {
+  height: 20px;
 }

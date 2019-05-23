@@ -1,11 +1,65 @@
-import React from 'react';
-import './CommunityForum.css';
+import React, {Fragment} from 'react';
 import { Link } from 'react-router-dom'
+import Header from '../Header/Header';
+import './CommunityForum.css';
 
+// import React from 'react';
+// import './CommunityForum.css';
+// import Events from "./events";
+// import Input from "./input";
+
+// class CommunityForum extends React.Component {
+//   state = {
+//     events: []
+//   }
+
+//   constructor(props) {
+//     super(props);
+//     this.drone = new window.Scaledrone("czBgrob2FXXXRdrO", {
+//       data: { username: "fuckface" }
+//     });
+//     this.drone.on('open', error => {
+//       if (error) {
+//         return console.error(error);
+//       }
+//     });
+//     const room = this.drone.subscribe("observable-community-forum");
+//     room.on('message', message => {
+//       const events = this.state.events;
+//       events.push({text: message.data });
+//       this.setState({events});
+//     });
+//   }
+
+//   onSendMessage = (text) => {
+//     console.log("onSendMessage:");
+//     console.log(text)
+//     this.drone.publish({
+//       room: "observable-community-forum",
+//       message: text
+//     });
+//   }
+
+//   render() {
+//   return (
+// <div>
+    
+
+//     <Events events={this.state.events} />
+
+//     <Input onSendMessage={this.onSendMessage} />
+ 
+//     <section class="blog_area">
+//       <div class="container">
+        
+//              </div>
+//     </section>
+//     </div>
 
 // Header message = { this.state.info }
 
 const CommunityForum = (props) => {
+  console.log('community', props);
   return (
   <div>
     <section class="banner_area">
@@ -18,46 +72,15 @@ const CommunityForum = (props) => {
         </div>
       </div>
     </section>  
- 
+{/* 
+    <Fragment>
+    <Header landing={false} headline="Community Forum" />
+*/}
     <section class="blog_area">
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
             <div class="blog_left_sidebar">
-{/*
-              {{#each posts}}
-*/}
-              <article class="row blog_item">
-                <div class="col-md-3">
-                  <div class="blog_info text-right">
-                    <ul class="blog_meta list">
-                      <div class="thumb">
-                        <img src={ require('../../img/blog/c1.jpg') } alt="c1" />
-                      </div>
-                      <li><a href="#">Jane<i class="lnr lnr-user"></i></a></li>
-                      <li><a href="#">3 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
-                      <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-9">
-                  <div class="blog_post">
-                    <div class="blog_details">
-                      <Link to="/singlepost" className="btn btn-link text-secondary">
-                        <h2>Trouble with siblings.</h2>
-                      </Link>
-                      <p>Sed adipiscing diam donec adipiscing tristique risus nec. Risus viverra adipiscing at in tellus integer feugiat scelerisque varius.</p>
-{/*
-                      <p>{{message}}</p>
-*/}                      
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-{/*
-              {{/each}}
-*/}
               <article class="row blog_item">
                 <div class="col-md-3">
                   <div class="blog_info text-right">
@@ -82,6 +105,7 @@ const CommunityForum = (props) => {
                   </div>
                 </div>
               </article>
+
               <article class="row blog_item">
                 <div class="col-md-3">
                   <div class="blog_info text-right">
@@ -106,6 +130,7 @@ const CommunityForum = (props) => {
                   </div>
                 </div>
               </article>
+
               <article class="row blog_item">
                 <div class="col-md-3">
                   <div class="blog_info text-right">
@@ -130,6 +155,7 @@ const CommunityForum = (props) => {
                   </div>
                 </div>
               </article>
+
               <nav class="blog-pagination justify-content-center d-flex">
                 <ul class="pagination">
                   <li class="page-item">
@@ -176,6 +202,7 @@ const CommunityForum = (props) => {
     </section>
   </div>
   )
-};
+  };
+
 
 export default CommunityForum;

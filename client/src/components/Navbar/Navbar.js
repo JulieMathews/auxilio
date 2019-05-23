@@ -35,10 +35,6 @@ class Navbar extends Component {
           <Link to="/" className="btn btn-link text-secondary">
             <li><span className="nav-item active"><a className="nav-link">Home</a></span></li>
           </Link>
-      
-          <Link to="/messenger" className="btn btn-link text-secondary">
-            <li><span className="nav-item active"><a className="nav-link">Messenger</a></span></li>
-          </Link>
               
           <li className="nav-item submenu dropdown">
             <div className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forums</div>

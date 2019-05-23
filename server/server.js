@@ -9,6 +9,7 @@ const Sequelize = require('sequelize')
 const db = require('./database/models');
 const user = require('./routes/user')
 const article = require('./routes/articles')
+const api = require('./routes/api')
 const app = express();
 var port = process.env.PORT || 8080;
 
@@ -39,15 +40,18 @@ app.use(flash());
 //Routes 
 app.use("/user", user);
 app.use("/article", article)
+app.use("/api", api)
 
-app.use(express.static(path.join(__dirname, 'build')));
+var staticFiles = process.env.NODE_ENV === "production" ? "build" : "public";
+var staticPath = path.join(__dirname, '..', 'client', staticFiles);
+app.use(express.static(staticPath));
 
 app.get('/ping', function (req, res) {
  return res.send('pong');
 });
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname, 'build', 'index.html'));
+  res.sendFile(path.resolve(__dirname, '..', 'client', 'build', 'index.html'));
 });
 
 var syncOptions = { force: false };

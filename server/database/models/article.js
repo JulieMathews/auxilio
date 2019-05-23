@@ -16,6 +16,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
+    headerImageUrl: {
+      type: DataTypes.TEXT,
+      allowNull: false,
+    }
   });
   Article.associate = function(models) {
     // associations can be defined here

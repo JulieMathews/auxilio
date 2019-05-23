@@ -1,8 +1,7 @@
-import React from 'react';
+import React, {Fragment} from 'react';
 import './SinglePost.css';
 import { Link } from 'react-router-dom'
-
-// Header message = { this.state.info }
+import Header from '../Header/Header';
 
 const SinglePost = (props) => {
   return (
@@ -12,7 +11,7 @@ const SinglePost = (props) => {
         <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
 				<div className="container">
 					<div className="banner_content text-center">
-						<h2>POST DETAILS</h2>
+						<h2>POSTS</h2>
 					</div>
 				</div>
       </div>

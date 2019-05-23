@@ -18,6 +18,7 @@ module.exports = (sequelize, DataTypes) => {
         len: [1, 30]
       }
     }, 
+    
     email: {
       type: DataTypes.STRING,
       allowNull:  false,
@@ -35,11 +36,19 @@ module.exports = (sequelize, DataTypes) => {
     }
     });
   User.associate = function(models) {
+    // associations can be defined here
     User.hasMany(models.User,{
       foreignKey: "ownerUuid",
       onDelete: "cascade"
     });
-    // associations can be defined here
+    User.hasMany(models.Conversation, {
+      as: "Conversations1",
+      foreignKey: "user1Uuid"
+    });
+    User.hasMany(models.Conversation, {
+      as: "Conversations2",
+      foreignKey: "user2Uuid"
+    });
   };
 
 // methods ======================
