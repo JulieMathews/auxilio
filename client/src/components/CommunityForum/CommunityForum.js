@@ -1,62 +1,25 @@
-import React from 'react';
-import '../css/style.css';
+import React, {Fragment} from 'react';
+import Header from '../Header/Header';
+import './CommunityForum.css';
 
 // Header message = { this.state.info }
 
 const CommunityForum = (props) => {
+  console.log('community', props);
   return (
-
-    <section class="banner_area">
-      <div class="banner_inner d-flex align-items-center">
-        <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
-        <div class="container">
-          <div class="banner_content text-center">
-            <h2>Community Forum</h2>
-          </div>
-        </div>
-      </div>
-    </section>  
- 
+    <Fragment>
+    <Header landing={false} headline="Community Forum" />
     <section class="blog_area">
       <div class="container">
         <div class="row">
           <div class="col-lg-8">
             <div class="blog_left_sidebar">
-              {{#each posts}}
-              <article class="row blog_item">
-                <div class="col-md-3">
-                  <div class="blog_info text-right">
-                    <div class="post_tag">
-                      <a href="#">Family</a>
-                    </div>
-                    <ul class="blog_meta list">
-                      <li><a href="#">Jane Doe<i class="lnr lnr-user"></i></a></li>
-                      <li><a href="#">3 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
-                      <li><a href="#">184 Views<i class="lnr lnr-eye"></i></a></li>
-                      <li><a href="#">06 Comments<i class="lnr lnr-bubble"></i></a></li>
-                    </ul>
-                  </div>
-                </div>
-                <div class="col-md-9">
-                  <div class="blog_post">
-                    <img src="img/family/fighting001.jpeg"/>
-                    <div class="blog_details">
-                      <a href="single-blog.html"><h2>Trouble with siblings.</h2></a>
-                      <p>{{message}}</p>
-                      <a href="single-blog.html" class="blog_btn">View More</a>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              {{/each}}
-
               <article class="row blog_item">
                 <div class="col-md-3">
                   <div class="blog_info text-right">
                     <ul class="blog_meta list">
                       <div class="thumb">
-                        <img src="img/blog/c2.jpg" alt=""/>
+                        <img src={ require("../../img/blog/c2.jpg")} alt="School Related"/>
                       </div>
                       <li><a href="#">Henry<i class="lnr lnr-user"></i></a></li>
                       <li><a href="#">2 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
@@ -67,18 +30,19 @@ const CommunityForum = (props) => {
                 <div class="col-md-9">
                   <div class="blog_post">
                     <div class="blog_details">
-                      <a href="singlePost.html"><h2>Issues at the playground</h2></a>
+                      <a href="/singlepost"><h2>Issues at the playground</h2></a>
                       <p>Sed adipiscing diam donec adipiscing tristique risus nec. Risus viverra adipiscing at in tellus integer feugiat scelerisque varius.</p>
                     </div>
                   </div>
                 </div>
               </article>
+
               <article class="row blog_item">
                 <div class="col-md-3">
                   <div class="blog_info text-right">
                     <ul class="blog_meta list">
                       <div class="thumb">
-                        <img src="img/blog/c3.jpg"/>
+                        <img src={ require("../../img/blog/c3.jpg")} alt="School Related"/>
                       </div>
                       <li><a href="#">Annie<i class="lnr lnr-user"></i></a></li>
                       <li><a href="#">2 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
@@ -95,12 +59,13 @@ const CommunityForum = (props) => {
                   </div>
                 </div>
               </article>
+
               <article class="row blog_item">
                 <div class="col-md-3">
                   <div class="blog_info text-right">
                     <ul class="blog_meta list">
                       <div class="thumb">
-                        <img src="img/blog/c1.jpg"/>
+                        <img src={ require("../../img/blog/c1.jpg")} alt="School Related"/>
                       </div>
                       <li><a href="#">Emily<i class="lnr lnr-user"></i></a></li>
                       <li><a href="#">1 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
@@ -117,6 +82,7 @@ const CommunityForum = (props) => {
                   </div>
                 </div>
               </article>
+
               <nav class="blog-pagination justify-content-center d-flex">
                 <ul class="pagination">
                   <li class="page-item">
@@ -158,6 +124,7 @@ const CommunityForum = (props) => {
         </div>
       </div>
     </section>
+    </Fragment>
   )
 };
 

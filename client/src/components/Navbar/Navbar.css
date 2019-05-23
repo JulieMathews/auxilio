@@ -6,7 +6,7 @@
   z-index: 99;
   transition: background 0.4s, all 0.3s linear; }
   .header_area .navbar {
-    background: transparent;
+    background: transparent .4;
     padding: 0px;
     border: 0px;
     border-radius: 0px; }
@@ -17,7 +17,7 @@
       .header_area .navbar .nav .nav-item .nav-link {
         font: 500 13px/68px "Roboto", sans-serif;
         text-transform: uppercase;
-        color: #fff;
+        color: black;
         padding: 0px;
         display: inline-block; }
         .header_area .navbar .nav .nav-item .nav-link:after {
@@ -118,3 +118,18 @@
   .container {
     max-width: 1170px; } }
 
+li {
+  margin-top: 0px;
+}
+
+.btn {
+  height: 60px !important;
+}
+
+.nav-link {
+  height: 20px;
+}
+
+.btn.btn-link.text-secondary {
+  height: 20px;
+}

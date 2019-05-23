@@ -4,44 +4,61 @@ import './Header.css';
 // Header message = { this.state.info }
 
 const Header = (props) => {
-  return (
-    <section class="home_banner_area">
-      <div class="banner_inner">
-        <div class="container">
-          <div class="row">
-            
-          {/*  <div> {this.prop.message}</div> */}
-                
-            <div class="col-lg-4">
-              <div class="home_right_box">
-                <div class="home_item">
-                  <a><img src="../../img/familyapp/family.png"></img></a>
+
+  function homeBanner() {
+    console.log('header:', props);
+    if(!props.landing) return null;
+    return (
+      <section className="home_banner_area">
+        <div className="container">
+          <div className="row">    
+            <div className="row">
+              <div className="col-lg-8">
+                <div className="banner_content">
+                  <h2>Auxilio</h2>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
-                <div class="home_item">
-                  <p>Community Forum</p>
-                </div>
-                {/*
-                <!--
-                <div class="home_item">
-                  <img src="img/familyapp/book.png" alt="Most Commented On"></img>
-                </div>
-                <div class="home_item">
-                  <p>In-School Forum</p>
-                </div>
-                <div class="home_item">
-                  <img src="img/familyapp/recruitment.png" alt="Written by Therapist"></img>
-                </div>
-                <div class="home_item">
-                  <p>Specialists Articles</p>
-                </div>
-                -->
-                */}
               </div>
-            </div>
+          
+              <div className="col-lg-4">
+                <div className="home_right_box">
+                  <div className="home_item">
+                    <span className="nav-item active"><a className="nav-link"><img src={ require('../../img/familyapp/family.png')} alt="School Related"/></a></span>
+                  </div>
+                  <div className="home_item">
+                    <p>Community Forum</p>
+                  </div>          
+                </div>
+              </div>
+            </div>                
+          </div>
+        </div>
+      </section>
+    )
+  }
+
+  function banner() {
+    if(props.landing) return null;
+    return (
+      <section className="banner_area">
+      <div className="banner_inner d-flex align-items-center">
+        <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+        <div className="container">
+          <div className="banner_content text-center">
+            <h2>{props.headline}</h2>
           </div>
         </div>
       </div>
-    </section>
+    </section> 
+    )
+  }
+
+  return (
+    <React.Fragment>
+      {homeBanner()}
+      {banner()}
+    </React.Fragment>
+   
   )
 };
 
