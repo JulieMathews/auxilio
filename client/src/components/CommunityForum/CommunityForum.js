@@ -1,6 +1,8 @@
 import React, {Fragment} from 'react';
 import { Link } from 'react-router-dom'
+import Navbar from '../Navbar/Navbar';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import './CommunityForum.css';
 
 // import React from 'react';
@@ -62,6 +64,8 @@ const CommunityForum = (props) => {
   console.log('community', props);
   return (
   <div>
+    <Navbar />
+    <Header />
     <section class="banner_area">
       <div class="banner_inner d-flex align-items-center">
         <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
@@ -88,9 +92,9 @@ const CommunityForum = (props) => {
                       <div class="thumb">
                         <img src={ require('../../img/blog/c2.jpg') } alt="c2" />
                       </div>
-                      <li><a href="#">Henry<i class="lnr lnr-user"></i></a></li>
-                      <li><a href="#">2 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
-                      <li><a href="#">05 Comments<i class="lnr lnr-bubble"></i></a></li>
+                      <li>Henry<i class="lnr lnr-user"></i></li>
+                      <li>2 May, 2019<i class="lnr lnr-calendar-full"></i></li>
+                      <li>05 Comments<i class="lnr lnr-bubble"></i></li>
                     </ul>
                   </div>
                 </div>
@@ -113,9 +117,9 @@ const CommunityForum = (props) => {
                       <div class="thumb">
                         <img src={ require('../../img/blog/c3.jpg') } alt="c3" />
                       </div>
-                      <li><a href="#">Annie<i class="lnr lnr-user"></i></a></li>
-                      <li><a href="#">2 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
-                      <li><a href="#">05 Comments<i class="lnr lnr-bubble"></i></a></li>
+                      <li>Annie<i class="lnr lnr-user"></i></li>
+                      <li>2 May, 2019<i class="lnr lnr-calendar-full"></i></li>
+                      <li>05 Comments<i class="lnr lnr-bubble"></i></li>
                     </ul>
                   </div>
                 </div>
@@ -138,9 +142,9 @@ const CommunityForum = (props) => {
                       <div class="thumb">
                         <img src={ require('../../img/blog/c1.jpg') } alt="c1" />
                       </div>
-                      <li><a href="#">Jane<i class="lnr lnr-user"></i></a></li>
-                      <li><a href="#">1 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
-                      <li><a href="#">05 Comments<i class="lnr lnr-bubble"></i></a></li>
+                      <li>Jane<i class="lnr lnr-user"></i></li>
+                      <li>1 May, 2019<i class="lnr lnr-calendar-full"></i></li>
+                      <li>05 Comments<i class="lnr lnr-bubble"></i></li>
                     </ul>
                   </div>
                 </div>
@@ -159,24 +163,22 @@ const CommunityForum = (props) => {
               <nav class="blog-pagination justify-content-center d-flex">
                 <ul class="pagination">
                   <li class="page-item">
-                    <a href="#" class="page-link" aria-label="Previous">
+                    <div class="page-link" aria-label="Previous">
                       <span aria-hidden="true">
-                        <span class="lnr lnr-chevron-left"></span>
+                        <img src={ require('../../img/prev.png') } alt="prev" />
                       </span>
-                    </a>
+                    </div>
                   </li>
-                  <li class="page-item active"><a href="#" class="page-link">01</a></li>
+                  <li class="page-item active page-link">01</li>
 
-                  <li class="page-item"><a href="#" class="page-link">02</a></li>
-                  <li class="page-item"><a href="#" class="page-link">03</a></li>
-                  <li class="page-item"><a href="#" class="page-link">04</a></li>
+                  <li class="page-item page-link">02</li>
+                  <li class="page-item page-link">03</li>
+                  <li class="page-item page-link">04</li>
 
-                  <li class="page-item">
-                    <a href="#" class="page-link" aria-label="Next">
+                  <li class="page-item page-link" aria-label="Next">
                       <span aria-hidden="true">
-                        <span class="lnr lnr-chevron-right"></span>
+                        <img src={ require('../../img/next.png') } alt="next" />
                       </span>
-                    </a>
                   </li>
                 </ul>
               </nav>
@@ -200,6 +202,7 @@ const CommunityForum = (props) => {
         </div>
       </div>
     </section>
+  <Footer />
   </div>
   )
   };
