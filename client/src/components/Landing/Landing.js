@@ -3,11 +3,12 @@ import './Landing.css';
 import axios from 'axios';
 import Header from '../Header/Header';
 import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 import {Link} from 'react-router-dom';
 
 const Landing = (props) => {
   const [articles, setArticles] = useState([]);
-
+{/*}
   const fetchArticles = async() => {
     const response = await axios.get('/article');
     console.log('fetch articles:', response.data)
@@ -20,7 +21,7 @@ const Landing = (props) => {
   useEffect(() => {
     fetchArticles();
   }, []);
-
+*/}
   const renderArticles = () => {
     console.log('article:', articles);
     return articles.map(article => {
@@ -53,6 +54,7 @@ const Landing = (props) => {
           </div>
         </div>
       </section>
+      <Footer />
     </div>
   )
 };
