@@ -1,3 +1,15 @@
-.blog-area{
+.blog-area {
     height: 100%;
+}
+
+.page-item.active {
+  background-color: #5ec0ca;
+}
+
+.page-link img {
+  width: 50px;
+}
+
+li .page-link {
+  font-size: 25px;
 }
