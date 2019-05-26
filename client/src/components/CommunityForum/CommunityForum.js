@@ -1,210 +1,113 @@
-import React from 'react';
+import React, { Fragment, Component } from 'react';
 import { Link } from 'react-router-dom'
-import Navbar from '../Navbar/Navbar';
 import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import './CommunityForum.css';
+import PostList from "./PostList";
+import Input from "./Input";
+import axios from "axios";
 
-// import React from 'react';
-// import './CommunityForum.css';
-// import Events from "./events";
-// import Input from "./input";
 
-// className CommunityForum extends React.Component {
-//   state = {
-//     events: []
-//   }
+class CommunityForum extends Component {
+  state = {
+    posts: []
+  }
 
-//   constructor(props) {
-//     super(props);
-//     this.drone = new window.Scaledrone("czBgrob2FXXXRdrO", {
-//       data: { username: "fuckface" }
-//     });
-//     this.drone.on('open', error => {
-//       if (error) {
-//         return console.error(error);
-//       }
-//     });
-//     const room = this.drone.subscribe("observable-community-forum");
-//     room.on('message', message => {
-//       const events = this.state.events;
-//       events.push({text: message.data });
-//       this.setState({events});
-//     });
-//   }
+  fetchComments = (parentIds) => {
+    var params = new URLSearchParams();
+    if (parentIds) {
+      for (var parentId of parentIds) {
+        params.append("parentId", parentId);
+      }
+    }
+    axios
+      .get("/api/posts", { params: params })
+      .then(response => {
+        if (response.status === 200) {
+          if (!parentIds) {
+            this.posts = response.data;
+            this.fetchComments(response.data.map(p => p.id));
+          } else {
+            this.updatePosts(this.posts, response.data);
+          }
+        }
+      })
+      .catch(error => {
+        console.log("Posts error:");
+        console.log(error);
+      });
+  }
 
-//   onSendMessage = (text) => {
-//     console.log("onSendMessage:");
-//     console.log(text)
-//     this.drone.publish({
-//       room: "observable-community-forum",
-//       message: text
-//     });
-//   }
+  componentDidMount() {
+    this.fetchComments();
+  }
 
-//   render() {
-//   return (
-// <div>
-    
+  updatePosts = (posts, comments) => {
+    var combinedPosts = [];
+    for (var post of posts) {
+      post.comments = comments.filter(c => c.parentId == post.id) || [];
+      combinedPosts.push(post);
+    }
+    this.setState({ posts: combinedPosts });
+  }
 
-//     <Events events={this.state.events} />
+  onSendMessage = (title, message) => {
+    axios
+      .post("/api/posts", { title: title, message: message })
+      .then(response => {
+        if (response.status === 200) {
+          const posts = this.state.posts;
+          var post = response.data;
+          post.comments = [];
+          posts.unshift(post);
+          this.setState({ posts });
+        }
+      })
+      .catch(error => {
+        console.log("Post error:");
+        console.log(error);
+      });
+  }
 
-//     <Input onSendMessage={this.onSendMessage} />
- 
-//     <section className="blog_area">
-//       <div className="container">
-        
-//              </div>
-//     </section>
-//     </div>
+  onSendComment = (parentId, message) => {
+    axios
+      .post("/api/posts", { parentId: parentId, title: "", message: message })
+      .then(response => {
+        if (response.status === 200) {
+          const comment = response.data;
+          const posts = this.state.posts;
+          var post = posts.find(p => p.id === comment.parentId);
+          post.comments.push(comment);
+          this.setState({ posts });
+        }
+      })
+      .catch(error => {
+        console.log("Comment error:");
+        console.log(error);
+      });
+  }
 
-// Header message = { this.state.info }
-
-const CommunityForum = (props) => {
-  console.log('community', props);
-  return (
-  <div>
-    <Navbar />
-    <Header />
-    <section className="banner_area">
-      <div className="banner_inner d-flex align-items-center">
-        <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
-        <div className="container">
-          <div className="banner_content text-center">
-            <h2>Community Forum</h2>
-          </div>
-        </div>
-      </div>
-    </section>  
-{/* 
-    <Fragment>
-    <Header landing={false} headline="Community Forum" />
-*/}
-    <section className="blog_area">
-      <div className="container">
-        <div className="row">
-          <div className="col-lg-8">
-            <div className="blog_left_sidebar">
-              <article className="row blog_item">
-                <div className="col-md-3">
-                  <div className="blog_info text-right">
-                    <ul className="blog_meta list">
-                      <div className="thumb">
-                        <img src={ require('../../img/blog/c2.jpg') } alt="c2" />
-                      </div>
-                      <li>Henry<i className="lnr lnr-user"></i></li>
-                      <li>2 May, 2019<i className="lnr lnr-calendar-full"></i></li>
-                      <li>05 Comments<i className="lnr lnr-bubble"></i></li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-md-9">
-                  <div className="blog_post">
-                    <div className="blog_details">
-                      <Link to="/singlepost" classNameName="btn btn-link text-secondary">
-                        <h2>Issues at the playground</h2>
-                      </Link>
-                      <p>Sed adipiscing diam donec adipiscing tristique risus nec. Risus viverra adipiscing at in tellus integer feugiat scelerisque varius.</p>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              <article className="row blog_item">
-                <div className="col-md-3">
-                  <div className="blog_info text-right">
-                    <ul className="blog_meta list">
-                      <div className="thumb">
-                        <img src={ require('../../img/blog/c3.jpg') } alt="c3" />
-                      </div>
-                      <li>Annie<i className="lnr lnr-user"></i></li>
-                      <li>2 May, 2019<i className="lnr lnr-calendar-full"></i></li>
-                      <li>05 Comments<i className="lnr lnr-bubble"></i></li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-md-9">
-                  <div className="blog_post">
-                    <div className="blog_details">
-                      <Link to="/singlepost" classNameName="btn btn-link text-secondary">
-                        <h2>Eating out troubles</h2>
-                      </Link>
-                      <p>Aliquet bibendum enim facilisis gravida neque convallis a. Habitant morbi tristique senectus et netus. Lacus vestibulum sed arcu non odio euismod lacinia at.</p>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              <article className="row blog_item">
-                <div className="col-md-3">
-                  <div className="blog_info text-right">
-                    <ul className="blog_meta list">
-                      <div className="thumb">
-                        <img src={ require('../../img/blog/c1.jpg') } alt="c1" />
-                      </div>
-                      <li>Jane<i className="lnr lnr-user"></i></li>
-                      <li>1 May, 2019<i className="lnr lnr-calendar-full"></i></li>
-                      <li>05 Comments<i className="lnr lnr-bubble"></i></li>
-                    </ul>
-                  </div>
-                </div>
-                <div className="col-md-9">
-                  <div className="blog_post">
-                    <div className="blog_details">
-                      <Link to="/singlepost" classNameName="btn btn-link text-secondary">
-                        <h2>Why don't my parents leave us alone?</h2>
-                      </Link>
-                      <p>Metus aliquam eleifend mi. Sed adipiscing diam donec adipiscing tristique risus nec. </p>
-                    </div>
-                  </div>
-                </div>
-              </article>
-
-              <nav className="blog-pagination justify-content-center d-flex">
-                <ul className="pagination">
-                  <li className="page-item">
-                    <div className="page-link" aria-label="Previous">
-                      <span aria-hidden="true">
-                        <img src={ require('../../img/prev.png') } alt="prev" />
-                      </span>
-                    </div>
-                  </li>
-                  <li className="page-item active page-link">01</li>
-
-                  <li className="page-item page-link">02</li>
-                  <li className="page-item page-link">03</li>
-                  <li className="page-item page-link">04</li>
-
-                  <li className="page-item page-link" aria-label="Next">
-                      <span aria-hidden="true">
-                        <img src={ require('../../img/next.png') } alt="next" />
-                      </span>
-                  </li>
-                </ul>
-              </nav>
+  render() {
+    console.log('community', this.props);
+    return (
+    <div>
+      <Navbar/>
+      <Header/>
+      <section className="banner_area">
+        <div className="banner_inner d-flex align-items-center">
+          <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+          <div className="container">
+            <div className="banner_content text-center">
+              <h2>Community Forum</h2>
             </div>
           </div>
-{/*          !!!!!!!!!SEARCH FOR POSTS!!!!!!!!!
-          <div className="col-lg-4">
-            <div className="blog_right_sidebar">
-              <aside className="single_sidebar_widget search_widget">
-                <div className="input-group">
-                  <input type="text" className="form-control" placeholder="Search Posts"/>
-                  <span className="input-group-btn">
-                    <button className="btn btn-default" type="button"><i className="lnr lnr-magnifier"></i></button>
-                  </span>
-                </div>
-                <div className="br"></div>
-              </aside>
-            </div>
-          </div>
-*/}
         </div>
-      </div>
-    </section>
-  <Footer />
-  </div>
-  )
+      </section>
+      <Input onSendMessage={this.onSendMessage} />
+      <PostList posts={this.state.posts} onSendComment={this.onSendComment} />
+      <Footer/>
+    </div>
+    )
+  }
   };
 
 

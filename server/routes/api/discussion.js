@@ -8,9 +8,6 @@ router.post('/new', function (req, res){
     const newPost = new Discussion({ discussion: req.body.discussion });
     newPost.save().then(savedPost => {
         res.json(savedPost)
-    })
-    .catch(error => {
-        res.status(500).json({error: error})
     });
 });
 
@@ -74,4 +71,3 @@ router.route('/:id')
 });
 
 module.exports = router;
-

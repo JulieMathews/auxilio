@@ -74,8 +74,8 @@ const SinglePost = (props) => {
                   </div>
                   <div className="thumb">
                     <img src={ require('../../img/blog/next.jpg') } alt="next" />
-                  </div>										
-                </div>									
+                  </div>
+                </div>
               </div>
             </div>
             <div className="comments-area">
@@ -95,10 +95,12 @@ const SinglePost = (props) => {
                     </div>
                   </div>
                   <div className="reply-btn">
+
                     <button href="" className="btn-reply text-uppercase">reply</button> 
+
                   </div>
                 </div>
-              </div>	
+              </div>
               <div className="comment-list left-padding">
                 <div className="single-comment justify-content-between d-flex">
                   <div className="user justify-content-between d-flex">
@@ -115,9 +117,10 @@ const SinglePost = (props) => {
                   </div>
                   <div className="reply-btn">
                     <button href="" className="btn-reply text-uppercase">reply</button> 
+
                   </div>
                 </div>
-              </div>	
+              </div>
               <div className="comment-list left-padding">
                 <div className="single-comment justify-content-between d-flex">
                   <div className="user justify-content-between d-flex">
@@ -133,10 +136,12 @@ const SinglePost = (props) => {
                     </div>
                   </div>
                   <div className="reply-btn">
+
                     <button href="" className="btn-reply text-uppercase">reply</button> 
+
                   </div>
                 </div>
-              </div>	
+              </div>
               <div className="comment-list">
                 <div className="single-comment justify-content-between d-flex">
                   <div className="user justify-content-between d-flex">
@@ -152,10 +157,12 @@ const SinglePost = (props) => {
                     </div>
                   </div>
                 <div className="reply-btn">
+
                   <button href="" className="btn-reply text-uppercase">reply</button> 
+
                 </div>
               </div>
-            </div>	
+            </div>
             <div className="comment-list">
               <div className="single-comment justify-content-between d-flex">
                 <div className="user justify-content-between d-flex">
@@ -171,21 +178,23 @@ const SinglePost = (props) => {
                   </div>
                 </div>
                 <div className="reply-btn">
+
                   <btn href="" className="btn-reply text-uppercase">reply</btn> 
+
                 </div>
               </div>
-            </div>	                                             				
+            </div>
           </div>
           <div className="comment-form">
             <h4>Leave a Reply</h4>
-            <form>
+            <form className="singlepost_form">
               <div className="form-group form-inline">
                 <div className="form-group col-lg-6 col-md-6 name">
                   <input type="text" className="form-control" id="name" placeholder="Enter Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Name'"/>
                 </div>
                 <div className="form-group col-lg-6 col-md-6 email">
                   <input type="email" className="form-control" id="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"/>
-                </div>										
+                </div>
               </div>
               <div className="form-group">
                   <input type="text" className="form-control" id="subject" placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'"/>
@@ -193,11 +202,13 @@ const SinglePost = (props) => {
               <div className="form-group">
                   <textarea className="form-control mb-10" rows="5" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
               </div>
+
               <button href="#" className="primary-btn submit_btn">Post Comment</button>	
+
             </form>
           </div>
         </div>
-{/*        
+{/*
         <div className="col-lg-4">
           <div className="blog_right_sidebar">
             <aside className="single_sidebar_widget search_widget">

@@ -52,10 +52,10 @@ router.post(
 
 router.get('/', (req, res, next) => {
     console.log("===user!====")
-    console.log(req.user)
     if (req.user){
-        res.json({ user: req.user})
-    }else{
+      console.log(req.user.get())
+      res.json({ user: req.user.get()})
+    } else {
         res.json({ user: null })
     }
 })
@@ -70,5 +70,3 @@ router.post('/logout', (req, res) => {
 })
 
 module.exports = router
-
-  
