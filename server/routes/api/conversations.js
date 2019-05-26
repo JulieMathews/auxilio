@@ -24,10 +24,18 @@ router.post("/", function(req, res) {
             console.log("Returning conversation:")
             console.log(convo);
             res.json(convo.get());
-        })
-        .catch(error =>  {
-            res.status(500).json({error: error});
         });
+});
+
+router.get("/", function(req, res) {
+  models.Conversation
+    .findAll()
+    .then(convos => {
+      return res.json(convos.map(c => c.get()));
+    })
+    .catch(error => {
+      return res.status(500).json({ error: error });
+    });
 });
 
 module.exports = router;

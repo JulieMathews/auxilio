@@ -3,6 +3,7 @@ const express = require('express');
 const bodyParser = require('body-parser')
 const path = require('path');
 const session = require('express-session');
+const SessionStore = require('express-session-sequelize')(session.Store);
 var passport = require('./passport');
 var flash = require("connect-flash");
 const Sequelize = require('sequelize')
@@ -20,24 +21,29 @@ app.use(bodyParser.json());
 //app.use(express.static("client"));
 //app.set("views", "client/views");
 
+const sequelizeSessionStore = new SessionStore({
+  db: db.sequelize
+});
+
 // session support is required for passportjs
 app.use(
-    session({
+  session({
     key: "user_sid",
     secret: "giasghsdjgoisdgsdhgkwhe53lkd",
+    store: sequelizeSessionStore,
     resave: false,
     saveUninitialized: false,
     cookie: {
         expires: 6000000
     }
-})
+  })
 );
 
 app.use(passport.initialize());
 app.use(passport.session()); //persistent login sessions
 app.use(flash());
 
-//Routes 
+//Routes
 app.use("/user", user);
 app.use("/article", article)
 app.use("/api", api)
@@ -68,7 +74,7 @@ if (process.env.NODE_ENV === "test"){
 
 //Starting the server, syncing our models
 db.sequelize.sync(syncOptions).then(function() {
-    app.listen(port, function() { 
+    app.listen(port, function() {
     console.log(
         "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
         port,
@@ -76,6 +82,3 @@ db.sequelize.sync(syncOptions).then(function() {
         );
     });
 });
-
-
-
