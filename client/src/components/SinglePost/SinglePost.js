@@ -1,11 +1,15 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import './SinglePost.css';
 import { Link } from 'react-router-dom'
+import Navbar from '../Navbar/Navbar';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const SinglePost = (props) => {
   return (
   <div>
+    <Navbar/>
+    <Header/>
     <section className="banner_area">
       <div className="banner_inner d-flex align-items-center">
         <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
@@ -29,8 +33,8 @@ const SinglePost = (props) => {
                     <div className="thumb">
                       <img src={ require('../../img/blog/c5.jpg') } alt="c5" />
                     </div>
-                    <li><a href="#">Bob<i className="lnr lnr-user"></i></a></li>
-                    <li><a href="#">3 May, 2019<i className="lnr lnr-calendar-full"></i></a></li>
+                    <li>Bob<i className="lnr lnr-user"></i></li>
+                    <li>3 May, 2019<i className="lnr lnr-calendar-full"></i></li>
                   </ul>
                 </div>
               </div>
@@ -52,25 +56,21 @@ const SinglePost = (props) => {
                 <div className="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
                   <div className="thumb">
                     <img src={ require('../../img/blog/prev.jpg') } alt="prev" />
-{/*
-                    <a href="#"><img className="img-fluid" src="img/blog/prev.jpg"/></a>
-*/}
                   </div>
                   <div className="arrow">
-                    <a href="#"><span className="lnr text-white lnr-arrow-left"></span></a>
+                  <Link href="#" className="page-link" aria-label="Previous"></Link>
                   </div>
-                  <div className="detials">
+                  <div className="thumb">
+                  <img src={ require('../../img/prev.png') } alt="prev" />
                     <p>Prev Post</p>
-                    <a href="#"><h4>Space The Final Frontier</h4></a>
                   </div>
                 </div>
                 <div className="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                   <div className="detials">
                     <p>Next Post</p>
-                    <a href="#"><h4>Telescopes 101</h4></a>
                   </div>
                   <div className="arrow">
-                    <a href="#"><span className="lnr text-white lnr-arrow-right"></span></a>
+                    <Link href="#"><span className="lnr text-white lnr-arrow-right"></span></Link>
                   </div>
                   <div className="thumb">
                     <img src={ require('../../img/blog/next.jpg') } alt="next" />
@@ -87,7 +87,7 @@ const SinglePost = (props) => {
                       <img src={ require('../../img/blog/c1.jpg') } alt="c1" />
                     </div>
                     <div className="desc">
-                      <h5><a href="#">Emilly</a></h5>
+                      <h5>Emilly</h5>
                       <p className="date">3 May, 2019 at 3:12 pm </p>
                       <p className="comment">
                         Never say goodbye till the end comes!
@@ -95,7 +95,7 @@ const SinglePost = (props) => {
                     </div>
                   </div>
                   <div className="reply-btn">
-                    <a href="" className="btn-reply text-uppercase">reply</a> 
+                    <button href="" className="btn-reply text-uppercase">reply</button> 
                   </div>
                 </div>
               </div>	
@@ -106,7 +106,7 @@ const SinglePost = (props) => {
                       <img src={ require('../../img/blog/c2.jpg') } alt="c2" />
                     </div>
                     <div className="desc">
-                      <h5><a href="#">Henry</a></h5>
+                      <h5>Henry</h5>
                       <p className="date">3 May, 2019 at 3:12 pm </p>
                       <p className="comment">
                         Never say goodbye till the end comes!
@@ -114,7 +114,7 @@ const SinglePost = (props) => {
                     </div>
                   </div>
                   <div className="reply-btn">
-                    <a href="" className="btn-reply text-uppercase">reply</a> 
+                    <button href="" className="btn-reply text-uppercase">reply</button> 
                   </div>
                 </div>
               </div>	
@@ -125,7 +125,7 @@ const SinglePost = (props) => {
                       <img src={ require('../../img/blog/c3.jpg') } alt="c3" />
                     </div>
                     <div className="desc">
-                      <h5><a href="#">Annie</a></h5>
+                      <h5>Annie</h5>
                       <p className="date">3 May, 2019 at 3:12 pm </p>
                       <p className="comment">
                           Never say goodbye till the end comes!
@@ -133,7 +133,7 @@ const SinglePost = (props) => {
                     </div>
                   </div>
                   <div className="reply-btn">
-                    <a href="" className="btn-reply text-uppercase">reply</a> 
+                    <button href="" className="btn-reply text-uppercase">reply</button> 
                   </div>
                 </div>
               </div>	
@@ -144,7 +144,7 @@ const SinglePost = (props) => {
                       <img src={ require('../../img/blog/c4.jpg') } alt="c4" />
                     </div>
                     <div className="desc">
-                      <h5><a href="#">Maria</a></h5>
+                      <h5>Maria</h5>
                       <p className="date">3 May, 2019 at 3:12 pm </p>
                       <p className="comment">
                           Never say goodbye till the end comes!
@@ -152,7 +152,7 @@ const SinglePost = (props) => {
                     </div>
                   </div>
                 <div className="reply-btn">
-                  <a href="" className="btn-reply text-uppercase">reply</a> 
+                  <button href="" className="btn-reply text-uppercase">reply</button> 
                 </div>
               </div>
             </div>	
@@ -163,7 +163,7 @@ const SinglePost = (props) => {
                     <img src={ require('../../img/blog/c5.jpg') } alt="c5" />
                   </div>
                   <div className="desc">
-                    <h5><a href="#">Bob</a></h5>
+                    <h5>Bob</h5>
                     <p className="date">3 May, 2019 at 3:12 pm </p>
                     <p className="comment">
                         Never say goodbye till the end comes!
@@ -171,7 +171,7 @@ const SinglePost = (props) => {
                   </div>
                 </div>
                 <div className="reply-btn">
-                  <a href="" className="btn-reply text-uppercase">reply</a> 
+                  <btn href="" className="btn-reply text-uppercase">reply</btn> 
                 </div>
               </div>
             </div>	                                             				
@@ -193,7 +193,7 @@ const SinglePost = (props) => {
               <div className="form-group">
                   <textarea className="form-control mb-10" rows="5" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
               </div>
-              <a href="#" className="primary-btn submit_btn">Post Comment</a>	
+              <button href="#" className="primary-btn submit_btn">Post Comment</button>	
             </form>
           </div>
         </div>
@@ -216,6 +216,7 @@ const SinglePost = (props) => {
       </div>
       </div>
     </section>
+    <Footer/>
   </div>
   )
 };

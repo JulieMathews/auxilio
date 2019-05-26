@@ -1,6 +1,8 @@
-import React, {Fragment} from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom'
+import Navbar from '../Navbar/Navbar';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import './CommunityForum.css';
 
 // import React from 'react';
@@ -8,7 +10,7 @@ import './CommunityForum.css';
 // import Events from "./events";
 // import Input from "./input";
 
-// class CommunityForum extends React.Component {
+// className CommunityForum extends React.Component {
 //   state = {
 //     events: []
 //   }
@@ -49,8 +51,8 @@ import './CommunityForum.css';
 
 //     <Input onSendMessage={this.onSendMessage} />
  
-//     <section class="blog_area">
-//       <div class="container">
+//     <section className="blog_area">
+//       <div className="container">
         
 //              </div>
 //     </section>
@@ -62,11 +64,13 @@ const CommunityForum = (props) => {
   console.log('community', props);
   return (
   <div>
-    <section class="banner_area">
-      <div class="banner_inner d-flex align-items-center">
-        <div class="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
-        <div class="container">
-          <div class="banner_content text-center">
+    <Navbar />
+    <Header />
+    <section className="banner_area">
+      <div className="banner_inner d-flex align-items-center">
+        <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+        <div className="container">
+          <div className="banner_content text-center">
             <h2>Community Forum</h2>
           </div>
         </div>
@@ -76,28 +80,28 @@ const CommunityForum = (props) => {
     <Fragment>
     <Header landing={false} headline="Community Forum" />
 */}
-    <section class="blog_area">
-      <div class="container">
-        <div class="row">
-          <div class="col-lg-8">
-            <div class="blog_left_sidebar">
-              <article class="row blog_item">
-                <div class="col-md-3">
-                  <div class="blog_info text-right">
-                    <ul class="blog_meta list">
-                      <div class="thumb">
+    <section className="blog_area">
+      <div className="container">
+        <div className="row">
+          <div className="col-lg-8">
+            <div className="blog_left_sidebar">
+              <article className="row blog_item">
+                <div className="col-md-3">
+                  <div className="blog_info text-right">
+                    <ul className="blog_meta list">
+                      <div className="thumb">
                         <img src={ require('../../img/blog/c2.jpg') } alt="c2" />
                       </div>
-                      <li><a href="#">Henry<i class="lnr lnr-user"></i></a></li>
-                      <li><a href="#">2 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
-                      <li><a href="#">05 Comments<i class="lnr lnr-bubble"></i></a></li>
+                      <li>Henry<i className="lnr lnr-user"></i></li>
+                      <li>2 May, 2019<i className="lnr lnr-calendar-full"></i></li>
+                      <li>05 Comments<i className="lnr lnr-bubble"></i></li>
                     </ul>
                   </div>
                 </div>
-                <div class="col-md-9">
-                  <div class="blog_post">
-                    <div class="blog_details">
-                      <Link to="/singlepost" className="btn btn-link text-secondary">
+                <div className="col-md-9">
+                  <div className="blog_post">
+                    <div className="blog_details">
+                      <Link to="/singlepost" classNameName="btn btn-link text-secondary">
                         <h2>Issues at the playground</h2>
                       </Link>
                       <p>Sed adipiscing diam donec adipiscing tristique risus nec. Risus viverra adipiscing at in tellus integer feugiat scelerisque varius.</p>
@@ -106,23 +110,23 @@ const CommunityForum = (props) => {
                 </div>
               </article>
 
-              <article class="row blog_item">
-                <div class="col-md-3">
-                  <div class="blog_info text-right">
-                    <ul class="blog_meta list">
-                      <div class="thumb">
+              <article className="row blog_item">
+                <div className="col-md-3">
+                  <div className="blog_info text-right">
+                    <ul className="blog_meta list">
+                      <div className="thumb">
                         <img src={ require('../../img/blog/c3.jpg') } alt="c3" />
                       </div>
-                      <li><a href="#">Annie<i class="lnr lnr-user"></i></a></li>
-                      <li><a href="#">2 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
-                      <li><a href="#">05 Comments<i class="lnr lnr-bubble"></i></a></li>
+                      <li>Annie<i className="lnr lnr-user"></i></li>
+                      <li>2 May, 2019<i className="lnr lnr-calendar-full"></i></li>
+                      <li>05 Comments<i className="lnr lnr-bubble"></i></li>
                     </ul>
                   </div>
                 </div>
-                <div class="col-md-9">
-                  <div class="blog_post">
-                    <div class="blog_details">
-                      <Link to="/singlepost" className="btn btn-link text-secondary">
+                <div className="col-md-9">
+                  <div className="blog_post">
+                    <div className="blog_details">
+                      <Link to="/singlepost" classNameName="btn btn-link text-secondary">
                         <h2>Eating out troubles</h2>
                       </Link>
                       <p>Aliquet bibendum enim facilisis gravida neque convallis a. Habitant morbi tristique senectus et netus. Lacus vestibulum sed arcu non odio euismod lacinia at.</p>
@@ -131,23 +135,23 @@ const CommunityForum = (props) => {
                 </div>
               </article>
 
-              <article class="row blog_item">
-                <div class="col-md-3">
-                  <div class="blog_info text-right">
-                    <ul class="blog_meta list">
-                      <div class="thumb">
+              <article className="row blog_item">
+                <div className="col-md-3">
+                  <div className="blog_info text-right">
+                    <ul className="blog_meta list">
+                      <div className="thumb">
                         <img src={ require('../../img/blog/c1.jpg') } alt="c1" />
                       </div>
-                      <li><a href="#">Jane<i class="lnr lnr-user"></i></a></li>
-                      <li><a href="#">1 May, 2019<i class="lnr lnr-calendar-full"></i></a></li>
-                      <li><a href="#">05 Comments<i class="lnr lnr-bubble"></i></a></li>
+                      <li>Jane<i className="lnr lnr-user"></i></li>
+                      <li>1 May, 2019<i className="lnr lnr-calendar-full"></i></li>
+                      <li>05 Comments<i className="lnr lnr-bubble"></i></li>
                     </ul>
                   </div>
                 </div>
-                <div class="col-md-9">
-                  <div class="blog_post">
-                    <div class="blog_details">
-                      <Link to="/singlepost" className="btn btn-link text-secondary">
+                <div className="col-md-9">
+                  <div className="blog_post">
+                    <div className="blog_details">
+                      <Link to="/singlepost" classNameName="btn btn-link text-secondary">
                         <h2>Why don't my parents leave us alone?</h2>
                       </Link>
                       <p>Metus aliquam eleifend mi. Sed adipiscing diam donec adipiscing tristique risus nec. </p>
@@ -156,43 +160,41 @@ const CommunityForum = (props) => {
                 </div>
               </article>
 
-              <nav class="blog-pagination justify-content-center d-flex">
-                <ul class="pagination">
-                  <li class="page-item">
-                    <a href="#" class="page-link" aria-label="Previous">
+              <nav className="blog-pagination justify-content-center d-flex">
+                <ul className="pagination">
+                  <li className="page-item">
+                    <div className="page-link" aria-label="Previous">
                       <span aria-hidden="true">
-                        <span class="lnr lnr-chevron-left"></span>
+                        <img src={ require('../../img/prev.png') } alt="prev" />
                       </span>
-                    </a>
+                    </div>
                   </li>
-                  <li class="page-item active"><a href="#" class="page-link">01</a></li>
+                  <li className="page-item active page-link">01</li>
 
-                  <li class="page-item"><a href="#" class="page-link">02</a></li>
-                  <li class="page-item"><a href="#" class="page-link">03</a></li>
-                  <li class="page-item"><a href="#" class="page-link">04</a></li>
+                  <li className="page-item page-link">02</li>
+                  <li className="page-item page-link">03</li>
+                  <li className="page-item page-link">04</li>
 
-                  <li class="page-item">
-                    <a href="#" class="page-link" aria-label="Next">
+                  <li className="page-item page-link" aria-label="Next">
                       <span aria-hidden="true">
-                        <span class="lnr lnr-chevron-right"></span>
+                        <img src={ require('../../img/next.png') } alt="next" />
                       </span>
-                    </a>
                   </li>
                 </ul>
               </nav>
             </div>
           </div>
 {/*          !!!!!!!!!SEARCH FOR POSTS!!!!!!!!!
-          <div class="col-lg-4">
-            <div class="blog_right_sidebar">
-              <aside class="single_sidebar_widget search_widget">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Search Posts"/>
-                  <span class="input-group-btn">
-                    <button class="btn btn-default" type="button"><i class="lnr lnr-magnifier"></i></button>
+          <div className="col-lg-4">
+            <div className="blog_right_sidebar">
+              <aside className="single_sidebar_widget search_widget">
+                <div className="input-group">
+                  <input type="text" className="form-control" placeholder="Search Posts"/>
+                  <span className="input-group-btn">
+                    <button className="btn btn-default" type="button"><i className="lnr lnr-magnifier"></i></button>
                   </span>
                 </div>
-                <div class="br"></div>
+                <div className="br"></div>
               </aside>
             </div>
           </div>
@@ -200,6 +202,7 @@ const CommunityForum = (props) => {
         </div>
       </div>
     </section>
+  <Footer />
   </div>
   )
   };

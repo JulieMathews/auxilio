@@ -12,15 +12,12 @@ import Articles from './components/articles/articles';
 import Navbar from './components/Navbar/Navbar';
 import Landing from './components/Landing/Landing';
 import AboutUs from './components/AboutUs/AboutUs';
-import Footer from './components/Footer/Footer';
 import CommunityForum from "./components/CommunityForum/CommunityForum";
 import SinglePost from './components/SinglePost/SinglePost';
 
-//import SinglePost from './components/SinglePost/SinglePost';
 //import SpecialistForum from './compoenents/SpecialistForum';
 //import SpecialistContact from './components/SpecialistContact';
 //import SpecialistPost from './components/SpecialistPost';
-//import AboutUs from './components/AboutUs/AboutUs';
 
   //  return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work?'));
 
