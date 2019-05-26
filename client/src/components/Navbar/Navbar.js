@@ -33,33 +33,23 @@ class Navbar extends Component {
         <ul className="nav navbar-nav menu_nav ml-auto"> 
 
           <Link to="/" className="btn btn-link text-secondary">
-            <li><span className="nav-item active"><a className="nav-link">Home</a></span></li>
+            <li><span className="nav-item active nav-link">Home</span></li>
           </Link>
               
-          <li className="nav-item submenu dropdown">
-            <div className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Forums</div>
-            <ul className="dropdown-menu">
-              <Link to="/communityforum" className="btn btn-link text-secondary">
-                <li className="nav-item"><a className="nav-link">Community Forum</a></li>
-              </Link>
-            </ul>
-          </li> 
-      
-          <li className="nav-item submenu dropdown">
-            <div className="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Specialists</div>
-            <ul className="dropdown-menu">
-              <Link to="/articles" className="btn btn-link text-secondary">
-                <li className="nav-item"><a className="nav-link">Articles</a></li>
-              </Link>
-            </ul>
-          </li> 
+          <Link to="/communityforum" className="btn btn-link text-secondary">
+            <li className="nav-item nav-link">Community Forum</li>
+          </Link>
+
+          <Link to="/articles" className="btn btn-link text-secondary">
+            <li className="nav-item nav-link">Articles</li>
+          </Link>
 
           <Link to="/aboutus" className="btn btn-link text-secondary">
-            <li><span className="nav-item active"><a className="nav-link">About Us</a></span></li>
+            <li><span className="nav-item active nav-link">About Us</span></li>
           </Link>
 
           <Link to="#" className="btn btn-link text-secondary" onClick={this.logout}>
-            <li><span className="nav-item active"><a className="nav-link">Logout</a></span></li>
+            <li><span className="nav-item active nav-link">Logout</span></li>
           </Link>
         </ul>
       </section>
@@ -73,16 +63,22 @@ class Navbar extends Component {
         <ul className="nav navbar-nav menu_nav ml-auto"> 
         
           <Link to="/" className="btn btn-link text-secondary">
-            <li><span className="nav-item active"><a className="nav-link">Home</a></span></li></Link>
+            <li><span className="nav-item active nav-link">Home</span></li></Link>
 
           <Link to="/aboutus" className="btn btn-link text-secondary">
-            <li><span className="nav-item active"><a className="nav-link">About Us</a></span></li></Link>
+            <li><span className="nav-item active nav-link">About Us</span></li></Link>
+
+          <Link to="/articles" className="btn btn-link text-secondary">
+            <li className="nav-item nav-link">Articles</li>
+          </Link>
           
           <Link to="/login" className="btn btn-link text-secondary">
-            <li><span className="nav-item active"><a className="nav-link">Login</a></span></li></Link>
+            <li><span className="nav-item active nav-link">Login</span></li>
+          </Link>
           
           <Link to="/signup" className="btn btn-link text-secondary">
-            <li><span className="nav-item active"><a className="nav-link">Signup</a></span></li></Link>
+            <li><span className="nav-item active nav-link">Signup</span></li>
+          </Link>
         </ul>
       </section>
     )

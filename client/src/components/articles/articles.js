@@ -3,6 +3,7 @@ import '../Landing/Landing.css';
 import axios from 'axios';
 import Header from '../Header/Header';
 import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 import {Link} from 'react-router-dom';
 
 const Articles = (props) => { 
@@ -38,8 +39,8 @@ const Articles = (props) => {
 
   return (
     <div>
-      
-
+      <Navbar/>
+      <Header/>
       <section className="popular_area p_120">
         <div className="container">
           <div className="main_title">
@@ -51,6 +52,7 @@ const Articles = (props) => {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   )
 };

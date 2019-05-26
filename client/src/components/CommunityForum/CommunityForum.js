@@ -90,6 +90,8 @@ class CommunityForum extends Component {
     console.log('community', this.props);
     return (
     <div>
+      <Navbar/>
+      <Header/>
       <section className="banner_area">
         <div className="banner_inner d-flex align-items-center">
           <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
@@ -102,8 +104,7 @@ class CommunityForum extends Component {
       </section>
       <Input onSendMessage={this.onSendMessage} />
       <PostList posts={this.state.posts} onSendComment={this.onSendComment} />
-
-
+      <Footer/>
     </div>
     )
   }

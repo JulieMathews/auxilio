@@ -23,7 +23,7 @@ const Header = (props) => {
               <div className="col-lg-4">
                 <div className="home_right_box">
                   <div className="home_item">
-                    <span className="nav-item active"><a className="nav-link"><img src={ require('../../img/familyapp/family.png')} alt="School Related"/></a></span>
+                    <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/family.png')} alt="School Related"/></span>
                   </div>
                   <div className="home_item">
                     <p>Community Forum</p>

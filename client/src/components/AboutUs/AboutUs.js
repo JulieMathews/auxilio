@@ -1,11 +1,16 @@
 import React from 'react';
 import './AboutUs.css';
+import Navbar from '../Navbar/Navbar';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 // Header message = { this.state.info }
 
 const AboutUs = (props) => {
   return (
   <div>
+    <Navbar/>
+    <Header/>
     <section className="banner_area">
       <div className="banner_inner d-flex align-items-center">
         <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
@@ -87,6 +92,7 @@ const AboutUs = (props) => {
         </div>
       </div>
     </section>
+    <Footer/>
   </div>
   )
 };
