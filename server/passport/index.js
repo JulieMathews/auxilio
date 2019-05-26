@@ -6,7 +6,7 @@ var User = require("../database/models").User;
 
 
 
-// called on login, saves the id to session 
+// called on login, saves the id to session
 
     passport.serializeUser(function(user, done) {
         console.log('*** serializeUser called, user: ')
@@ -14,7 +14,7 @@ var User = require("../database/models").User;
         console.log('---------')
       done(null, user.uuid);
     });
-  
+
 
     // user object attaches to the request as req.user
 
@@ -22,17 +22,16 @@ var User = require("../database/models").User;
         console.log('DeserializeUser called')
       User.findByPk(uuid).then(function(user) {
         if (user) {
-          done(null, user.get());
+          done(null, user);
         } else {
           done(user.errors, null);
         }
       });
     });
-  
 
 
-    //  Use Strategies 
+
+    //  Use Strategies
     passport.use(LocalStrategy)
-    
+
     module.exports = passport
-    

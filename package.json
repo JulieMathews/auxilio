@@ -10,10 +10,10 @@
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.2",
     "connect-flash": "^0.1.1",
-    "connect-mongo": "^2.0.1",
     "dotenv": "^8.0.0",
     "express": "^4.16.2",
     "express-session": "^1.15.6",
+    "express-session-sequelize": "^2.0.0",
     "flash": "^1.1.0",
     "method": "^2.0.0",
     "method-override": "^3.0.0",
@@ -21,7 +21,6 @@
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
-    "react-show-more-text": "^1.0.4",
     "sequelize": "^5.8.6",
     "sequelize-cli": "^5.4.0",
     "spectre.css": "^0.5.0"
@@ -29,7 +28,7 @@
   "scripts": {
     "start": "concurrently \"npm run client\" \"npm run api\"",
     "build": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "api": "nodemon ./server/server.js",
+    "api": "nodemon --inspect ./server/server.js",
     "client": "cd client && npm start"
   },
   "devDependencies": {

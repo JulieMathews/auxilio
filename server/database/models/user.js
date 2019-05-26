@@ -17,8 +17,8 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         len: [1, 30]
       }
-    }, 
-    
+    },
+
     email: {
       type: DataTypes.STRING,
       allowNull:  false,
@@ -26,7 +26,7 @@ module.exports = (sequelize, DataTypes) => {
       validate: {
         len: [1, 100]
       }
-  }, 
+  },
     password: {
       type: DataTypes.STRING,
       allowNull: false,
@@ -37,8 +37,8 @@ module.exports = (sequelize, DataTypes) => {
     });
   User.associate = function(models) {
     // associations can be defined here
-    User.hasMany(models.User,{
-      foreignKey: "ownerUuid",
+    User.hasMany(models.Post,{
+      foreignKey: "userUuid",
       onDelete: "cascade"
     });
     User.hasMany(models.Conversation, {
@@ -61,8 +61,6 @@ module.exports = (sequelize, DataTypes) => {
   User.prototype.validPassword = function(password) {
     return bcrypt.compareSync(password, this.password);
   };
-
-
 
   return User;
 };

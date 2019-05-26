@@ -38,7 +38,7 @@ class InstantMessenger extends Component {
         if (error) {
           return console.error(error);
         }
-        
+
         const member = {...this.state.member};
         member.id = this.drone.clientId;
         this.setState({member});
@@ -55,7 +55,7 @@ class InstantMessenger extends Component {
         messages.push(message);
       this.setState({messages});
       });
-      room.on('message', message => { 
+      room.on('message', message => {
       const messages = this.state.messages;
       console.log(message.member)
       messages.push(message);
@@ -94,9 +94,7 @@ class InstantMessenger extends Component {
           messages={this.state.messages}
           currentMember={this.state.member}
         />
-        <Input
-          onSendMessage={this.onSendMessage}
-        />
+        <Input onSendMessage={this.onSendMessage} />
         </div>
       </div>
     );
