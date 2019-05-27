@@ -61,7 +61,7 @@ const SinglePost = (props) => {
                   <Link href="#" className="page-link" aria-label="Previous"></Link>
                   </div>
                   <div className="thumb">
-                  <img src={ require('../../img/prev.png') } alt="prev" />
+                    <img src={ require('../../img/prev.png') } alt="prev" />
                     <p>Prev Post</p>
                   </div>
                 </div>
@@ -96,7 +96,7 @@ const SinglePost = (props) => {
                   </div>
                   <div className="reply-btn">
 
-                    <button href="" className="btn-reply text-uppercase">reply</button> 
+                    <button href="" className="btn-reply text-uppercase">reply</button>
 
                   </div>
                 </div>
@@ -116,7 +116,7 @@ const SinglePost = (props) => {
                     </div>
                   </div>
                   <div className="reply-btn">
-                    <button href="" className="btn-reply text-uppercase">reply</button> 
+                    <button href="" className="btn-reply text-uppercase">reply</button>
 
                   </div>
                 </div>
@@ -137,7 +137,7 @@ const SinglePost = (props) => {
                   </div>
                   <div className="reply-btn">
 
-                    <button href="" className="btn-reply text-uppercase">reply</button> 
+                    <button href="" className="btn-reply text-uppercase">reply</button>
 
                   </div>
                 </div>
@@ -158,7 +158,7 @@ const SinglePost = (props) => {
                   </div>
                 <div className="reply-btn">
 
-                  <button href="" className="btn-reply text-uppercase">reply</button> 
+                  <button href="" className="btn-reply text-uppercase">reply</button>
 
                 </div>
               </div>
@@ -179,7 +179,7 @@ const SinglePost = (props) => {
                 </div>
                 <div className="reply-btn">
 
-                  <btn href="" className="btn-reply text-uppercase">reply</btn> 
+                  <btn href="" className="btn-reply text-uppercase">reply</btn>
 
                 </div>
               </div>
@@ -203,7 +203,7 @@ const SinglePost = (props) => {
                   <textarea className="form-control mb-10" rows="5" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
               </div>
 
-              <button href="#" className="primary-btn submit_btn">Post Comment</button>	
+              <button href="#" className="primary-btn submit_btn">Post Comment</button>
 
             </form>
           </div>

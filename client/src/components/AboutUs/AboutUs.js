@@ -28,14 +28,14 @@ const AboutUs = (props) => {
                       <p>Eu augue ut lectus arcu. Nisl pretium fusce id velit ut tortor. Pharetra sit amet aliquam id diam maecenas ultricies mi.</p>
                     </div>
                   </div>
-    
+
                   <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
                       <h6><i className="lnr lnr-license"></i> Professional Services</h6>
                       <p>Eu augue ut lectus arcu. Nisl pretium fusce id velit ut tortor. Pharetra sit amet aliquam id diam maecenas ultricies mi.</p>
                     </div>
                   </div>
-    
+
                   <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
                       <h6><i className="lnr lnr-phone"></i> Great Support</h6>

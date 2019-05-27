@@ -1,12 +1,10 @@
-import React, { Fragment, Component } from 'react';
-import { Link } from 'react-router-dom'
+import React, { Component } from 'react';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import './CommunityForum.css';
 import PostList from "./PostList";
 import Input from "./Input";
 import axios from "axios";
-
 
 class CommunityForum extends Component {
   state = {
@@ -44,8 +42,8 @@ class CommunityForum extends Component {
 
   updatePosts = (posts, comments) => {
     var combinedPosts = [];
-    for (var post of posts) {
-      post.comments = comments.filter(c => c.parentId == post.id) || [];
+    for (let post of posts) {
+      post.comments = comments.filter(c => c.parentId === post.id) || [];
       combinedPosts.push(post);
     }
     this.setState({ posts: combinedPosts });
