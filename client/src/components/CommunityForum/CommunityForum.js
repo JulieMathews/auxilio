@@ -1,6 +1,5 @@
 import React, { Fragment, Component } from 'react';
 import { Link } from 'react-router-dom'
-import Navbar from '../Navbar/Navbar';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import './CommunityForum.css';
@@ -92,7 +91,6 @@ class CommunityForum extends Component {
     console.log('community', this.props);
     return (
     <div>
-      <Navbar/>
       <Header/>
       <section className="banner_area">
         <div className="banner_inner d-flex align-items-center">
