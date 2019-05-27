@@ -17,12 +17,14 @@
     "flash": "^1.1.0",
     "method": "^2.0.0",
     "method-override": "^3.0.0",
+    "multer": "^1.4.1",
     "mysql": "^2.17.1",
     "mysql2": "^1.6.5",
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "sequelize": "^5.8.6",
     "sequelize-cli": "^5.4.0",
+    "sharp": "^0.22.1",
     "spectre.css": "^0.5.0"
   },
   "scripts": {
