@@ -41,8 +41,6 @@ const Landing = (props) => {
     <div>
       <Navbar/>
       <Header landing={true} headline='Community Forum' />
-      
-
       <section className="popular_area p_120">
         <div className="container">
           <div className="main_title">

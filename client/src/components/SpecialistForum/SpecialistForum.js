@@ -2,14 +2,12 @@ import React from 'react';
 import '../css/style.css';
 //import { linkSync } from 'fs';
 import {Link} from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 const SpecialistForum = (props) => {
   return (    
     <div>
-      <Navbar/>
       <Header/>
     <section className="banner_area">
       <div className="banner_inner d-flex align-items-center">
