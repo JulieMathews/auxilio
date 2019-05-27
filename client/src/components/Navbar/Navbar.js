@@ -63,10 +63,16 @@ class Navbar extends Component {
         <ul className="nav navbar-nav menu_nav ml-auto"> 
         
           <Link to="/" className="btn btn-link text-secondary">
-            <li><span className="nav-item active nav-link">Home</span></li></Link>
+            <li><span className="nav-item active nav-link">Home</span></li>
+          </Link>
 
           <Link to="/aboutus" className="btn btn-link text-secondary">
-            <li><span className="nav-item active nav-link">About Us</span></li></Link>
+            <li><span className="nav-item active nav-link">About Us</span></li>
+          </Link>
+
+          <Link to="/communityforum" className="btn btn-link text-secondary">
+            <li className="nav-item nav-link">Community Forum</li>
+          </Link>
 
           <Link to="/articles" className="btn btn-link text-secondary">
             <li className="nav-item nav-link">Articles</li>

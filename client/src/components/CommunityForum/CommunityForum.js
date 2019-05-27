@@ -1,6 +1,8 @@
 import React, { Fragment, Component } from 'react';
 import { Link } from 'react-router-dom'
+import Navbar from '../Navbar/Navbar';
 import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import './CommunityForum.css';
 import PostList from "./PostList";
 import Input from "./Input";
