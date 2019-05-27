@@ -27,7 +27,9 @@ const Landing = (props) => {
       return (
         <div className="col-lg-4" key={article.id}>
           <div className="popular_item">
-            <Link to={`/article/${article.id}`}><img className="img-fluid" src={article.headerImageUrl} /></Link>
+            <Link to={`/article/${article.id}`}>
+              <img className="img-fluid" src={article.headerImageUrl} alt="Article header" />
+            </Link>
             <h4>{article.title}</h4>
             {article.blurb}
           </div>

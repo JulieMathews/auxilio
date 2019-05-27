@@ -11,7 +11,7 @@ const Header = (props) => {
     return (
       <section className="home_banner_area">
         <div className="container">
-          <div className="row">    
+          <div className="row">
             <div className="row">
               <div className="col-lg-8">
                 <div className="banner_content">
@@ -19,7 +19,7 @@ const Header = (props) => {
                   <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
                 </div>
               </div>
-          
+
               <div className="col-lg-4">
                 <div className="home_right_box">
                   <div className="home_item">
@@ -27,10 +27,10 @@ const Header = (props) => {
                   </div>
                   <div className="home_item">
                     <p>Community Forum</p>
-                  </div>          
+                  </div>
                 </div>
               </div>
-            </div>                
+            </div>
           </div>
         </div>
       </section>
@@ -49,7 +49,7 @@ const Header = (props) => {
           </div>
         </div>
       </div>
-    </section> 
+    </section>
     )
   }
 
@@ -58,7 +58,7 @@ const Header = (props) => {
       {homeBanner()}
       {banner()}
     </React.Fragment>
-   
+
   )
 };
 

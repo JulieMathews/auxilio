@@ -85,12 +85,12 @@ class App extends Component {
         {this.state.loggedIn &&
           <React.Fragment>
           <Route path="/messenger" render={() =>
-            <InstantMessenger currentUser={this.state.username} />} 
+            <InstantMessenger currentUser={this.state.username} />}
           />
           <Route exact path="/communityforum" component={CommunityForum} />
           <Route exact path="/singlepost" component={SinglePost} />
-          <Route path="/articles" render={() => 
-            <Articles/> } 
+          <Route path="/articles" render={() =>
+            <Articles/> }
           />
           <Route exact path="/article/:id" />
           </React.Fragment>

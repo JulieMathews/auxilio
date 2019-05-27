@@ -5,16 +5,16 @@ import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import {Link} from 'react-router-dom';
 
-const Articles = (props) => { 
+const Articles = (props) => {
     const [articles, setArticles] = useState([]);
 
   const fetchArticles = async() => {
     const response = await axios.get('/article');
     console.log('fetch articles:', response.data)
-    // let len = response.data.length;
-    // if (len > 3 ) len = 3;
-    // const parsedArticles = response.data.slice(0, len);
-    // setArticles(parsedArticles);
+    let len = response.data.length;
+    if (len > 3 ) len = 3;
+    const parsedArticles = response.data.slice(0, len);
+    setArticles(parsedArticles);
   }
 
   useEffect(() => {
@@ -27,7 +27,9 @@ const Articles = (props) => {
       return (
         <div className="col-lg-4" key={article.id}>
           <div className="popular_item">
-            <Link to={`/article/${article.id}`}><img className="img-fluid" src={article.headerImageUrl} /></Link>
+            <Link to={`/article/${article.id}`}>
+              <img className="img-fluid" src={article.headerImageUrl} alt="Article header" />
+            </Link>
             <h4>{article.title}</h4>
             {article.blurb}
           </div>

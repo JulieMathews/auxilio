@@ -8,6 +8,7 @@ class Signup extends Component {
 		super()
 		this.state = {
 			username: '',
+			photo: '',
 			email: '',
 			password: '',
 			confirmPassword: '',
@@ -17,8 +18,14 @@ class Signup extends Component {
 		this.handleChange = this.handleChange.bind(this)
 	}
 	handleChange(event) {
+		let val;
+		if (event.target.name === 'photo') {
+			val = event.target.files[0];
+		} else {
+			val = event.target.value;
+		}
 		this.setState({
-			[event.target.name]: event.target.value
+			[event.target.name]: val
 		})
 	}
 	handleSubmit(event) {
@@ -26,12 +33,14 @@ class Signup extends Component {
 		console.log(this.state.username)
 		event.preventDefault()
 
+		var formData = new FormData();
+		formData.append('username', this.state.username);
+		formData.append('photo', this.state.photo);
+		formData.append('email', this.state.email);
+		formData.append('password', this.state.password);
+
 		//request to server to add a new username/password
-		axios.post('/user/', {
-			username: this.state.username,
-			email: this.state.email,
-			password: this.state.password
-		})
+		axios.post('/user/', formData)
 			.then(response => {
 				console.log(response)
 				if (!response.data.error) {
@@ -58,7 +67,7 @@ render() {
 		<div className="SignupForm">
 			<Error message={this.state.error} />
 			<h4>Sign up</h4>
-			<form className="form-horizontal">
+			<form className="form-horizontal" enctype="multipart/form-data">
 			<div className="form-group">
 					<div className="col-1 col-ml-auto">
 						<label className="form-label" htmlFor="email">email</label>
@@ -85,6 +94,19 @@ render() {
 							name="username"
 							placeholder="Username"
 							value={this.state.username}
+							onChange={this.handleChange}
+						/>
+					</div>
+				</div>
+				<div className="form-group">
+					<div className="col-1 col-ml-auto">
+						<label className="form-label" htmlFor="username">Photo</label>
+					</div>
+					<div className="col-5 col-mr-auto">
+						<input className="form-input"
+							type="file"
+							id="photo"
+							name="photo"
 							onChange={this.handleChange}
 						/>
 					</div>
