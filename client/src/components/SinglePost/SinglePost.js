@@ -1,14 +1,12 @@
 import React from 'react';
 import './SinglePost.css';
 import { Link } from 'react-router-dom'
-import Navbar from '../Navbar/Navbar';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 const SinglePost = (props) => {
   return (
   <div>
-    <Navbar/>
     <Header/>
     <section className="banner_area">
       <div className="banner_inner d-flex align-items-center">
