@@ -5,7 +5,6 @@ import './AboutUs.css';
 const AboutUs = (props) => {
   return (
   <div>
-    <Header/>
     <section className="banner_area">
       <div className="banner_inner d-flex align-items-center">
         <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>

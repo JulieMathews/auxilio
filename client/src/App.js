@@ -11,6 +11,7 @@ import Articles from './components/articles/articles';
 // pages
 import Navbar from './components/Navbar/Navbar';
 import Landing from './components/Landing/Landing';
+import Footer from './components/Footer/Footer';
 import AboutUs from './components/AboutUs/AboutUs';
 import CommunityForum from "./components/CommunityForum/CommunityForum";
 import SinglePost from './components/SinglePost/SinglePost';
