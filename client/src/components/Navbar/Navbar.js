@@ -98,11 +98,11 @@ class Navbar extends Component {
             <nav className="navbar navbar-expand-lg navbar-light">
               <div className="container">
                 <div className="navbar-brand logo_h"><img src={logo} alt=""/><img src={logo} alt="logo"/></div>
-                {/* <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
-                </button>   */}
+                </button> 
                 {this.loggedInNavbar()}
                 {this.notLoggedInNavbar()} 
               </div> 

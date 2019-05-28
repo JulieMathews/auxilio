@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import './Landing.css';
 import axios from 'axios';
-import Header from '../Header/Header';
-import Navbar from '../Navbar/Navbar';
 import {Link} from 'react-router-dom';
 
 const Landing = (props) => {
@@ -38,8 +36,6 @@ const Landing = (props) => {
 
   return (
     <div>
-      <Navbar/>
-      <Header landing={true} headline='Community Forum' />
       
 
       <section className="popular_area p_120">

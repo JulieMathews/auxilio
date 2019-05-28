@@ -1,6 +1,5 @@
 import React, { Fragment, Component } from 'react';
 import { Link } from 'react-router-dom'
-import Header from '../Header/Header';
 import './CommunityForum.css';
 import PostList from "./PostList";
 import Input from "./Input";

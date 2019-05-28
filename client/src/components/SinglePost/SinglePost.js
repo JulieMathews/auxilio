@@ -1,7 +1,6 @@
 import React, {Fragment} from 'react';
 import styles from './SinglePost.css';
 import { Link } from 'react-router-dom'
-import Header from '../Header/Header';
 
 const SinglePost = (props) => {
   return (
@@ -197,7 +196,7 @@ const SinglePost = (props) => {
             </form>
           </div>
         </div>
-{/*
+{/*  SEARCH BAR COMMENTED OUT UNTIL WE NEED IT IN THE FUTURE
         <div className="col-lg-4">
           <div className="blog_right_sidebar">
             <aside className="single_sidebar_widget search_widget">

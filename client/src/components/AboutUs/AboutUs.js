@@ -1,8 +1,6 @@
 import React from 'react';
 import './AboutUs.css';
 
-// Header message = { this.state.info }
-
 const AboutUs = (props) => {
   return (
   <div>
