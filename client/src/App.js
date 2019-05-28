@@ -14,6 +14,7 @@ import Landing from './components/Landing/Landing';
 import AboutUs from './components/AboutUs/AboutUs';
 import CommunityForum from "./components/CommunityForum/CommunityForum";
 import SinglePost from './components/SinglePost/SinglePost';
+import UserList from './components/chat/UserList';
 
 //import SpecialistForum from './compoenents/SpecialistForum';
 //import SpecialistContact from './components/SpecialistContact';
@@ -35,6 +36,7 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.getAllUsers() 
     this.getUser()
   }
 
@@ -52,7 +54,8 @@ class App extends Component {
         this.setState({
           loggedIn: true,
           user: response.data.user,
-          username: response.data.user.username
+          username: response.data.user.username,
+          uuid: response.data.user.uuid
         })
       } else {
         console.log('Get user: no user');
@@ -64,6 +67,14 @@ class App extends Component {
       }
     })
   }
+
+  getAllUsers() {
+    // This will fetch all users for the user list
+    axios.get('/api/users').then(response =>
+     this.setState({
+       allUsers: response.data
+     })
+    )}
 
   render() {
     return (
@@ -93,8 +104,13 @@ class App extends Component {
             <Articles/> } 
           />
           <Route exact path="/article/:id" />
+          <UserList currentUser={this.state.user} allUsers={this.state.allUsers} />
+          />
           </React.Fragment>
+          
+          
         }
+        
       </div>
     );
   }

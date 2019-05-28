@@ -33,12 +33,12 @@ class UserList extends Component {
     }
 
     render() {
-        const {users} = this.props;
+        const users = this.props.allUsers;
         const currentUserId = this.props.currentUser.uuid;
         return (
             <ul className="Users-list">
               <li className="UserList-user">
-                <a onClick={e => this.showPublic()}>Global</a>
+                <p onClick={e => this.showPublic()}>Global</p>
               </li>
               { users
                     .filter(u => u.uuid !== currentUserId)
@@ -50,7 +50,7 @@ class UserList extends Component {
     renderUser(user) {
         return (
         <li className="UserList-user">
-          <a onClick={e => this.startConversation(e, user.uuid)}>{user.username}</a>
+          <p onClick={e => this.startConversation(e, user.uuid)}>{user.username}</p>
         </li>
         )
     }
