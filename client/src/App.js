@@ -98,6 +98,7 @@ class App extends Component {
           <Route exact path="/article/:id" />
           </React.Fragment>
         }
+        <Footer/>
       </div>
     );
   }

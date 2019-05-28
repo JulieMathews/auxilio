@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import '../Landing/Landing.css';
 import axios from 'axios';
-import Header from '../Header/Header';
-import Navbar from '../Navbar/Navbar';
 import {Link} from 'react-router-dom';
 
 const Articles = (props) => { 
@@ -11,10 +9,10 @@ const Articles = (props) => {
   const fetchArticles = async() => {
     const response = await axios.get('/article');
     console.log('fetch articles:', response.data)
-    // let len = response.data.length;
-    // if (len > 3 ) len = 3;
-    // const parsedArticles = response.data.slice(0, len);
-    // setArticles(parsedArticles);
+    let len = response.data.length;
+    if (len > 3 ) len = 3;
+    const parsedArticles = response.data.slice(0, len);
+    setArticles(parsedArticles);
   }
 
   useEffect(() => {
