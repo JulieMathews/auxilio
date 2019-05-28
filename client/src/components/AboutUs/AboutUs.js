@@ -1,9 +1,12 @@
 import React from 'react';
 import './AboutUs.css';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 const AboutUs = (props) => {
   return (
   <div>
+    <Header/>
     <section className="banner_area">
       <div className="banner_inner d-flex align-items-center">
         <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
@@ -23,14 +26,14 @@ const AboutUs = (props) => {
                       <p>Eu augue ut lectus arcu. Nisl pretium fusce id velit ut tortor. Pharetra sit amet aliquam id diam maecenas ultricies mi.</p>
                     </div>
                   </div>
-    
+
                   <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
                       <h6><i className="lnr lnr-license"></i> Professional Services</h6>
                       <p>Eu augue ut lectus arcu. Nisl pretium fusce id velit ut tortor. Pharetra sit amet aliquam id diam maecenas ultricies mi.</p>
                     </div>
                   </div>
-    
+
                   <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
                       <h6><i className="lnr lnr-phone"></i> Great Support</h6>
@@ -85,6 +88,7 @@ const AboutUs = (props) => {
         </div>
       </div>
     </section>
+    <Footer/>
   </div>
   )
 };
