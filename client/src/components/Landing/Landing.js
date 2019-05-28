@@ -1,8 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import './Landing.css';
 import axios from 'axios';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
+
 import {Link} from 'react-router-dom';
 
 const Landing = (props) => {
@@ -40,7 +39,7 @@ const Landing = (props) => {
 
   return (
     <div>
-      <Header landing={true} headline='Community Forum' />
+
       <section className="popular_area p_120">
         <div className="container">
           <div className="main_title">
@@ -52,7 +51,7 @@ const Landing = (props) => {
           </div>
         </div>
       </section>
-    <Footer />
+
     </div>
   )
 };

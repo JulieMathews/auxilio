@@ -1,9 +1,6 @@
 import React from 'react';
 import './AboutUs.css';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 
-// Header message = { this.state.info }
 
 const AboutUs = (props) => {
   return (
@@ -90,7 +87,7 @@ const AboutUs = (props) => {
         </div>
       </div>
     </section>
-    <Footer/>
+
   </div>
   )
 };

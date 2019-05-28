@@ -1,13 +1,11 @@
 import React from 'react';
 import './SinglePost.css';
 import { Link } from 'react-router-dom'
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 
 const SinglePost = (props) => {
   return (
   <div>
-    <Header/>
+
     <section className="banner_area">
       <div className="banner_inner d-flex align-items-center">
         <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
@@ -206,7 +204,7 @@ const SinglePost = (props) => {
             </form>
           </div>
         </div>
-{/*
+{/*  SEARCH BAR COMMENTED OUT UNTIL WE NEED IT IN THE FUTURE
         <div className="col-lg-4">
           <div className="blog_right_sidebar">
             <aside className="single_sidebar_widget search_widget">
@@ -225,7 +223,7 @@ const SinglePost = (props) => {
       </div>
       </div>
     </section>
-    <Footer/>
+
   </div>
   )
 };
