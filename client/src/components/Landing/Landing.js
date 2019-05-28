@@ -2,7 +2,7 @@ import React, {useState, useEffect} from 'react';
 import './Landing.css';
 import axios from 'axios';
 import Header from '../Header/Header';
-import Navbar from '../Navbar/Navbar';
+import Footer from '../Footer/Footer';
 import {Link} from 'react-router-dom';
 
 const Landing = (props) => {
@@ -27,7 +27,9 @@ const Landing = (props) => {
       return (
         <div className="col-lg-4" key={article.id}>
           <div className="popular_item">
-            <Link to={`/article/${article.id}`}><img className="img-fluid" src={article.headerImageUrl} /></Link>
+            <Link to={`/article/${article.id}`}>
+              <img className="img-fluid" src={article.headerImageUrl} alt="Article header" />
+            </Link>
             <h4>{article.title}</h4>
             {article.blurb}
           </div>
@@ -38,10 +40,7 @@ const Landing = (props) => {
 
   return (
     <div>
-      <Navbar/>
       <Header landing={true} headline='Community Forum' />
-      
-
       <section className="popular_area p_120">
         <div className="container">
           <div className="main_title">
@@ -53,6 +52,7 @@ const Landing = (props) => {
           </div>
         </div>
       </section>
+    <Footer />
     </div>
   )
 };

@@ -3,7 +3,7 @@ import '../Landing/Landing.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 
-const Articles = (props) => { 
+const Articles = (props) => {
     const [articles, setArticles] = useState([]);
 
   const fetchArticles = async() => {
@@ -25,7 +25,9 @@ const Articles = (props) => {
       return (
         <div className="col-lg-4" key={article.id}>
           <div className="popular_item">
-            <Link to={`/article/${article.id}`}><img className="img-fluid" src={article.headerImageUrl} /></Link>
+            <Link to={`/article/${article.id}`}>
+              <img className="img-fluid" src={article.headerImageUrl} alt="Article header" />
+            </Link>
             <h4>{article.title}</h4>
             {article.blurb}
           </div>
@@ -36,8 +38,7 @@ const Articles = (props) => {
 
   return (
     <div>
-      
-
+      <Header/>
       <section className="popular_area p_120">
         <div className="container">
           <div className="main_title">
@@ -49,6 +50,7 @@ const Articles = (props) => {
           </div>
         </div>
       </section>
+      <Footer/>
     </div>
   )
 };

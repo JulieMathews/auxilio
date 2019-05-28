@@ -86,7 +86,7 @@ class InstantMessenger extends Component {
     return (
       <div className="App">
         <div className="App-header">
-          <h1><i class="far fa-comments"></i></h1>
+          <h1><i className="far fa-comments"></i></h1>
         </div>
         <div className="messageParent">
         <UserList users={this.state.users} currentUser={this.props.currentUser} onChangeRoom={this.onChangeRoom} />

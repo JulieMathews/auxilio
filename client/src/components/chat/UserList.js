@@ -38,7 +38,7 @@ class UserList extends Component {
         return (
             <ul className="Users-list">
               <li className="UserList-user">
-                <a onClick={e => this.showPublic()}>Global</a>
+                <button onClick={e => this.showPublic()}>Global</button>
               </li>
               { users
                     .filter(u => u.uuid !== currentUserId)
@@ -50,7 +50,7 @@ class UserList extends Component {
     renderUser(user) {
         return (
         <li className="UserList-user">
-          <a onClick={e => this.startConversation(e, user.uuid)}>{user.username}</a>
+          <button onClick={e => this.startConversation(e, user.uuid)}>{user.username}</button>
         </li>
         )
     }

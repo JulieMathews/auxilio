@@ -6,7 +6,7 @@ class Comment extends React.Component {
     const username = comment.User ? comment.User.username : "Anonymous Coward";
     return (
       <div>
-        <span className="userName">{username}</span>: 
+        <span className="userName">{username}</span>:
         <span className="message">{comment.message}</span>
       </div>
     )
