@@ -18,10 +18,10 @@ class Navbar extends Component {
       if(response.status === 200) {
         this.props.updateUser({
           loggedIn: false,
-          username: null
+          user: null
         })
       }
-    }).catch(error =>{ 
+    }).catch(error =>{
       console.log("Logout error")
     })
   }
@@ -30,12 +30,12 @@ class Navbar extends Component {
     if(!this.props.loggedIn) return null;
     return (
       <section className="collapse navbar-collapse offset" id="navbarSupportedContent">
-        <ul className="nav navbar-nav menu_nav ml-auto"> 
+        <ul className="nav navbar-nav menu_nav ml-auto">
 
           <Link to="/" className="btn btn-link text-secondary">
             <li><span className="nav-item active nav-link">Home</span></li>
           </Link>
-              
+
           <Link to="/communityforum" className="btn btn-link text-secondary">
             <li className="nav-item nav-link">Community Forum</li>
           </Link>
@@ -53,15 +53,15 @@ class Navbar extends Component {
           </Link>
         </ul>
       </section>
-    ) 
+    )
   }
 
   notLoggedInNavbar() {
     if(this.props.loggedIn) return null;
     return (
       <section className="collapse navbar-collapse offset" id="navbarSupportedContent">
-        <ul className="nav navbar-nav menu_nav ml-auto"> 
-        
+        <ul className="nav navbar-nav menu_nav ml-auto">
+
           <Link to="/" className="btn btn-link text-secondary">
             <li><span className="nav-item active nav-link">Home</span></li>
           </Link>
@@ -77,11 +77,11 @@ class Navbar extends Component {
           <Link to="/articles" className="btn btn-link text-secondary">
             <li className="nav-item nav-link">Articles</li>
           </Link>
-          
+
           <Link to="/login" className="btn btn-link text-secondary">
             <li><span className="nav-item active nav-link">Login</span></li>
           </Link>
-          
+
           <Link to="/signup" className="btn btn-link text-secondary">
             <li><span className="nav-item active nav-link">Signup</span></li>
           </Link>
@@ -94,7 +94,7 @@ class Navbar extends Component {
     console.log('navbar render, props: ')
     console.log(this.props);
     return(
-      <div> 
+      <div>
         <header className="header_area">
           <div className="main_menu" id="mainNav">
             <nav className="navbar navbar-expand-lg navbar-light">
@@ -106,14 +106,14 @@ class Navbar extends Component {
                   <span className="icon-bar"></span>
                 </button>   */}
                 {this.loggedInNavbar()}
-                {this.notLoggedInNavbar()} 
-              </div> 
+                {this.notLoggedInNavbar()}
+              </div>
           </nav>
         </div>
       </header>
     </div>
     );
   }
-};  
+};
 
 export default Navbar

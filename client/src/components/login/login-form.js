@@ -12,7 +12,7 @@ class LoginForm extends Component {
         }
         this.handleSubmit = this.handleSubmit.bind(this)
         this.handleChange = this.handleChange.bind(this)
-  
+
     }
 
     handleChange(event) {
@@ -37,7 +37,7 @@ class LoginForm extends Component {
                     // update App.js state
                     this.props.updateUser({
                         loggedIn: true,
-                        username: response.data.username
+                        user: response.data
                     })
                     // update the state to redirect to home
                     this.setState({
@@ -92,7 +92,7 @@ class LoginForm extends Component {
                             <div className="col-4"></div>
                             <button
                                 className="btn btn-primary col-4 col-mr-auto"
-                               
+
                                 onClick={this.handleSubmit}
                                 type="submit">Login</button>
                         </div>

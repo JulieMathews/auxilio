@@ -35,6 +35,9 @@ class UserList extends Component {
     render() {
         const users = this.props.allUsers;
         const currentUserId = this.props.currentUser.uuid;
+        if (!users || !currentUserId) {
+          return null;
+        }
         return (
             <ul className="Users-list">
               <li className="UserList-user">

@@ -27,20 +27,28 @@ class App extends Component {
     super()
     this.state = {
       loggedIn: false,
-      username: null
+      user: null,
+      chatRoomName: null,
     }
 
     this.getUser = this.getUser.bind(this)
-    this.componentDidMount = this.componentDidMount.bind(this)
     this.updateUser = this.updateUser.bind(this)
   }
 
-  componentDidMount() {
-    this.getAllUsers() 
-    this.getUser()
-  }
-
-  updateUser (userObject) {
+  updateUser(userObject) {
+    if (userObject.loggedIn) {
+      console.log("Creating Scaledrone object:");
+      console.log(userObject.user);
+      this.drone = new window.Scaledrone("czBgrob2FXXXRdrO", {
+        data: {
+          uuid: userObject.user.uuid,
+          username: userObject.user.username,
+          email: userObject.user.email,
+        }
+      });
+      this.getAllUsers()
+      this.getUser()
+    }
     this.setState(userObject)
   }
 
@@ -48,21 +56,18 @@ class App extends Component {
     axios.get('/user/').then(response => {
       console.log('Get user response: ')
       console.log(response.data)
-      if (response.data.user) {
+      if (response.data) {
         console.log('Get User: There is a user saved in the server session: ')
 
         this.setState({
           loggedIn: true,
-          user: response.data.user,
-          username: response.data.user.username,
-          uuid: response.data.user.uuid
+          user: response.data,
         })
       } else {
         console.log('Get user: no user');
         this.setState({
           loggedIn: false,
           user: null,
-          username: null
         })
       }
     })
@@ -74,7 +79,8 @@ class App extends Component {
      this.setState({
        allUsers: response.data
      })
-    )}
+    )
+  }
 
   render() {
     return (
@@ -82,7 +88,7 @@ class App extends Component {
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
-          <p>Join the party, {this.state.username}!</p>
+          <p>Join the party, {this.state.user.username}!</p>
         }
         {/* Routes to different components */}
         <Route exact path="/" component={Landing} />
@@ -96,26 +102,25 @@ class App extends Component {
         {this.state.loggedIn &&
           <React.Fragment>
           <Route path="/messenger" render={() =>
-            <InstantMessenger currentUser={this.state.username} />} 
+            <InstantMessenger currentUser={this.state.user} />}
           />
           <Route exact path="/communityforum" component={CommunityForum} />
           <Route exact path="/singlepost" component={SinglePost} />
-          <Route path="/articles" render={() => 
-            <Articles/> } 
+          <Route path="/articles" render={() =>
+            <Articles/> }
           />
           <Route exact path="/article/:id" />
           <UserList currentUser={this.state.user} allUsers={this.state.allUsers} onChangeRoom={this.onChangeRoom} />
-          
+          {this.state.chatRoomName &&
+            <InstantMessenger currentUser={this.state.user} drone={this.drone} roomName={this.state.chatRoomName} />
+          }
           </React.Fragment>
         }
       </div>
     );
   }
   onChangeRoom = (roomName) => {
-    console.log(this.state.room);
-    this.state.room.unsubscribe();
-    this.setState({ messages: [], roomName: roomName, room: {} });
-    this.subscribe(roomName);
+    this.setState({ chatRoomName: roomName });
   }
 }
 export default App;

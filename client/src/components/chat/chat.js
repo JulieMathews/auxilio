@@ -12,54 +12,47 @@ function randomColor() {
 class InstantMessenger extends Component {
   state = {
     messages: [],
-    users: [],
     roomName: "observable-room",
     room: {},
-    member: {
-      username: "Sonja",
-      color: randomColor(),
-    }
   }
 
   constructor(props) {
     super(props)
     if (props.currentUser) {
-      const memberData = {...props.currentUser};
-      memberData.color = randomColor();
-      this.drone = new window.Scaledrone("czBgrob2FXXXRdrO", {
-        data: memberData
-      });
+      this.drone = props.drone;
       const fixedState = {...this.state}
-      fixedState.member.username = props.currentUser.username;
       this.state = fixedState
       console.log(props);
-      console.log(this.state.member);
       this.drone.on('open', error => {
         if (error) {
           return console.error(error);
         }
 
-        const member = {...this.state.member};
-        member.id = this.drone.clientId;
-        this.setState({member});
+        this.setState({ clientId: this.drone.clientId });
       });
     }
   }
 
   subscribe(newRoomName) {
     const room = this.drone.subscribe(newRoomName, {historyCount: 5});
-      room.on('history_message', (message) => {
-        console.log(message);
-        const messages = this.state.messages;
-        console.log(message.member);
-        messages.push(message);
-      this.setState({messages});
-      });
-      room.on('message', message => {
+    room.on('history_message', (message) => {
+      console.log(message);
       const messages = this.state.messages;
-      console.log(message.member)
+      console.log(message.member);
       messages.push(message);
       this.setState({messages});
+    });
+    room.on('message', message => {
+      console.log("message: ");
+      const messages = this.state.messages;
+      console.log(message);
+      messages.push(message);
+      this.setState({messages});
+    });
+    room.on('data', (message, member) => {
+      console.log("Data: ");
+      console.log(message);
+      console.log(member);
     });
     console.log(room);
     this.setState({room: room});
@@ -67,32 +60,28 @@ class InstantMessenger extends Component {
   }
 
   componentDidMount() {
-    this.subscribe(this.state.roomName);
-    axios
-      .get("/api/users")
-      .then(response => {
-        if (response.status === 200) {
-          this.setState({ users: response.data });
-        }
-      })
-      .catch(error => {
-        console.log("User list error:");
-        console.log(error);
-      });
+    this.subscribe(this.props.roomName);
+  }
+
+  componentWillUnmount() {
+    if (this.state.room) {
+      this.state.room.unsubscribe();
+    }
   }
 
   render() {
     if (this.props.currentUser) {
+      var member = {...this.state.currentUser};
+      member.id = this.state.clientId;
     return (
       <div className="App">
         <div className="App-header">
           <h1><i className="far fa-comments"></i></h1>
         </div>
         <div className="messageParent">
-        <UserList users={this.state.users} currentUser={this.props.currentUser} onChangeRoom={this.onChangeRoom} />
         <Messages
           messages={this.state.messages}
-          currentMember={this.state.member}
+          currentMember={member}
         />
         <Input onSendMessage={this.onSendMessage} />
         </div>
@@ -104,18 +93,11 @@ class InstantMessenger extends Component {
   }
 
   onSendMessage = (message) => {
-    this.drone.publish({
-      room: this.state.roomName,
+    this.props.drone.publish({
+      room: this.props.roomName,
       message
     });
   }
-
-  onChangeRoom = (roomName) => {
-    console.log(this.state.room);
-    this.state.room.unsubscribe();
-    this.setState({ messages: [], roomName: roomName, room: {} });
-    this.subscribe(roomName);
-  }
 }
 
-export default InstantMessenger ;
+export default InstantMessenger;

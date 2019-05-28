@@ -46,7 +46,7 @@ router.post(
             email:req.user.email,
             username:req.user.username
         };
-        res.send(userInfo);
+        res.json(req.user.get());
     }
 )
 
@@ -54,9 +54,9 @@ router.get('/', (req, res, next) => {
     console.log("===user!====")
     if (req.user){
       console.log(req.user.get())
-      res.json({ user: req.user.get()})
+      res.json(req.user.get())
     } else {
-        res.json({ user: null })
+        res.json({})
     }
 })
 
