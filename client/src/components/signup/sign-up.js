@@ -67,7 +67,7 @@ render() {
 		<div className="SignupForm">
 			<Error message={this.state.error} />
 			<h4>Sign up</h4>
-			<form className="form-horizontal" enctype="multipart/form-data">
+			<form className="form-horizontal" encType="multipart/form-data">
 			<div className="form-group">
 					<div className="col-1 col-ml-auto">
 						<label className="form-label" htmlFor="email">email</label>
