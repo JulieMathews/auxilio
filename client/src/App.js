@@ -104,15 +104,18 @@ class App extends Component {
             <Articles/> } 
           />
           <Route exact path="/article/:id" />
-          <UserList currentUser={this.state.user} allUsers={this.state.allUsers} />
-          />
+          <UserList currentUser={this.state.user} allUsers={this.state.allUsers} onChangeRoom={this.onChangeRoom} />
+          
           </React.Fragment>
-          
-          
         }
-        
       </div>
     );
+  }
+  onChangeRoom = (roomName) => {
+    console.log(this.state.room);
+    this.state.room.unsubscribe();
+    this.setState({ messages: [], roomName: roomName, room: {} });
+    this.subscribe(roomName);
   }
 }
 export default App;
