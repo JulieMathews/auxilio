@@ -33,9 +33,9 @@ const Footer = (props) => {
                 <div className="f_title">
                   <h3>Julie Mathews</h3>
                 </div>
-                <p>LinkedIn</p>
-                <p>GitHub</p>
-                <p>Portfolio</p>
+                <a href="https://www.linkedin.com/in/julie-mathews/"><p>LinkedIn</p></a>
+                <a href="https://github.com/JulieMathews"><p>GitHub</p></a>
+                <a href="https://juliemathews.github.io/New_Port/"><p>Portfolio</p></a>
               </aside>
             </div>
 
