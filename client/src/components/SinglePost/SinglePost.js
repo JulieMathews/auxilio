@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom'
 const SinglePost = (props) => {
   return (
   <div>
-    <Header/>
+
     <section className="banner_area">
       <div className="banner_inner d-flex align-items-center">
         <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
@@ -223,6 +223,7 @@ const SinglePost = (props) => {
       </div>
       </div>
     </section>
+
   </div>
   )
 };

@@ -38,6 +38,7 @@ const Articles = (props) => {
 
   return (
     <div>
+
       <section className="popular_area p_120">
         <div className="container">
           <div className="main_title">
@@ -49,6 +50,7 @@ const Articles = (props) => {
           </div>
         </div>
       </section>
+
     </div>
   )
 };
