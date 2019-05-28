@@ -1,8 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import '../Landing/Landing.css';
 import axios from 'axios';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 import {Link} from 'react-router-dom';
 
 const Articles = (props) => {
