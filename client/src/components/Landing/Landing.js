@@ -39,7 +39,31 @@ const Landing = (props) => {
 
   return (
     <div>
+      <section className="home_banner_area">
+        <div className="container">
+          <div className="row">
+            <div className="row">
+              <div className="col-lg-8">
+                <div className="banner_content">
+                  <h2>Auxilio</h2>
+                  <p>Parents, teachers and therapists giving professional advice and community support for ADHD and Autism.</p>
+                </div>
+              </div>
 
+              <div className="col-lg-4">
+                <div className="home_right_box">
+                  <div className="home_item">
+                    <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/family.png')} alt="School Related"/></span>
+                  </div>
+                  <div className="home_item">
+                    <Link><p>Community Forum</p></Link>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="popular_area p_120">
         <div className="container">
           <div className="main_title">
