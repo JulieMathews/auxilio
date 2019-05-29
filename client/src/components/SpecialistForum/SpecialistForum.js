@@ -2,14 +2,12 @@ import React from 'react';
 import '../css/style.css';
 //import { linkSync } from 'fs';
 import {Link} from 'react-router-dom';
-import Navbar from '../Navbar/Navbar';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 
 const SpecialistForum = (props) => {
-  return (    
+  return (
     <div>
-      <Navbar/>
       <Header/>
     <section className="banner_area">
       <div className="banner_inner d-flex align-items-center">
@@ -149,8 +147,8 @@ const SpecialistForum = (props) => {
                   </div>
                   <div classNameName="thumb">
                     <img src={ require('../../img/blog/next.jpg') } alt="next" />
-                  </div>										
-                </div>									
+                  </div>
+                </div>
               </div>
             </div>
             </div>
@@ -158,7 +156,7 @@ const SpecialistForum = (props) => {
           <div className="col-lg-4">
             <div className="blog_right_sidebar">
 
-{/*           SEARCHBAR NOT NEEDED RIGHT NOW   
+{/*           SEARCHBAR NOT NEEDED RIGHT NOW
               <aside className="single_sidebar_widget search_widget">
                 <div className="input-group">
                   <input type="text" className="form-control" placeholder="Search Posts">

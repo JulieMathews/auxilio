@@ -1,12 +1,13 @@
 import React from 'react';
 import '../css/style.css';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 
 // Header message = { this.state.info }
 
 const SpecialistPost = (props) => {
   return (
   <div>
-    <Navbar/>
     <Header/>
     <section className="banner_area">
       <div className="banner_inner d-flex align-items-center">
@@ -26,7 +27,7 @@ const SpecialistPost = (props) => {
               <div className="col-lg-12">
                 <div className="feature-img">
                 <img src={ require('../../img/blog/c5.jpg') } alt="c5" />
-                </div>									
+                </div>
               </div>
               <div className="col-lg-3  col-md-3">
                 <div className="blog_info text-right">
@@ -57,7 +58,7 @@ const SpecialistPost = (props) => {
                     <span aria-hidden="true">
                       <img src={ require('../../img/prev.png') } alt="prev" />
                       <span className="lnr lnr-chevron-left"></span>
-                    </span>                  
+                    </span>
                 </li>
                 <li className="page-item">
                   <Link href="#" className="page-link" aria-label="Next"></Link>
@@ -85,10 +86,10 @@ const SpecialistPost = (props) => {
                     </div>
                   </div>
                   <div className="reply-btn">
-                    <button href="" className="btn-reply text-uppercase">reply</button> 
+                    <button href="" className="btn-reply text-uppercase">reply</button>
                   </div>
                 </div>
-              </div>	
+              </div>
               <div className="comment-list left-padding">
                 <div className="single-comment justify-content-between d-flex">
                   <div className="user justify-content-between d-flex">
@@ -104,10 +105,10 @@ const SpecialistPost = (props) => {
                     </div>
                   </div>
                   <div className="reply-btn">
-                    <button href="" className="btn-reply text-uppercase">reply</button> 
+                    <button href="" className="btn-reply text-uppercase">reply</button>
                   </div>
                 </div>
-              </div>	
+              </div>
               <div className="comment-list left-padding">
                 <div className="single-comment justify-content-between d-flex">
                   <div className="user justify-content-between d-flex">
@@ -123,10 +124,10 @@ const SpecialistPost = (props) => {
                     </div>
                   </div>
                   <div className="reply-btn">
-                    <button href="" className="btn-reply text-uppercase">reply</button> 
+                    <button href="" className="btn-reply text-uppercase">reply</button>
                   </div>
                 </div>
-              </div>	
+              </div>
               <div className="comment-list">
                 <div className="single-comment justify-content-between d-flex">
                   <div className="user justify-content-between d-flex">
@@ -142,10 +143,10 @@ const SpecialistPost = (props) => {
                     </div>
                   </div>
                   <div className="reply-btn">
-                    <button href="" className="btn-reply text-uppercase">reply</button> 
+                    <button href="" className="btn-reply text-uppercase">reply</button>
                   </div>
                 </div>
-              </div>	
+              </div>
               <div className="comment-list">
                 <div className="single-comment justify-content-between d-flex">
                   <div className="user justify-content-between d-flex">
@@ -161,10 +162,10 @@ const SpecialistPost = (props) => {
                     </div>
                   </div>
                   <div className="reply-btn">
-                    <button href="" className="btn-reply text-uppercase">reply</button> 
+                    <button href="" className="btn-reply text-uppercase">reply</button>
                   </div>
                 </div>
-              </div>	                                             				
+              </div>
             </div>
             <div className="comment-form">
               <h4>Leave a Reply</h4>
@@ -175,7 +176,7 @@ const SpecialistPost = (props) => {
                   </div>
                   <div className="form-group col-lg-6 col-md-6 email">
                     <input type="email" className="form-control" id="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'">
-                  </div>										
+                  </div>
                 </div>
                 <div className="form-group">
                   <input type="text" className="form-control" id="subject" placeholder="Subject" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Subject'">
@@ -183,7 +184,7 @@ const SpecialistPost = (props) => {
                 <div className="form-group">
                   <textarea className="form-control mb-10" rows="5" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
                 </div>
-                <Link href="#" className="primary-btn submit_btn">Post Comment</Link>	
+                <Link href="#" className="primary-btn submit_btn">Post Comment</Link>
               </form>
             </div>
           </div>

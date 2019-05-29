@@ -1,15 +1,11 @@
 import React from 'react';
 import './SinglePost.css';
 import { Link } from 'react-router-dom'
-import Navbar from '../Navbar/Navbar';
-import Header from '../Header/Header';
-import Footer from '../Footer/Footer';
 
 const SinglePost = (props) => {
   return (
   <div>
-    <Navbar/>
-    <Header/>
+
     <section className="banner_area">
       <div className="banner_inner d-flex align-items-center">
         <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
@@ -61,7 +57,7 @@ const SinglePost = (props) => {
                   <Link href="#" className="page-link" aria-label="Previous"></Link>
                   </div>
                   <div className="thumb">
-                  <img src={ require('../../img/prev.png') } alt="prev" />
+                    <img src={ require('../../img/prev.png') } alt="prev" />
                     <p>Prev Post</p>
                   </div>
                 </div>
@@ -96,7 +92,7 @@ const SinglePost = (props) => {
                   </div>
                   <div className="reply-btn">
 
-                    <button href="" className="btn-reply text-uppercase">reply</button> 
+                    <button href="" className="btn-reply text-uppercase">reply</button>
 
                   </div>
                 </div>
@@ -116,7 +112,7 @@ const SinglePost = (props) => {
                     </div>
                   </div>
                   <div className="reply-btn">
-                    <button href="" className="btn-reply text-uppercase">reply</button> 
+                    <button href="" className="btn-reply text-uppercase">reply</button>
 
                   </div>
                 </div>
@@ -137,7 +133,7 @@ const SinglePost = (props) => {
                   </div>
                   <div className="reply-btn">
 
-                    <button href="" className="btn-reply text-uppercase">reply</button> 
+                    <button href="" className="btn-reply text-uppercase">reply</button>
 
                   </div>
                 </div>
@@ -158,7 +154,7 @@ const SinglePost = (props) => {
                   </div>
                 <div className="reply-btn">
 
-                  <button href="" className="btn-reply text-uppercase">reply</button> 
+                  <button href="" className="btn-reply text-uppercase">reply</button>
 
                 </div>
               </div>
@@ -179,7 +175,7 @@ const SinglePost = (props) => {
                 </div>
                 <div className="reply-btn">
 
-                  <btn href="" className="btn-reply text-uppercase">reply</btn> 
+                  <btn href="" className="btn-reply text-uppercase">reply</btn>
 
                 </div>
               </div>
@@ -203,12 +199,12 @@ const SinglePost = (props) => {
                   <textarea className="form-control mb-10" rows="5" name="message" placeholder="Messege" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Messege'" required=""></textarea>
               </div>
 
-              <button href="#" className="primary-btn submit_btn">Post Comment</button>	
+              <button href="#" className="primary-btn submit_btn">Post Comment</button>
 
             </form>
           </div>
         </div>
-{/*
+{/*  SEARCH BAR COMMENTED OUT UNTIL WE NEED IT IN THE FUTURE
         <div className="col-lg-4">
           <div className="blog_right_sidebar">
             <aside className="single_sidebar_widget search_widget">
@@ -227,7 +223,7 @@ const SinglePost = (props) => {
       </div>
       </div>
     </section>
-    <Footer/>
+
   </div>
   )
 };

@@ -3,3 +3,9 @@
   flex: 0 0 33.33%;
   max-width: 33.33%; 
 }
+
+.projects_item .hover {
+  background: #efd199;
+  opacity: .9;
+  font-size: 20px;
+}

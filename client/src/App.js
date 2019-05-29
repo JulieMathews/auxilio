@@ -11,6 +11,7 @@ import Articles from './components/articles/articles';
 // pages
 import Navbar from './components/Navbar/Navbar';
 import Landing from './components/Landing/Landing';
+import Footer from './components/Footer/Footer';
 import AboutUs from './components/AboutUs/AboutUs';
 import CommunityForum from "./components/CommunityForum/CommunityForum";
 import SinglePost from './components/SinglePost/SinglePost';
@@ -102,7 +103,7 @@ class App extends Component {
         {this.state.loggedIn &&
           <React.Fragment>
           <Route path="/messenger" render={() =>
-            <InstantMessenger currentUser={this.state.user} />}
+            <InstantMessenger currentUser={this.state.username} />}
           />
           <Route exact path="/communityforum" component={CommunityForum} />
           <Route exact path="/singlepost" component={SinglePost} />
@@ -116,6 +117,7 @@ class App extends Component {
           }
           </React.Fragment>
         }
+        <Footer/>
       </div>
     );
   }

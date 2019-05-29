@@ -1,6 +1,5 @@
 import React from 'react';
 import '../css/style.css';
-import Navbar from '../Navbar/Navbar';
 import Header from '../Header/Header';
 import Footer from '../Footer/Footer';
 import {Link} from 'react-router-dom';
@@ -8,7 +7,6 @@ import {Link} from 'react-router-dom';
 const InSchoolForum = (props) => {
   return (
   <div>
-    <Navbar />
     <Header />
     <section className="banner_area">
       <div className="banner_inner d-flex align-items-center">
@@ -142,7 +140,7 @@ const InSchoolForum = (props) => {
                     <span aria-hidden="true">
                       <img src={ require('../../img/prev.png') } alt="prev" />
                       <span className="lnr lnr-chevron-left"></span>
-                    </span>                  
+                    </span>
                 </li>
                 <li className="page-item active page-link">01</li>
                 <li className="page-item page-link">02</li>
