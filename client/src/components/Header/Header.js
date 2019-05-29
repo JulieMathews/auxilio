@@ -9,6 +9,7 @@ const Header = (props) => {
     console.log('header:', props);
     if(!props.landing) return null;
     return (
+      <div>
       <section className="home_banner_area">
         <div className="container">
           <div className="row">
@@ -16,7 +17,7 @@ const Header = (props) => {
               <div className="col-lg-8">
                 <div className="banner_content">
                   <h2>Auxilio</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                  <p>Parents, teachers and therapists giving professional advice and community support for ADHD and Autism.</p>
                 </div>
               </div>
 
@@ -34,6 +35,7 @@ const Header = (props) => {
           </div>
         </div>
       </section>
+      </div>
     )
   }
 
