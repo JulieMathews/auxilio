@@ -27,7 +27,6 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      loggedIn: false,
       user: null,
       chatRoomName: null,
     }
@@ -36,20 +35,29 @@ class App extends Component {
     this.updateUser = this.updateUser.bind(this)
   }
 
-  updateUser(userObject) {
-    if (userObject.loggedIn) {
-      console.log("Creating Scaledrone object:");
-      console.log(userObject.user);
-      this.drone = new window.Scaledrone("czBgrob2FXXXRdrO", {
-        data: {
-          uuid: userObject.user.uuid,
-          username: userObject.user.username,
-          email: userObject.user.email,
-        }
-      });
-      this.getAllUsers()
-      this.getUser()
+  componentDidMount() {
+    this.getUser();
+  }
+
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.user !== this.state.user) {
+      if (this.state.user) {
+        console.log("Creating Scaledrone object:");
+        this.drone = new window.Scaledrone("czBgrob2FXXXRdrO", {
+          data: {
+            uuid: this.state.user.uuid,
+            username: this.state.user.username,
+            email: this.state.user.email,
+          }
+        });
+        this.getAllUsers();
+      } else {
+        this.setState({ allUsers: [] });
+      }
     }
+  }
+
+  updateUser(userObject) {
     this.setState(userObject)
   }
 
@@ -61,13 +69,11 @@ class App extends Component {
         console.log('Get User: There is a user saved in the server session: ')
 
         this.setState({
-          loggedIn: true,
           user: response.data,
         })
       } else {
         console.log('Get user: no user');
         this.setState({
-          loggedIn: false,
           user: null,
         })
       }
@@ -83,12 +89,17 @@ class App extends Component {
     )
   }
 
+  closeChat = () => {
+    console.log("Closing chat...");
+    this.setState({ chatRoom: null });
+  }
+
   render() {
     return (
       <div className="App">
-        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        <Navbar updateUser={this.updateUser} loggedIn={this.state.user !== null} />
         {/* greet user if logged in: */}
-        {this.state.loggedIn &&
+        {this.state.user &&
           <p>Join the party, {this.state.user.username}!</p>
         }
         {/* Routes to different components */}
@@ -100,10 +111,10 @@ class App extends Component {
         <Route path="/signup" render={() =>
           <Signup/>}
         />
-        {this.state.loggedIn &&
+        {this.state.user &&
           <React.Fragment>
           <Route path="/messenger" render={() =>
-            <InstantMessenger currentUser={this.state.username} />}
+            <InstantMessenger currentUser={this.state.user} />}
           />
           <Route exact path="/communityforum" component={CommunityForum} />
           <Route exact path="/singlepost" component={SinglePost} />
@@ -111,9 +122,16 @@ class App extends Component {
             <Articles/> }
           />
           <Route exact path="/article/:id" />
-          <UserList currentUser={this.state.user} allUsers={this.state.allUsers} onChangeRoom={this.onChangeRoom} />
-          {this.state.chatRoomName &&
-            <InstantMessenger currentUser={this.state.user} drone={this.drone} roomName={this.state.chatRoomName} />
+          <UserList currentUser={this.state.user}
+            allUsers={this.state.allUsers}
+            onChangeRoom={this.onChangeRoom} />
+          {this.state.chatRoom &&
+            <InstantMessenger
+              currentUser={this.state.user}
+              drone={this.drone}
+              closeChat={this.closeChat}
+              roomName={this.state.chatRoom.name}
+              roomDescription={this.state.chatRoom.description} />
           }
           </React.Fragment>
         }
@@ -121,8 +139,8 @@ class App extends Component {
       </div>
     );
   }
-  onChangeRoom = (roomName) => {
-    this.setState({ chatRoomName: roomName });
+  onChangeRoom = (roomName, description) => {
+    this.setState({ chatRoom: { name: roomName, description: description } });
   }
 }
 export default App;

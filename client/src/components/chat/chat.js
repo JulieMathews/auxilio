@@ -2,17 +2,10 @@ import React, { Component } from 'react';
 import './instantMessenger.css';
 import Messages from "./Messages";
 import Input from "./Input";
-import UserList from "./UserList";
-import axios from "axios";
-
-function randomColor() {
-  return '#' + Math.floor(Math.random() * 0xFFFFFF).toString(16);
-}
 
 class InstantMessenger extends Component {
   state = {
     messages: [],
-    roomName: "observable-room",
     room: {},
   }
 
@@ -34,11 +27,12 @@ class InstantMessenger extends Component {
   }
 
   subscribe(newRoomName) {
+    console.log("Subscribing to", newRoomName);
     const room = this.drone.subscribe(newRoomName, {historyCount: 5});
     room.on('history_message', (message) => {
+      console.log("history message: ");
       console.log(message);
       const messages = this.state.messages;
-      console.log(message.member);
       messages.push(message);
       this.setState({messages});
     });
@@ -49,13 +43,8 @@ class InstantMessenger extends Component {
       messages.push(message);
       this.setState({messages});
     });
-    room.on('data', (message, member) => {
-      console.log("Data: ");
-      console.log(message);
-      console.log(member);
-    });
     console.log(room);
-    this.setState({room: room});
+    this.setState({ room });
     console.log(this.state);
   }
 
@@ -69,22 +58,35 @@ class InstantMessenger extends Component {
     }
   }
 
+  componentDidUpdate(prevProps, prevState) {
+    if (prevProps.roomName !== this.props.roomName) {
+      if (prevState.room) {
+        console.log("Unsubscribing from", prevProps.roomName);
+        prevState.room.unsubscribe();
+      }
+      if (this.state.messages && this.state.messages.length !== 0) {
+        console.log("Clearing messages");
+        this.setState({ messages: [] });
+      }
+      if (this.props.roomName) {
+        this.subscribe(this.props.roomName);
+      }
+    }
+  }
+
   render() {
     if (this.props.currentUser) {
       var member = {...this.state.currentUser};
       member.id = this.state.clientId;
     return (
-      <div className="App">
-        <div className="App-header">
-          <h1><i className="far fa-comments"></i></h1>
-        </div>
-        <div className="messageParent">
+      <div className="messageParent">
+        <h4>{this.props.roomDescription}</h4>
+        <button onClick={this.props.closeChat}>Close</button>
         <Messages
           messages={this.state.messages}
           currentMember={member}
         />
         <Input onSendMessage={this.onSendMessage} />
-        </div>
       </div>
     );
     } else {

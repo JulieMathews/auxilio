@@ -17,7 +17,6 @@ class Navbar extends Component {
       console.log(response.data)
       if(response.status === 200) {
         this.props.updateUser({
-          loggedIn: false,
           user: null
         })
       }
@@ -91,8 +90,6 @@ class Navbar extends Component {
   }
 
   render() {
-    console.log('navbar render, props: ')
-    console.log(this.props);
     return(
       <div>
         <header className="header_area">
@@ -104,7 +101,7 @@ class Navbar extends Component {
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
                   <span className="icon-bar"></span>
-                </button> 
+                </button>
                 {this.loggedInNavbar()}
                 {this.notLoggedInNavbar()}
               </div>

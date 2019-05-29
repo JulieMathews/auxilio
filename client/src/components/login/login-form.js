@@ -36,7 +36,6 @@ class LoginForm extends Component {
                 if (response.status === 200) {
                     // update App.js state
                     this.props.updateUser({
-                        loggedIn: true,
                         user: response.data
                     })
                     // update the state to redirect to home
