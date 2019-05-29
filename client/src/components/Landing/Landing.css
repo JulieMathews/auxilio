@@ -1,3 +1,28 @@
 .article_parent{
     justify-content: center ;
 }
+
+.col-lg-8 {
+  margin-top: 30px;
+}
+
+.banner_content h2 {
+  font-size: 50px;
+  margin-bottom: 0;
+  text-shadow: 4px 4px 8px white;
+}
+
+.banner_content .para {
+  padding-top: 50px;
+  font-size: 20px;
+}
+
+.popular_inner .img-fluid {
+  border: 1px solid black;
+  box-shadow: 12px 12px 29px #555;
+}
+
+.home_right_box {
+  box-shadow: 12px 12px 29px #555;
+}
+
