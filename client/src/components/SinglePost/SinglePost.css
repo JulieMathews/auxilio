@@ -34,7 +34,11 @@
     line-height: 22px;
     color: #222222; }
   .comment-form .name {
-    padding-left: 0px; }
+    padding-left: 0px; 
+    line-width: 100px;
+
+  }
+    
     @media (max-width: 767px) {
       .comment-form .name {
         padding-right: 0px;
@@ -85,4 +89,9 @@
     margin-bottom: 23px;
     margin-right: 20px;
     float: right;
+}
+
+.navigation-area img {
+  width: 40px;
+  background-color: white;
 }

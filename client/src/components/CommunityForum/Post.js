@@ -26,9 +26,7 @@ class Post extends Component {
         <div className="col-md-9">
           <div className="blog_post">
             <div className="blog_details">
-              <Link to="/singlepost" className="btn btn-link text-secondary">
-                <h2>{post.title}</h2>
-              </Link>
+              <h2>{post.title}</h2>
               <p>{post.message}</p>
             </div>
           </div>

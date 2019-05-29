@@ -14,7 +14,6 @@ import Landing from './components/Landing/Landing';
 import Footer from './components/Footer/Footer';
 import AboutUs from './components/AboutUs/AboutUs';
 import CommunityForum from "./components/CommunityForum/CommunityForum";
-import SinglePost from './components/SinglePost/SinglePost';
 import UserList from './components/chat/UserList';
 
 //import SpecialistForum from './compoenents/SpecialistForum';
@@ -117,7 +116,6 @@ class App extends Component {
             <InstantMessenger currentUser={this.state.user} />}
           />
           <Route exact path="/communityforum" component={CommunityForum} />
-          <Route exact path="/singlepost" component={SinglePost} />
           <Route path="/articles" render={() =>
             <Articles/> }
           />
