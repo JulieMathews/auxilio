@@ -89,7 +89,7 @@ class App extends Component {
         <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
         {/* greet user if logged in: */}
         {this.state.loggedIn &&
-          <p>Join the party, {this.state.user.username}!</p>
+          <p id="joinParty">Join the party, {this.state.user.username}!</p>
         }
         {/* Routes to different components */}
         <Route exact path="/" component={Landing} />

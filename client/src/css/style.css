@@ -185,6 +185,7 @@ button:focus {
             border-style: solid;
             border-width: 10px 10px 0 10px;
             border-color: #eeeeee transparent transparent transparent;
+            margin: 0px;
             position: absolute;
             right: 24px;
             top: 45px;
@@ -294,6 +295,7 @@ button:focus {
 .home_banner_area {
   z-index: 1;
   background-color: #A2DCE2;
+  margin-top: 11px;
 }
   .home_banner_area .banner_inner {
     width: 100%; }
@@ -3019,8 +3021,6 @@ h6 {
 /*# sourceMappingURL=style.css.map */
 .special_form {
 position: fixed;
-/* bottom: 0; */
-/* right: 0; */
 background: #FFFFFF;
 background: -moz-radial-gradient(center, #FFFFFF 0%, #FFFFFF 0%, #6B7496 100%);
 background: -webkit-radial-gradient(center, #FFFFFF 0%, #FFFFFF 0%, #6B7496 100%);
@@ -3054,10 +3054,20 @@ button {
 
 .form-label {
   color: black;
-  /* display: flex; */
-  /* justify-content: flex-start; */
   font-weight: bolder;
-  /* font-size: 1rem; */
-  /* margin-right: 4px !important; */
+}
 
+/* Dynamic Join the Party Banner */
+#joinParty {
+  background-color: #6287a2;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-weight: bolder;
+  font-size: 1.5rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: .5rem;
+  text-align: center;
 }
