@@ -45,21 +45,32 @@ const Landing = (props) => {
             <div className="row">
               <div className="col-lg-8">
                 <div className="banner_content">
-                  <h2>Auxilio</h2>
-                  <p>Parents, teachers and therapists giving professional advice and community support for ADHD and Autism.</p>
+                  <h2>Auxilio</h2> <h6>-- to give help, give assistance</h6>
+                  <div className="para">
+                  <p>Having children with learning disabilities puts a lot of stress on families and can feel very isolating. Navigating the school system and getting access to professional help is expensive and very limited.</p>
+                  <p>Signup to access the forum and direct messaging.</p>
+                  </div>
                 </div>
               </div>
-
+{/*  ONLY FOR LOGGEDIN */}
               <div className="col-lg-4">
                 <div className="home_right_box">
                   <div className="home_item">
                     <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/family.png')} alt="School Related"/></span>
                   </div>
                   <div className="home_item">
-                    <Link><p>Community Forum</p></Link>
+                    <Link to="/communityforum"><p>Community Forum</p></Link>
+                  </div>
+                  <div className="home_item">
+                    <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/happy.png')} alt="School Related"/></span>
+                  </div>
+                  <div className="home_item">
+                    <Link to="/messages"><p>Messenger</p></Link>
                   </div>
                 </div>
               </div>
+              
+
             </div>
           </div>
         </div>
@@ -68,7 +79,7 @@ const Landing = (props) => {
         <div className="container">
           <div className="main_title">
             <h2>Most Recent Articles</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+            <p>Read what our Specialists have written on topics to help you through everyday issues and questions.</p>
           </div>
           <div className="popular_inner row">
             {renderArticles()}
