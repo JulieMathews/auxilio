@@ -11,21 +11,21 @@ const Footer = (props) => {
             <div className="col-lg-4 col-sm-4">
               <aside className="f_widget ab_widget">
                 <div className="f_title">
-                  <h3>Sonja</h3>
+                  <h3>Sonja Rasmussen</h3>
                 </div>
-                <p>LinkedIn</p>
-                <p>GitHub</p>
-                <p>Portfolio</p>
+                <a href="https://www.linkedin.com/in/sonja-rasmussen-15bb2814/"><p>LinkedIn</p></a>
+                <a href="https://github.com/SonjaRasmussen"><p>GitHub</p></a>
+                <a href="https://sonjarasmussen.github.io/"><p>Portfolio</p></a>
               </aside>
             </div>
             <div className="col-lg-4 col-sm-3">
               <aside className="f_widget ab_widget">
                 <div className="f_title">
-                  <h3>Ben</h3>
+                  <h3>Ben Vaagen</h3>
                 </div>
-                <p>LinkedIn</p>
-                <p>GitHub</p>
-                <p>Portfolio</p>
+                <a href="https://www.linkedin.com/in/benjamin-vaagen-7b0178174/"><p>LinkedIn</p></a>
+                <a href="https://github.com/benvaagen"><p>GitHub</p></a>
+                <a href="https://benvaagen.github.io/officialPortfolio/"><p>Portfolio</p></a>
               </aside>
             </div>
             <div className="col-lg-4 col-sm-3">

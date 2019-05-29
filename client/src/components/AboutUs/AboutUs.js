@@ -13,29 +13,29 @@ const AboutUs = (props) => {
             <section className="feature_area p_120">
               <div className="container">
                 <div className="main_title">
-                  <h2>What Make us Unique</h2>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
+                  <h2>What Make Us Unique</h2>
+                  <p>We are one of a kind for building up a community for parents, experts, and specialists to come together for support and advice. </p>
                 </div>
 
                 <div className="row feature_inner">
                   <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
                       <h6><i className="lnr lnr-user"></i> Expert Therapists</h6>
-                      <p>Eu augue ut lectus arcu. Nisl pretium fusce id velit ut tortor. Pharetra sit amet aliquam id diam maecenas ultricies mi.</p>
+                      <p>Talk with an expert. Or be the expert to give input.</p>
                     </div>
                   </div>
 
                   <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
                       <h6><i className="lnr lnr-license"></i> Professional Services</h6>
-                      <p>Eu augue ut lectus arcu. Nisl pretium fusce id velit ut tortor. Pharetra sit amet aliquam id diam maecenas ultricies mi.</p>
+                      <p>Read articles by our professionals. Contact a professional for one-on-one communication.</p>
                     </div>
                   </div>
 
                   <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
                       <h6><i className="lnr lnr-phone"></i> Great Support</h6>
-                      <p>Eu augue ut lectus arcu. Nisl pretium fusce id velit ut tortor. Pharetra sit amet aliquam id diam maecenas ultricies mi.</p>
+                      <p>Talk with other parents and guardians to build up your village.</p>
                     </div>
                   </div>
                 </div>
@@ -51,10 +51,10 @@ const AboutUs = (props) => {
         <div className="about_inner row">
           <div className="col-lg-6">
             <div className="about_left_text">
-              <h6>Brand new app to blow your mind</h6>
+              <h6>Brand new app for</h6>
               <h3>The Support You Need</h3>
               <h5>We are here to listen to you and deliver exellence</h5>
-              <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod temp or incididunt ut labore et dolore magna aliqua. Ut enim ad minim.</p>
+              <p>Consider this a safe-place to ask questions, get advice, and meet new people with similar circumstances.</p>
             </div>
           </div>
           <div className="col-lg-6">
@@ -68,19 +68,19 @@ const AboutUs = (props) => {
       <div className="row m0">
         <div className="projects_item wd_18">
           <img src={ require('../../img/aboutUs/sonja-1.png') } alt="Sonja" />
-          <div className="hover" style={{opacity:.7}}>
-            <p>Risus viverra adipiscing at in tellus integer feugiat scelerisque varius.</p>
+          <div className="hover" style={{opacity:.9}}>
+            <p>Mother of two active children, whom wants to help change the world and solve every day problems.</p>
           </div>
         </div>
         <div className="projects_item wd_18">
           <img src={ require('../../img/aboutUs/ben-1.png') } alt="Ben" />
-          <div className="hover" style={{opacity:.7}}>
-            <p>Risus viverra adipiscing at in tellus integer feugiat scelerisque varius.</p>
+          <div className="hover" style={{opacity:.9}}>
+            <p>A debonair ambassador for the growing community.</p>
           </div>
         </div>
         <div className="projects_item wd_18">
           <img src={ require('../../img/aboutUs/julie-1.png') } alt="Julie" />
-          <div className="hover" style={{opacity:.7}}>
+          <div className="hover" style={{opacity:.9}}>
             <p>Mother of four, all of which had speech delay and one on the Autism Spectrum.</p>
           </div>
         </div>
