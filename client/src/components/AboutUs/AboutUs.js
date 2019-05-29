@@ -69,7 +69,7 @@ const AboutUs = (props) => {
         <div className="projects_item wd_18">
           <img src={ require('../../img/aboutUs/sonja-1.png') } alt="Sonja" />
           <div className="hover" style={{opacity:.9}}>
-            <p>Mother of two active children, whom wants to help change the world one family at a time.</p>
+            <p>Mother of two active children, whom wants to help change the world and solve every day problems.</p>
           </div>
         </div>
         <div className="projects_item wd_18">
