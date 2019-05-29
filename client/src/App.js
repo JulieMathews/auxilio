@@ -106,6 +106,7 @@ class App extends Component {
             <InstantMessenger currentUser={this.state.username} />}
           />
           <Route exact path="/communityforum" component={CommunityForum} />
+          <p>Got something to say?</p>
           <Route exact path="/singlepost" component={SinglePost} />
           <Route path="/articles" render={() =>
             <Articles/> }

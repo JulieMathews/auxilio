@@ -24,14 +24,14 @@ class Input extends Component {
         <form className="forumForm" onSubmit={e => this.onSubmit(e)}>
           <ul style={{ listStyle: "none", position: "relative" }}>
             <li>
-              <input
+              <input class="newPost"
                 onChange={e => this.onChange(e, "title")}
                 value={this.state.title}
                 type="text"
                 placeholder="The title of your post" />
             </li>
             <li>
-              <textarea
+              <textarea id="textarea"
                 onChange={e => this.onChange(e, "message")}
                 value={this.state.message}
                 placeholder="Type words and then press enter"
@@ -40,7 +40,7 @@ class Input extends Component {
                 />
             </li>
             <li>
-              <button style={{ float: 'right' }}>Post</button>
+              <button class="newPostSubmit" style={{ float: 'right' }}>Post</button>
             </li>
           </ul>
         </form>

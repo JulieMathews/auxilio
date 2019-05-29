@@ -66,9 +66,17 @@ body {
   font-weight: normal;
   color: black; }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h3, h4, h5, h6 {
   font-family: "Heebo", sans-serif;
   font-weight: bold; }
+
+h2 {
+  font-family: "Heebo", sans-serif;
+  font-weight: bold;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+
+}
 
 button:focus {
   outline: none;
@@ -429,7 +437,9 @@ button:focus {
         margin-top:80px;
         margin-bottom: 0px;
         text-transform: uppercase;
-        font-weight: bold; }
+        font-weight: bold;
+        padding-bottom: 3rem;
+      }
       .banner_area .banner_inner .banner_content .page_link a {
         font-size: 14px;
         color: #fff;
@@ -3067,7 +3077,8 @@ button {
   font-weight: bolder;
   font-size: 1.5rem;
   width: 100%;
-  margin: 0 auto;
+  margin-bottom: 11px;
   padding: .5rem;
   text-align: center;
 }
+
