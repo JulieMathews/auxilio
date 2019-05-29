@@ -56,7 +56,7 @@ const Landing = (props) => {
                     <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/family.png')} alt="School Related"/></span>
                   </div>
                   <div className="home_item">
-                    <Link><p>Community Forum</p></Link>
+                    <Link to="/communityforum"><p>Community Forum</p></Link>
                   </div>
                 </div>
               </div>

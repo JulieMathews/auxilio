@@ -15,6 +15,7 @@ import Footer from './components/Footer/Footer';
 import AboutUs from './components/AboutUs/AboutUs';
 import CommunityForum from "./components/CommunityForum/CommunityForum";
 import SinglePost from './components/SinglePost/SinglePost';
+import UserList from './components/chat/UserList';
 
 //import SpecialistForum from './compoenents/SpecialistForum';
 //import SpecialistContact from './components/SpecialistContact';
@@ -26,20 +27,37 @@ class App extends Component {
   constructor() {
     super()
     this.state = {
-      loggedIn: false,
-      username: null
+      user: null,
+      chatRoomName: null,
     }
 
     this.getUser = this.getUser.bind(this)
-    this.componentDidMount = this.componentDidMount.bind(this)
     this.updateUser = this.updateUser.bind(this)
   }
 
   componentDidMount() {
-    this.getUser()
+    this.getUser();
   }
 
-  updateUser (userObject) {
+  componentDidUpdate(prevProps, prevState) {
+    if (prevState.user !== this.state.user) {
+      if (this.state.user) {
+        console.log("Creating Scaledrone object:");
+        this.drone = new window.Scaledrone("czBgrob2FXXXRdrO", {
+          data: {
+            uuid: this.state.user.uuid,
+            username: this.state.user.username,
+            email: this.state.user.email,
+          }
+        });
+        this.getAllUsers();
+      } else {
+        this.setState({ allUsers: [] });
+      }
+    }
+  }
+
+  updateUser(userObject) {
     this.setState(userObject)
   }
 
@@ -47,32 +65,42 @@ class App extends Component {
     axios.get('/user/').then(response => {
       console.log('Get user response: ')
       console.log(response.data)
-      if (response.data.user) {
+      if (response.data) {
         console.log('Get User: There is a user saved in the server session: ')
 
         this.setState({
-          loggedIn: true,
-          user: response.data.user,
-          username: response.data.user.username
+          user: response.data,
         })
       } else {
         console.log('Get user: no user');
         this.setState({
-          loggedIn: false,
           user: null,
-          username: null
         })
       }
     })
   }
 
+  getAllUsers() {
+    // This will fetch all users for the user list
+    axios.get('/api/users').then(response =>
+     this.setState({
+       allUsers: response.data
+     })
+    )
+  }
+
+  closeChat = () => {
+    console.log("Closing chat...");
+    this.setState({ chatRoom: null });
+  }
+
   render() {
     return (
       <div className="App">
-        <Navbar updateUser={this.updateUser} loggedIn={this.state.loggedIn} />
+        <Navbar updateUser={this.updateUser} loggedIn={this.state.user !== null} />
         {/* greet user if logged in: */}
-        {this.state.loggedIn &&
-          <p>Join the party, {this.state.username}!</p>
+        {this.state.user &&
+          <p id="joinParty">Join the party, {this.state.user.username}!</p>
         }
         {/* Routes to different components */}
         <Route exact path="/" component={Landing} />
@@ -83,10 +111,10 @@ class App extends Component {
         <Route path="/signup" render={() =>
           <Signup/>}
         />
-        {this.state.loggedIn &&
+        {this.state.user &&
           <React.Fragment>
           <Route path="/messenger" render={() =>
-            <InstantMessenger currentUser={this.state.username} />}
+            <InstantMessenger currentUser={this.state.user} />}
           />
           <Route exact path="/communityforum" component={CommunityForum} />
           <Route exact path="/singlepost" component={SinglePost} />
@@ -94,11 +122,25 @@ class App extends Component {
             <Articles/> }
           />
           <Route exact path="/article/:id" />
+          <UserList currentUser={this.state.user}
+            allUsers={this.state.allUsers}
+            onChangeRoom={this.onChangeRoom} />
+          {this.state.chatRoom &&
+            <InstantMessenger
+              currentUser={this.state.user}
+              drone={this.drone}
+              closeChat={this.closeChat}
+              roomName={this.state.chatRoom.name}
+              roomDescription={this.state.chatRoom.description} />
+          }
           </React.Fragment>
         }
         <Footer/>
       </div>
     );
+  }
+  onChangeRoom = (roomName, description) => {
+    this.setState({ chatRoom: { name: roomName, description: description } });
   }
 }
 export default App;
