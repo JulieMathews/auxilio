@@ -10,7 +10,7 @@ const Articles = (props) => {
     const response = await axios.get('/article');
     console.log('fetch articles:', response.data)
     let len = response.data.length;
-    if (len > 3 ) len = 3;
+    if (len > 9 ) len = 9;
     const parsedArticles = response.data.slice(0, len);
     setArticles(parsedArticles);
   }
@@ -30,6 +30,7 @@ const Articles = (props) => {
             </Link>
             <h4>{article.title}</h4>
             {article.blurb}
+            {article.article}
           </div>
         </div>
       );
