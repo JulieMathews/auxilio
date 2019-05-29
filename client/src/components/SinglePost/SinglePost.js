@@ -1,6 +1,6 @@
 import React from 'react';
 import './SinglePost.css';
-import { Link } from 'react-router-dom'
+//import { Link } from 'react-router-dom'
 
 const SinglePost = (props) => {
   return (
@@ -47,33 +47,25 @@ const SinglePost = (props) => {
                 </p>
               </div>
             </div>
+
             <div className="navigation-area">
               <div className="row">
                 <div className="col-lg-6 col-md-6 col-12 nav-left flex-row d-flex justify-content-start align-items-center">
-                  <div className="thumb">
-                    <img src={ require('../../img/blog/prev.jpg') } alt="prev" />
-                  </div>
-                  <div className="arrow">
-                  <Link href="#" className="page-link" aria-label="Previous"></Link>
-                  </div>
-                  <div className="thumb">
-                    <img src={ require('../../img/prev.png') } alt="prev" />
+                  <div className="details">
                     <p>Prev Post</p>
+                    <img src={ require('../../img/prev.png') } alt="prev" />
                   </div>
                 </div>
+
                 <div className="col-lg-6 col-md-6 col-12 nav-right flex-row d-flex justify-content-end align-items-center">
                   <div className="detials">
                     <p>Next Post</p>
-                  </div>
-                  <div className="arrow">
-                    <Link href="#"><span className="lnr text-white lnr-arrow-right"></span></Link>
-                  </div>
-                  <div className="thumb">
-                    <img src={ require('../../img/blog/next.jpg') } alt="next" />
+                    <img src={ require('../../img/next.png') } alt="next" />
                   </div>
                 </div>
               </div>
             </div>
+
             <div className="comments-area">
               <h4>05 Comments</h4>
               <div className="comment-list">
@@ -175,7 +167,7 @@ const SinglePost = (props) => {
                 </div>
                 <div className="reply-btn">
 
-                  <btn href="" className="btn-reply text-uppercase">reply</btn>
+                  <button href="" className="btn-reply text-uppercase">reply</button>
 
                 </div>
               </div>
@@ -186,10 +178,10 @@ const SinglePost = (props) => {
             <form className="singlepost_form">
               <div className="form-group form-inline">
                 <div className="form-group col-lg-6 col-md-6 name">
-                  <input type="text" className="form-control" id="name" placeholder="Enter Name" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter Name'"/>
+                  <input type="text" className="form-control" id="name" placeholder="Name" onfocus="this.placeholder = ''" Br="this.placeholder = 'Name'"/>
                 </div>
                 <div className="form-group col-lg-6 col-md-6 email">
-                  <input type="email" className="form-control" id="email" placeholder="Enter email address" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Enter email address'"/>
+                  <input type="email" className="form-control" id="email" placeholder="Email" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Email'"/>
                 </div>
               </div>
               <div className="form-group">
@@ -222,8 +214,8 @@ const SinglePost = (props) => {
 */}
       </div>
       </div>
-    </section>
 
+    </section>
   </div>
   )
 };
