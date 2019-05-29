@@ -14,28 +14,28 @@ const AboutUs = (props) => {
               <div className="container">
                 <div className="main_title">
                   <h2>What Make Us Unique</h2>
-                  <p>We are one of a kind for building up a community for parents, experts, and specialists to come together for support and advice. </p>
+                  <p>Auxilio is an online community to support parents and caregivers on a daily basis. Auxlilio will build community by publishing articles written by therapists who specialize in specific learning disabilities, create an active user-engaged community forum and offer real time private messaging with fellow community members. </p>
                 </div>
 
                 <div className="row feature_inner">
                   <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
-                      <h6><i className="lnr lnr-user"></i> Expert Therapists</h6>
-                      <p>Talk with an expert. Or be the expert to give input.</p>
+                      <h6>Expert Therapists</h6>
+                      <p>Ask questions and receive input for everyday scenarios.</p>
                     </div>
                   </div>
 
                   <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
-                      <h6><i className="lnr lnr-license"></i> Professional Services</h6>
-                      <p>Read articles by our professionals. Contact a professional for one-on-one communication.</p>
+                      <h6>Professional Services</h6>
+                      <p>Read articles and onnect for one-on-one communication.</p>
                     </div>
                   </div>
 
                   <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
-                      <h6><i className="lnr lnr-phone"></i> Great Support</h6>
-                      <p>Talk with other parents and guardians to build up your village.</p>
+                      <h6>Great Support</h6>
+                      <p>Find other guardians with relatable circumstances.</p>
                     </div>
                   </div>
                 </div>
@@ -68,19 +68,22 @@ const AboutUs = (props) => {
       <div className="row m0">
         <div className="projects_item wd_18">
           <img src={ require('../../img/aboutUs/sonja-1.png') } alt="Sonja" />
-          <div className="hover" style={{opacity:.9}}>
-            <p>Mother of two active children, whom wants to help change the world and solve every day problems.</p>
+          <div className="hover">
+            <h4>Sonja</h4>
+            <p>Mother of two active children, helping change the world and solve every day problems.</p>
           </div>
         </div>
         <div className="projects_item wd_18">
           <img src={ require('../../img/aboutUs/ben-1.png') } alt="Ben" />
-          <div className="hover" style={{opacity:.9}}>
+          <div className="hover">
+            <h4>Ben</h4>
             <p>A debonair ambassador for the growing community.</p>
           </div>
         </div>
         <div className="projects_item wd_18">
           <img src={ require('../../img/aboutUs/julie-1.png') } alt="Julie" />
-          <div className="hover" style={{opacity:.9}}>
+          <div className="hover">
+            <h4>Julie</h4>
             <p>Mother of four, all of which had speech delay and one on the Autism Spectrum.</p>
           </div>
         </div>

@@ -6,6 +6,23 @@
 
 .projects_item .hover {
   background: #efd199;
-  opacity: .9;
-  font-size: 20px;
+  font-size: 14px;
+  opacity:.7;
 }
+
+.banner_area .banner_inner .banner_content h2 {
+  font-size: 50px;
+  margin-bottom: 0;
+  padding-bottom: 0px;
+  margin-top: 20px;
+  text-shadow: 4px 4px 8px black;
+}
+
+.projects_item img{
+  background-color: white;
+}
+
+.feature_item {
+  box-shadow: 12px 12px 29px #555;
+}
+
