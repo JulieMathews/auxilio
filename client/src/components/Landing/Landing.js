@@ -60,12 +60,14 @@ const Landing = (props) => {
                   </div>
                   <div className="home_item">
                     <Link to="/communityforum"><p>Community Forum</p></Link>
+
                   </div>
                   <div className="home_item">
                     <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/happy.png')} alt="School Related"/></span>
                   </div>
                   <div className="home_item">
                     <Link to="/messages"><p>Messenger</p></Link>
+
                   </div>
                 </div>
               </div>

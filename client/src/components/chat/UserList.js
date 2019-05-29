@@ -2,17 +2,17 @@ import React, { Component } from "react";
 import axios from "axios";
 
 class UserList extends Component {
-    startConversation(e, otherUuid) {
+    startConversation(e, otherUser) {
         console.log("Starting conversation...");
         e.preventDefault();
         axios
-            .post("/api/conversations", { other: otherUuid })
+            .post("/api/conversations", { other: otherUser.uuid })
             .then(response => {
                 if (response.status === 200) {
                     console.log("Found conversation: ");
                     console.log(response.data);
                 }
-                this.showConversation(response.data);
+                this.showConversation(response.data, "Conversation with " + otherUser.username);
             })
             .catch(error => {
                 console.log("Conversation error:");
@@ -22,23 +22,26 @@ class UserList extends Component {
     }
 
     showPublic() {
-        this.props.onChangeRoom("observable-room");
+        this.props.onChangeRoom("observable-room", "Community Chat");
     }
 
-    showConversation(convo) {
+    showConversation(convo, description) {
         const roomName = "observable-private-" + convo.id;
-        this.props.onChangeRoom(roomName);
+        this.props.onChangeRoom(roomName, description);
         // Somehow render new InstantMessenger:
         // <InstantMessenger roomName={roomName} />
     }
 
     render() {
-        const {users} = this.props;
+        const users = this.props.allUsers;
         const currentUserId = this.props.currentUser.uuid;
+        if (!users || !currentUserId) {
+          return null;
+        }
         return (
             <ul className="Users-list">
-              <li className="UserList-user">
-                <button onClick={e => this.showPublic()}>Global</button>
+              <li className="UserList-user" key="global">
+                <p onClick={e => this.showPublic()}>Global</p>
               </li>
               { users
                     .filter(u => u.uuid !== currentUserId)
@@ -49,8 +52,8 @@ class UserList extends Component {
 
     renderUser(user) {
         return (
-        <li className="UserList-user">
-          <button onClick={e => this.startConversation(e, user.uuid)}>{user.username}</button>
+        <li className="UserList-user" key={user.uuid}>
+          <p onClick={e => this.startConversation(e, user)}>{user.username}</p>
         </li>
         )
     }

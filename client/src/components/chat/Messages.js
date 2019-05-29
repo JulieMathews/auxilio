@@ -14,7 +14,7 @@ class Messages extends Component {
   renderMessage(message) {
     const {member, data} = message;
     const {currentMember} = this.props;
-   
+
     var color = "#f44";
     var username = "System Message";
     var className = "Messages-message";
@@ -28,7 +28,7 @@ class Messages extends Component {
       }
     }
     return (
-      <li className={className}>
+      <li className={className} key={message.id}>
       <span
         className="avatar"
         style={{backgroundColor: color}}
