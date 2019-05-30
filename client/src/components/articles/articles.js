@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
-import '../Landing/Landing.css';
 import axios from 'axios';
+import './articles.css';
 import {Link} from 'react-router-dom';
 
 const Articles = (props) => {
@@ -40,13 +40,19 @@ const Articles = (props) => {
 
   return (
     <div>
+      <section className="banner_area">
+        <div className="banner_inner d-flex align-items-center">
+          <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
+          <div className="container">
+            <div className="banner_content text-center">
+              <h2>Most Recent Articles</h2>
 
+            </div>
+          </div>
+        </div>
+      </section>
       <section className="popular_area p_120">
         <div className="container">
-          <div className="main_title">
-            <h2>Most Recent Articles</h2>
-            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation.</p>
-          </div>
           <div className="popular_inner row">
             {renderArticles()}
           </div>
