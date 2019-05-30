@@ -19,7 +19,7 @@
   list-style: none;
   padding-left: 0;
   flex-grow: 1;
- 
+
   /* float: right; */
 }
 
@@ -121,11 +121,13 @@ h1 {
   margin-left: 1rem;
   margin-bottom: 1rem;
   margin-right: 25%;
-  /* position: fixed; */
-  bottom:5;
-  /* left: 0; */
-  right: 0;
-  top: 5;
+
+  position: fixed;
+  bottom: 5rem;
+  left: 0rem;
+  right: 0rem;
+  top: 5rem;
+
   width: 30%;
   overflow: scroll;
   padding: 1rem;
