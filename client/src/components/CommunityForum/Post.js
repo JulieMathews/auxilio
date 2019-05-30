@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from 'react-router-dom';
+//import { Link } from 'react-router-dom';
 import moment from 'moment';
 import Comment from './Comment';
 import CommentInput from './CommentInput';
