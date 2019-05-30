@@ -705,7 +705,7 @@ button:focus {
     font-weight: 600;
     transition: all 0.3s linear; }
     .blog_details h2:hover {
-      color: #5ec0ca; }
+      color: black; }
   .blog_details p {
     margin-bottom: 26px; }
 
@@ -2736,7 +2736,7 @@ h6 {
   .popular_item p {
     margin-bottom: 0px; }
   .popular_item:hover h4 {
-    color: #5ec0ca; }
+    color: black; }
 
 /* End Popular Area css
 ============================================================================================ */
