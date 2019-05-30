@@ -16,7 +16,7 @@ class Messages extends Component {
     const {currentMember} = this.props;
 
     var color = "#f44";
-    var username = "System Message";
+    var username = "Guest";
     var className = "Messages-message";
     if (member) {
       if (member.id === currentMember.id){
