@@ -3086,3 +3086,10 @@ button {
   display: flex;
 }
 
+.userName {
+  font-family: sans-serif;
+  font-weight: bold;
+  font-size: 15px;
+  text-transform: uppercase;
+  color: #6287a2;
+}

@@ -31,6 +31,7 @@ class Post extends Component {
             </div>
           </div>
           <div className="CommentList">
+            <hr/>
           { post.comments.map(comment => (
             <Comment key={comment.id} comment={comment} />
           ))}
