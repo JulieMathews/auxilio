@@ -121,7 +121,7 @@ h1 {
   margin-left: 1rem;
   margin-bottom: 1rem;
   margin-right: 25%;
-  position: fixed;
+  /* position: fixed; */
   bottom:5;
   /* left: 0; */
   right: 0;
@@ -133,7 +133,6 @@ h1 {
 }
 
 .chatForm {
-  position: fixed;
   bottom: 0;
   right: 0;
   background:rgb(41, 79, 150, .40);
