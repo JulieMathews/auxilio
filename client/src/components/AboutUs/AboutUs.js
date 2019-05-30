@@ -28,7 +28,7 @@ const AboutUs = (props) => {
                   <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
                       <h6>Professional Services</h6>
-                      <p>Read articles and onnect for one-on-one communication.</p>
+                      <p>Read articles and connect for one-on-one communication.</p>
                     </div>
                   </div>
 
