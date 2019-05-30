@@ -28,13 +28,13 @@ const AboutUs = (props) => {
                   <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
                       <h6>Professional Services</h6>
-                      <p>Read articles and onnect for one-on-one communication.</p>
+                      <p>Read articles and connect for one-on-one communication.</p>
                     </div>
                   </div>
 
                   <div className="col-lg-4 col-md-6">
                     <div className="feature_item">
-                      <h6>Great Support</h6>
+                      <h6>Love & Support</h6>
                       <p>Find other guardians with relatable circumstances.</p>
                     </div>
                   </div>
@@ -53,7 +53,7 @@ const AboutUs = (props) => {
             <div className="about_left_text">
               <h6>Brand new app for</h6>
               <h3>The Support You Need</h3>
-              <h5>We are here to listen to you and deliver exellence</h5>
+              <h5>We are here to listen and deliver exellence!</h5>
               <p>Consider this a safe-place to ask questions, get advice, and meet new people with similar circumstances.</p>
             </div>
           </div>
@@ -77,7 +77,7 @@ const AboutUs = (props) => {
           <img src={ require('../../img/aboutUs/ben-1.png') } alt="Ben" />
           <div className="hover">
             <h4>Ben</h4>
-            <p>A debonair ambassador for the growing community.</p>
+            <p>A debonair ambassador for the growing community with aspirations of fatherhood.</p>
           </div>
         </div>
         <div className="projects_item wd_18">
