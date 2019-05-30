@@ -1,7 +1,7 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import './articles.css';
-import {Link} from 'react-router-dom';
+import ArticleBody from './body.js';
 
 const Articles = (props) => {
     const [articles, setArticles] = useState([]);
@@ -23,16 +23,7 @@ const Articles = (props) => {
     console.log('article:', articles);
     return articles.map(article => {
       return (
-        <div className="col-lg-4" key={article.id}>
-          <div className="popular_item">
-            <Link to={`/article/${article.id}`}>
-              <img className="img-fluid" src={article.headerImageUrl} alt="Article header" />
-            </Link>
-            <h4>{article.title}</h4>
-            {article.blurb}
-            <div dangerouslySetInnerHTML={{ __html:article.article }} />
-          </div>
-        </div>
+        <ArticleBody article={article} />
       );
     })
   }

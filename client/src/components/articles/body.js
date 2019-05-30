@@ -1,52 +1,36 @@
-import {Component} from "react";
-import React from "react";
-import axios from 'axios';
+import React, {Component} from "react";
+import {Link} from 'react-router-dom';
 
 class ArticleBody extends Component {
     state = {
-        articles: []
+        showAll: false
     }
 
-    componentDidMount() {
-        axios
-            .get('/article')
-            .then(response => {
-                console.log('Articles response:');
-                console.log(response);
-                if (response.status === 200) {
-                    this.setState({articles: response.data.articles});
-                }
-            })
-            .catch(error => {
-                console.log('Articles error:');
-                console.log(error);
-            })
-    }
-  render() {
-      const articles = this.state.articles;
-      return (
-          <div className="Articles-list">
-            {articles.map(a => this.renderArticle(a))}
-          </div>
-      )
+  toggleShowAll = (e) => {
+    e.preventDefault();
+    this.setState({showAll: !this.state.showAll});
   }
 
-  renderArticle(article) {
-    return(
-        <article className="article">
-            <div className="col-md-9">
-                <div className="blog_post">
-                    <img src="img/blog/main-blog/m-blog-2.jpg" alt="" />
-                    <div className="blog_details">
-                        <a href="single-blog.html"><h2>{article.title}</h2></a>
-                        <p>{article.article}</p>
-                     
-                    </div>
-                </div>
-            </div>
-        </article>
-    )
-    }
+  render() {
+    const article = this.props.article;
+    return (
+      <div className="col-lg-4" key={article.id}>
+        <div className="popular_item">
+          <Link to={`/article/${article.id}`}>
+            <img className="img-fluid" src={article.headerImageUrl} alt="Article header" />
+          </Link>
+          <h4>{article.title}</h4>
+          { this.state.showAll ? (
+            <div dangerouslySetInnerHTML={{ __html:article.article }} />
+          ) : (
+            <div>{article.blurb}</div>
+          ) }
+          <button onClick={this.toggleShowAll}>{ this.state.showAll ? 'View Less' : 'View More' }</button>
 
+        </div>
+      </div>
+    );
+  }
 }
-    export default ArticleBody;
+
+export default ArticleBody;
