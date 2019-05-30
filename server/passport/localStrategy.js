@@ -4,7 +4,7 @@ var db = require("../database/models");
 
 //Register for an user
   const strategySignup = new LocalStrategy({
-      
+
         usernameField: "email",
         passwordField: "password",
         passReqToCallback: true
@@ -59,7 +59,6 @@ var db = require("../database/models");
           }
         })
           .then(function(user) {
-            console.log("Got user: ", user.get());
             if (!user) {
               return done(null, false, {
                 message: "It looks like that email doesn't exist!"
@@ -77,4 +76,4 @@ var db = require("../database/models");
       }
     );
 
-module.exports = strategy 
+module.exports = strategy

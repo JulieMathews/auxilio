@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Redirect } from 'react-router-dom'
 import axios from 'axios'
+import Error from '../error/error';
 
 class LoginForm extends Component {
     constructor() {
@@ -44,6 +45,7 @@ class LoginForm extends Component {
                     })
                 }
             }).catch(error => {
+              this.setState({ errorMessage: "Invalid username or password"});
                 console.log('login error: ')
                 console.log(error);
             })
@@ -56,7 +58,7 @@ class LoginForm extends Component {
             return (
                 <div>
                     <h4>Login</h4>
-                    <div className="error">{this.state.errorMessage}</div>
+                    <Error message={this.state.errorMessage} />
                     <form className="form-horizontal">
                         <div className="form-group">
                             <div className="col-1 col-ml-auto">
