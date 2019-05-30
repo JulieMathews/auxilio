@@ -22,7 +22,7 @@ class UserList extends Component {
     }
 
     showPublic() {
-        this.props.onChangeRoom("observable-room", "Community Chat");
+        this.props.onChangeRoom("observable-room", "Private Chat");
     }
 
     showConversation(convo, description) {
