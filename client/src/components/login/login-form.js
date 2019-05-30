@@ -62,14 +62,14 @@ class LoginForm extends Component {
                     <form className="form-horizontal">
                         <div className="form-group">
                             <div className="col-1 col-ml-auto">
-                                <label className="form-label" htmlFor="username">EMAIL:</label>
+                                <label className="form-label" htmlFor="email">EMAIL:</label>
                             </div>
                             <div className="col-5 col-mr-auto">
                                 <input className="form-input"
                                     type="text"
-                                    id="username"
-                                    name="username"
-                                    placeholder="Username"
+                                    id="email"
+                                    name="email"
+                                    placeholder="email"
                                     value={this.state.username}
                                     onChange={this.handleChange}
                                 />
