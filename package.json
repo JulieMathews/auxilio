@@ -25,12 +25,13 @@
     "sequelize": "^5.8.6",
     "sequelize-cli": "^5.4.0",
     "sharp": "^0.22.1",
-    "spectre.css": "^0.5.0"
+    "spectre.css": "^0.5.0",
+    "uuid": "^3.3.2"
   },
   "scripts": {
     "start": "concurrently \"npm run client\" \"npm run api\"",
     "build": "cd client && npm install && npm install --only=dev --no-shrinkwrap && npm run build",
-    "api": "nodemon --inspect ./server/server.js",
+    "api": "nodemon ./server/server.js",
     "client": "cd client && npm start"
   },
   "devDependencies": {
