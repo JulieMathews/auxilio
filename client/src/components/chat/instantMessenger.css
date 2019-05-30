@@ -121,11 +121,13 @@ h1 {
   margin-left: 1rem;
   margin-bottom: 1rem;
   margin-right: 25%;
+
   position: fixed;
   bottom: 5rem;
   left: 0rem;
   right: 0rem;
   top: 5rem;
+
   width: 30%;
   overflow: scroll;
   padding: 1rem;
@@ -133,7 +135,6 @@ h1 {
 }
 
 .chatForm {
-  position: fixed;
   bottom: 0;
   right: 0;
   background:rgb(41, 79, 150, .40);

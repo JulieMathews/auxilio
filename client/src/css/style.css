@@ -3082,3 +3082,7 @@ button {
   text-align: center;
 }
 
+.flex-wrapper {
+  display: flex;
+}
+

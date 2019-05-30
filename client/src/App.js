@@ -120,17 +120,19 @@ class App extends Component {
             <Articles/> }
           />
           <Route exact path="/article/:id" />
-          <UserList currentUser={this.state.user}
-            allUsers={this.state.allUsers}
-            onChangeRoom={this.onChangeRoom} />
-          {this.state.chatRoom &&
-            <InstantMessenger
-              currentUser={this.state.user}
-              drone={this.drone}
-              closeChat={this.closeChat}
-              roomName={this.state.chatRoom.name}
-              roomDescription={this.state.chatRoom.description} />
-          }
+          <div className='flex-wrapper'>
+            <UserList currentUser={this.state.user}
+              allUsers={this.state.allUsers}
+              onChangeRoom={this.onChangeRoom} />
+            {this.state.chatRoom &&
+              <InstantMessenger
+                currentUser={this.state.user}
+                drone={this.drone}
+                closeChat={this.closeChat}
+                roomName={this.state.chatRoom.name}
+                roomDescription={this.state.chatRoom.description} />
+            }
+          </div>
           </React.Fragment>
         }
         <Footer/>
