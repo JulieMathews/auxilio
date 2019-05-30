@@ -17,7 +17,7 @@ li .page-link {
 .forumForm {
   list-style: outside none none;
   position: relative;
-  background-color: rgb(10, 187, 187);
+  background-color: #f7d394;
   margin-top: 1rem;
   margin-bottom: 1rem;
   padding: 2rem;
@@ -55,9 +55,23 @@ img {
 }
 
 .blog_item {
-  background-color: #80c8bc;
+  background-color: #ffeec9;
   padding: 1rem;
   border-bottom: 1px black solid;
   width: 80%;
   margin-left: 10%;
+}
+
+.banner_area .banner_inner .banner_content h2 {
+  padding-bottom: 3rem;
+}
+
+button {
+  padding: 5px 10px 5px 10px;
+  font-size: 16px;
+  background-color: #6287a2;
+  color: white;
+  border: 2px white solid;
+  border-radius: 8px;
+  margin-left: 10px;
 }
