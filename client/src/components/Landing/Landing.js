@@ -55,20 +55,21 @@ const Landing = (props) => {
 {/*  ONLY FOR LOGGEDIN */}
               <div className="col-lg-4">
                 <div className="home_right_box">
+
                   <div className="home_item">
-                    <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/family.png')} alt="School Related"/></span>
+                    <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/family.png')} alt="community"/></span>
                   </div>
                   <div className="home_item">
                     <Link to="/communityforum"><p>Community Forum</p></Link>
-
                   </div>
+
                   <div className="home_item">
-                    <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/happy.png')} alt="School Related"/></span>
+                    <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/happy.png')} alt="messages"/></span>
                   </div>
                   <div className="home_item">
                     <Link to="/messages"><p>Messenger</p></Link>
-
                   </div>
+                  
                 </div>
               </div>
               
