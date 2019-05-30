@@ -1,27 +1,15 @@
-import React, {useState, useEffect} from 'react';
+import React, {useContext} from 'react';
 import axios from 'axios';
 import './articles.css';
 import ArticleBody from './body.js';
+import GlobalContext from "../../context/global-context";
 
 const Articles = (props) => {
-    const [articles, setArticles] = useState([]);
-
-  const fetchArticles = async() => {
-    const response = await axios.get('/article');
-    console.log('fetch articles:', response.data)
-    let len = response.data.length;
-    if (len > 9 ) len = 9;
-    const parsedArticles = response.data.slice(0, len);
-    setArticles(parsedArticles);
-  }
-
-  useEffect(() => {
-    fetchArticles();
-  }, []);
+  const context = useContext(GlobalContext);
 
   const renderArticles = () => {
-    console.log('article:', articles);
-    return articles.map(article => {
+    console.log('article:', context.articles);
+    return context.articles.map(article => {
       return (
         <ArticleBody article={article} />
       );
