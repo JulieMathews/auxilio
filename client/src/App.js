@@ -112,27 +112,27 @@ class App extends Component {
         />
         {this.state.user &&
           <React.Fragment>
-          <Route path="/messenger" render={() =>
-            <InstantMessenger currentUser={this.state.user} />}
-          />
+          <Route path="/messages" render={() =>
+            <div className='flex-wrapper'>
+              <UserList currentUser={this.state.user}
+                allUsers={this.state.allUsers}
+                onChangeRoom={this.onChangeRoom} />
+              {this.state.chatRoom &&
+                <InstantMessenger
+                  currentUser={this.state.user}
+                  drone={this.drone}
+                  closeChat={this.closeChat}
+                  roomName={this.state.chatRoom.name}
+                  roomDescription={this.state.chatRoom.description} />
+              }
+              </div>
+            }        />
           <Route exact path="/communityforum" component={CommunityForum} />
           <Route path="/articles" render={() =>
             <Articles/> }
           />
           <Route exact path="/article/:id" />
-          <div className='flex-wrapper'>
-            <UserList currentUser={this.state.user}
-              allUsers={this.state.allUsers}
-              onChangeRoom={this.onChangeRoom} />
-            {this.state.chatRoom &&
-              <InstantMessenger
-                currentUser={this.state.user}
-                drone={this.drone}
-                closeChat={this.closeChat}
-                roomName={this.state.chatRoom.name}
-                roomDescription={this.state.chatRoom.description} />
-            }
-          </div>
+
           </React.Fragment>
         }
         <Footer/>

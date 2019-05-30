@@ -30,8 +30,7 @@ const Articles = (props) => {
             </Link>
             <h4>{article.title}</h4>
             {article.blurb}
-
-            {article.article}
+            <div dangerouslySetInnerHTML={{ __html:article.article }} />
           </div>
         </div>
       );
