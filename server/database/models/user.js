@@ -23,6 +23,10 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.STRING,
     },
 
+    profileImageData: {
+      type: DataTypes.BLOB,
+    },
+
     email: {
       type: DataTypes.STRING,
       allowNull:  false,
