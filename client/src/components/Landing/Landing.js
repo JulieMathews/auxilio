@@ -57,18 +57,18 @@ const Landing = (props) => {
                 <div className="home_right_box">
 
                   <div className="home_item">
-                    <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/family.png')} alt="community"/></span>
+                    <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/family.png')} alt="community"/><Link to="/communityforum"><p>Community Forum</p></Link></span>
                   </div>
-                  <div className="home_item">
+                  {/* <div className="home_item">
                     <Link to="/communityforum"><p>Community Forum</p></Link>
-                  </div>
+                  </div> */}
 
                   <div className="home_item">
-                    <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/happy.png')} alt="messages"/></span>
+                    <span className="nav-item active nav-link"><img src={ require('../../img/familyapp/happy.png')} alt="messages"/><Link to="/messages"><p>Messenger</p></Link></span>
                   </div>
-                  <div className="home_item">
+                  {/* <div className="home_item">
                     <Link to="/messages"><p>Messenger</p></Link>
-                  </div>
+                  </div> */}
 
                 </div>
               </div>

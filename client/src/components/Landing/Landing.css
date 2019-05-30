@@ -26,6 +26,24 @@
   box-shadow: 12px 12px 29px #555;
 }
 
+.nav-item {
+  padding: 1rem;
+}
+
 .home_item {
   color: black;
+  padding-bottom: 1rem;
+  font-size: 1rem;
+  margin-top: 0;
+  font-weight: bold;
+  height: 8rem;
+}
+
+p {
+  padding-top: 1rem;
+}
+
+img {
+  margin-top: 0;
+  padding-top: 0;
 }
