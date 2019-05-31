@@ -1,20 +1,18 @@
-import React, {useContext} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import axios from 'axios';
 import './articles.css';
 import ArticleBody from './body.js';
 import GlobalContext from "../../context/global-context";
 
-const Articles = (props) => {
+const Article = (props) => {
   const context = useContext(GlobalContext);
+  let currArticle;
+  context.articles.forEach((article) => {
+    if (parseInt(props.match.params.id) === article.id) {
+      currArticle = article;
+    }
+  })
 
-  const renderArticles = () => {
-    console.log('article:', context.articles);
-    return context.articles.map(article => {
-      return (
-        <ArticleBody article={article} />
-      );
-    })
-  }
 
   return (
     <div>
@@ -23,8 +21,8 @@ const Articles = (props) => {
           <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
           <div className="container">
             <div className="banner_content text-center">
-              <h2>Most Recent Articles</h2>
-
+              <h2>Article</h2>
+              <ArticleBody article={currArticle}/>               
             </div>
           </div>
         </div>
@@ -32,7 +30,7 @@ const Articles = (props) => {
       <section className="popular_area p_120">
         <div className="container">
           <div className="popular_inner row">
-            {renderArticles()}
+            {}
           </div>
         </div>
       </section>
@@ -40,4 +38,4 @@ const Articles = (props) => {
     </div>
   )
 };
-export default Articles;
+export default Article;

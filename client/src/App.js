@@ -7,6 +7,7 @@ import Signup from './components/signup/sign-up'
 import LoginForm from './components/login/login-form'
 import InstantMessenger from './components/chat/chat'
 import Articles from './components/articles/articles';
+import Article from './components/articles/article';
 
 // pages
 import Navbar from './components/Navbar/Navbar';
@@ -21,6 +22,8 @@ import UserList from './components/chat/UserList';
 //import SpecialistPost from './components/SpecialistPost';
 
   //  return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work?'));
+
+import GlobalState from "./context/GlobalState.js"
 
 class App extends Component {
   constructor() {
@@ -95,6 +98,7 @@ class App extends Component {
 
   render() {
     return (
+    <GlobalState>
       <div className="App">
         <Navbar updateUser={this.updateUser} loggedIn={this.state.user !== null} />
         {/* greet user if logged in: */}
@@ -131,12 +135,16 @@ class App extends Component {
           <Route path="/articles" render={() =>
             <Articles/> }
           />
-          <Route exact path="/article/:id" />
+          <Route exact path="/article/:id" render={(params) =>
+            <Article {...params} />}
+          />
 
           </React.Fragment>
         }
         <Footer/>
       </div>
+    </GlobalState>
+
     );
   }
   onChangeRoom = (roomName, description) => {
