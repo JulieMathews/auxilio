@@ -7,7 +7,7 @@ import Signup from './components/signup/sign-up'
 import LoginForm from './components/login/login-form'
 import InstantMessenger from './components/chat/chat'
 import Articles from './components/articles/articles';
-
+import Article from "./components/articles/article";
 // pages
 import Navbar from './components/Navbar/Navbar';
 import Landing from './components/Landing/Landing';
@@ -15,12 +15,14 @@ import Footer from './components/Footer/Footer';
 import AboutUs from './components/AboutUs/AboutUs';
 import CommunityForum from "./components/CommunityForum/CommunityForum";
 import UserList from './components/chat/UserList';
-
+import GlobalState from "./context/GlobalState.js";
 //import SpecialistForum from './compoenents/SpecialistForum';
 //import SpecialistContact from './components/SpecialistContact';
 //import SpecialistPost from './components/SpecialistPost';
 
   //  return React.createElement('div', {className: 'App'}, React.createElement('h1', null, 'Does this work?'));
+
+
 
 class App extends Component {
   constructor() {
@@ -95,11 +97,11 @@ class App extends Component {
 
   render() {
     return (
+      <GlobalState>
       <div className="App">
         <Navbar updateUser={this.updateUser} loggedIn={this.state.user !== null} />
         {/* greet user if logged in: */}
-        {this.state.user &&
-          <p id="pleasure">It's a pleasure to see you again, {this.state.user.username}!</p>
+        {this.state.user && <p id="pleasure">Its a pleasure to see you again, {this.state.user.username}!</p>
         }
         {/* Routes to different components */}
         <Route exact path="/" component={Landing} />
@@ -131,12 +133,15 @@ class App extends Component {
           <Route path="/articles" render={() =>
             <Articles/> }
           />
-          <Route exact path="/article/:id" />
+          <Route exact path="/article/:id" render={(params)=>
+            <Article {...params} />}
+          />
 
           </React.Fragment>
         }
         <Footer/>
       </div>
+      </GlobalState>
     );
   }
   onChangeRoom = (roomName, description) => {

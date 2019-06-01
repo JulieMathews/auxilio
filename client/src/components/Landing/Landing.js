@@ -1,30 +1,33 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect, useContext} from 'react';
 import './Landing.css';
+import GlobalContext from "../../context/global-context";
 import axios from 'axios';
 
 import {Link} from 'react-router-dom';
 
+
 const Landing = (props) => {
+  const context = useContext(GlobalContext);
   const [articles, setArticles] = useState([]);
 
-  const fetchArticles = async() => {
-    const response = await axios.get('/article');
-    console.log('fetch articles:', response.data)
-    let len = response.data.length;
-    if (len > 3 ) len = 3;
-    const parsedArticles = response.data.slice(0, len);
-    setArticles(parsedArticles);
-  }
+  //const fetchArticles = async() => {
+  //   const response = await axios.get('/article');
+  //   console.log('fetch articles:', response.data)
+  //   let len = response.data.length;
+  //   if (len > 3 ) len = 3;
+  //   const parsedArticles = response.data.slice(0, len);
+  //   setArticles(parsedArticles);
+  // }
 
-  useEffect(() => {
-    fetchArticles();
-  }, []);
+  // useEffect(() => {
+  //   fetchArticles();
+  // }, []);
 
   const renderArticles = () => {
-    console.log('article:', articles);
-    return articles.map(article => {
+    console.log('article:', context.articles);
+    return context.articles.map(article => {
       return (
-        <div className="col-lg-4" key={article.id}>
+        <div className="col-lg-4" key={`/article/${article.id}`}>
           <div className="popular_item">
             <Link to="/articles">
               <img className="img-fluid" src={article.headerImageUrl} alt="Article header" />
