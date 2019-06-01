@@ -22,8 +22,8 @@ const Articles = (props) => {
   // }, []);
 
   const renderArticles = () => {
-    console.log('article:', context.articles);
-    return context.articles.map(article => {
+    console.log('article:', context.allArticles);
+    return context.allArticles.map(article => {
       return (
         <ArticleBody article={article} />
       );

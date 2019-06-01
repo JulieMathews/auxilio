@@ -20,12 +20,14 @@ class ArticleBody extends Component {
             <img className="img-fluid" src={article.headerImageUrl} alt="Article header" />
           </Link>
           <h4>{article.title}</h4>
-          { this.state.showAll ? (
+          { this.props.showAll || this.state.showAll ? (
             <div dangerouslySetInnerHTML={{ __html:article.article }} />
           ) : (
             <div>{article.blurb}</div>
           ) }
-          <button onClick={this.toggleShowAll}>{ this.state.showAll ? 'View Less' : 'View More' }</button>
+          { !this.props.showAll &&
+            <button onClick={this.toggleShowAll}>{ this.state.showAll ? 'View Less' : 'View More' }</button>
+          }
 
         </div>
       </div>

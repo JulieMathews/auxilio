@@ -1,13 +1,14 @@
 import React, { Component } from "react";
 
- import GlobalContext from "./global-context";
+import GlobalContext from "./global-context";
 import axios from 'axios';
 
  export default class GlobalState extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      articles: []
+      allArticles: [],
+      popularArticles: [],
     };
   }
   componentDidMount() {
@@ -18,7 +19,7 @@ import axios from 'axios';
     console.log('fetch articles:', response.data)
     let len = response.data.length;
     const articles = response.data;
-    this.setState({ articles })
+    this.setState({ allArticles: articles, popularArticles: articles.slice(0, 3) });
   }
 
    render() {

@@ -24,12 +24,12 @@ const Landing = (props) => {
   // }, []);
 
   const renderArticles = () => {
-    console.log('article:', context.articles);
-    return context.articles.map(article => {
+    console.log('article:', context.popularArticles);
+    return context.popularArticles.map(article => {
       return (
         <div className="col-lg-4" key={`/article/${article.id}`}>
           <div className="popular_item">
-            <Link to="/articles">
+            <Link to={`/article/${article.id}`}>
               <img className="img-fluid" src={article.headerImageUrl} alt="Article header" />
             </Link>
             <h4>{article.title}</h4>

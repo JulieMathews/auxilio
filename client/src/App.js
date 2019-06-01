@@ -134,7 +134,7 @@ class App extends Component {
             <Articles/> }
           />
           <Route exact path="/article/:id" render={(params)=>
-            <Article {...params} />}
+            <Article {...params} showAll={true} />}
           />
 
           </React.Fragment>

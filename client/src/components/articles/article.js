@@ -7,7 +7,7 @@ import GlobalContext from "../../context/global-context";
  const Article = (props) => {
   const context = useContext(GlobalContext);
   let currArticle;
-  context.articles.forEach((article) => {
+  context.allArticles.forEach((article) => {
     if (parseInt(props.match.params.id) === article.id) {
       currArticle = article;
     }
@@ -16,21 +16,10 @@ import GlobalContext from "../../context/global-context";
 
    return (
     <div>
-      <section className="banner_area">
-        <div className="banner_inner d-flex align-items-center">
-          <div className="overlay bg-parallax" data-stellar-ratio="0.9" data-stellar-vertical-offset="0" data-background=""></div>
-          <div className="container">
-            <div className="banner_content text-center">
-              <h2>Article</h2>
-              <ArticleBody article={currArticle}/>
-            </div>
-          </div>
-        </div>
-      </section>
       <section className="popular_area p_120">
         <div className="container">
           <div className="popular_inner row">
-            {}
+            <ArticleBody article={currArticle} showAll={true} />
           </div>
         </div>
       </section>
