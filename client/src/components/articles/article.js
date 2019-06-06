@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from 'react';
 import axios from 'axios';
-import './articles.css';
+import './article.css';
 import ArticleBody from './body.js';
 import GlobalContext from "../../context/global-context";
 
@@ -19,7 +19,9 @@ import GlobalContext from "../../context/global-context";
       <section className="popular_area p_120">
         <div className="container">
           <div className="popular_inner row">
-            <ArticleBody article={currArticle} showAll={true} />
+            <div className="singleArt">
+              <ArticleBody article={currArticle} showAll={true} />
+            </div>
           </div>
         </div>
       </section>

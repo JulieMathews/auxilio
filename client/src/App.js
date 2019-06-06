@@ -101,7 +101,7 @@ class App extends Component {
       <div className="App">
         <Navbar updateUser={this.updateUser} loggedIn={this.state.user !== null} />
         {/* greet user if logged in: */}
-        {this.state.user && <p id="pleasure">Its a pleasure to see you again, {this.state.user.username}!</p>
+        {this.state.user && <p id="pleasure">It's a pleasure to see you again, {this.state.user.username}!</p>
         }
         {/* Routes to different components */}
         <Route exact path="/" component={Landing} />
