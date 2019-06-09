@@ -14,7 +14,7 @@ class ArticleBody extends Component {
   render() {
     const article = this.props.article;
     return (
-      <div className="col-lg-4" key={article.id}>
+      <div className="singleArt" key={article.id}>
         <div className="popular_item">
           <Link to={`/article/${article.id}`}>
             <img className="img-fluid" src={article.headerImageUrl} alt="Article header" />
@@ -25,9 +25,9 @@ class ArticleBody extends Component {
           ) : (
             <div>{article.blurb}</div>
           ) }
-          { !this.props.showAll &&
+          {/* { !this.props.showAll &&
             <button onClick={this.toggleShowAll}>{ this.state.showAll ? 'View Less' : 'View More' }</button>
-          }
+          } */}
 
         </div>
       </div>
