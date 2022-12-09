@@ -11,7 +11,7 @@
     "body-parser": "^1.18.2",
     "connect-flash": "^0.1.1",
     "dotenv": "^8.0.0",
-    "express": "^4.16.2",
+    "express": "^4.17.3",
     "express-session": "^1.15.6",
     "express-session-sequelize": "^2.0.0",
     "flash": "^1.1.0",
